@@ -19,6 +19,7 @@
 		9B8B0F29237CE707001326EB /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 9B8B0F28237CE707001326EB /* Apollo */; };
 		9B8B0F2B237CE707001326EB /* ApolloWebSocket in Frameworks */ = {isa = PBXBuildFile; productRef = 9B8B0F2A237CE707001326EB /* ApolloWebSocket */; };
 		9B8B0F32237CE996001326EB /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8B0F31237CE996001326EB /* API.swift */; };
+		9B8B0F34237CE9DF001326EB /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8B0F33237CE9DF001326EB /* Network.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		9B8B0F2D237CE84B001326EB /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
 		9B8B0F30237CE90F001326EB /* LaunchList.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = LaunchList.graphql; sourceTree = "<group>"; };
 		9B8B0F31237CE996001326EB /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		9B8B0F33237CE9DF001326EB /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				9B8B0F31237CE996001326EB /* API.swift */,
+				9B8B0F33237CE9DF001326EB /* Network.swift */,
 				9B8B0EF5237CE6A8001326EB /* AppDelegate.swift */,
 				9B8B0EF7237CE6A8001326EB /* SceneDelegate.swift */,
 				9B8B0EF9237CE6A8001326EB /* MasterViewController.swift */,
@@ -304,6 +307,7 @@
 			files = (
 				9B8B0EF6237CE6A8001326EB /* AppDelegate.swift in Sources */,
 				9B8B0EF8237CE6A8001326EB /* SceneDelegate.swift in Sources */,
+				9B8B0F34237CE9DF001326EB /* Network.swift in Sources */,
 				9B8B0EFA237CE6A8001326EB /* MasterViewController.swift in Sources */,
 				9B8B0EFC237CE6A8001326EB /* DetailViewController.swift in Sources */,
 				9B8B0F32237CE996001326EB /* API.swift in Sources */,
