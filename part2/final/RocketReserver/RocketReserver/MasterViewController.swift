@@ -30,7 +30,29 @@ class MasterViewController: UITableViewController {
     // MARK: - Segues
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+      guard let selectedIndexPath = self.tableView.indexPathForSelectedRow else {
+        // Nothing is selected, nothing to do
+        return
+      }
         
+      guard let listSection = ListSection(rawValue: selectedIndexPath.section) else {
+        assertionFailure("Invalid section")
+        return
+      }
+        
+      switch listSection {
+      case .launches:
+        guard
+          let destination = segue.destination as? UINavigationController,
+          let detail = destination.topViewController as? DetailViewController else {
+            assertionFailure("Wrong kind of destination")
+            return
+        }
+        
+        let launch = self.launches[selectedIndexPath.row]
+        detail.launchID = launch.id
+        self.detailViewController = detail
+      }
     }
     
     // MARK: - Table View
