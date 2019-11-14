@@ -11,7 +11,11 @@ import Apollo
 
 class DetailViewController: UIViewController {
     
-    @IBOutlet weak var detailDescriptionLabel: UILabel!
+    @IBOutlet private var missionPatchImageView: UIImageView!
+    @IBOutlet private var missionNameLabel: UILabel!
+    @IBOutlet private var rocketNameLabel: UILabel!
+    @IBOutlet private var launchSiteLabel: UILabel!
+    @IBOutlet private var bookCancelButton: UIBarButtonItem!
     
     private var launch: LaunchDetailsQuery.Data.Launch?
     
