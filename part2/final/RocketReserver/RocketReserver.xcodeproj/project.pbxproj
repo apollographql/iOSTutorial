@@ -21,6 +21,7 @@
 		9B8B0F32237CE996001326EB /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8B0F31237CE996001326EB /* API.swift */; };
 		9B8B0F34237CE9DF001326EB /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8B0F33237CE9DF001326EB /* Network.swift */; };
 		9B97EF1E237E0D9C00A714ED /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 9B97EF1D237E0D9C00A714ED /* SDWebImage */; };
+		9B97EF20237E133D00A714ED /* LaunchDetails.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 9B97EF1F237E133D00A714ED /* LaunchDetails.graphql */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		9B8B0F30237CE90F001326EB /* LaunchList.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = LaunchList.graphql; sourceTree = "<group>"; };
 		9B8B0F31237CE996001326EB /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		9B8B0F33237CE9DF001326EB /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		9B97EF1F237E133D00A714ED /* LaunchDetails.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = LaunchDetails.graphql; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 				9B8B0EFD237CE6A8001326EB /* Main.storyboard */,
 				9B8B0F2D237CE84B001326EB /* schema.json */,
 				9B8B0F30237CE90F001326EB /* LaunchList.graphql */,
+				9B97EF1F237E133D00A714ED /* LaunchDetails.graphql */,
 				9B8B0F00237CE6AB001326EB /* Assets.xcassets */,
 				9B8B0F02237CE6AB001326EB /* LaunchScreen.storyboard */,
 				9B8B0F05237CE6AB001326EB /* Info.plist */,
@@ -264,6 +267,7 @@
 				9B8B0F04237CE6AB001326EB /* LaunchScreen.storyboard in Resources */,
 				9B8B0F01237CE6AB001326EB /* Assets.xcassets in Resources */,
 				9B8B0EFF237CE6A8001326EB /* Main.storyboard in Resources */,
+				9B97EF20237E133D00A714ED /* LaunchDetails.graphql in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

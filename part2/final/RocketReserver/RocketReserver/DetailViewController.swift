@@ -13,6 +13,8 @@ class DetailViewController: UIViewController {
     
     @IBOutlet weak var detailDescriptionLabel: UILabel!
     
+    private var launch: LaunchDetailsQuery.Data.Launch?
+    
     var launchID: GraphQLID? {
         didSet {
             self.configureView()
