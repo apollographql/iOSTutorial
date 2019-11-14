@@ -54,6 +54,7 @@
 		9B8B0F19237CE6AB001326EB /* RocketReserverUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketReserverUITests.swift; sourceTree = "<group>"; };
 		9B8B0F1B237CE6AB001326EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B8B0F2D237CE84B001326EB /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
+		9B8B0F30237CE90F001326EB /* LaunchList.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = LaunchList.graphql; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +113,7 @@
 				9B8B0EFB237CE6A8001326EB /* DetailViewController.swift */,
 				9B8B0EFD237CE6A8001326EB /* Main.storyboard */,
 				9B8B0F2D237CE84B001326EB /* schema.json */,
+				9B8B0F30237CE90F001326EB /* LaunchList.graphql */,
 				9B8B0F00237CE6AB001326EB /* Assets.xcassets */,
 				9B8B0F02237CE6AB001326EB /* LaunchScreen.storyboard */,
 				9B8B0F05237CE6AB001326EB /* Info.plist */,
