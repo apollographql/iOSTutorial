@@ -1,5 +1,5 @@
-query LaunchList {
-  launches {
+query LaunchList($cursor:String) {
+  launches(after:$cursor) {
     hasMore
     cursor
     launches {
