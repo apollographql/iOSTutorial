@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class MasterViewController: UITableViewController {
     
@@ -30,29 +31,29 @@ class MasterViewController: UITableViewController {
     // MARK: - Segues
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-      guard let selectedIndexPath = self.tableView.indexPathForSelectedRow else {
-        // Nothing is selected, nothing to do
-        return
-      }
-        
-      guard let listSection = ListSection(rawValue: selectedIndexPath.section) else {
-        assertionFailure("Invalid section")
-        return
-      }
-        
-      switch listSection {
-      case .launches:
-        guard
-          let destination = segue.destination as? UINavigationController,
-          let detail = destination.topViewController as? DetailViewController else {
-            assertionFailure("Wrong kind of destination")
+        guard let selectedIndexPath = self.tableView.indexPathForSelectedRow else {
+            // Nothing is selected, nothing to do
             return
         }
         
-        let launch = self.launches[selectedIndexPath.row]
-        detail.launchID = launch.id
-        self.detailViewController = detail
-      }
+        guard let listSection = ListSection(rawValue: selectedIndexPath.section) else {
+            assertionFailure("Invalid section")
+            return
+        }
+        
+        switch listSection {
+        case .launches:
+            guard
+                let destination = segue.destination as? UINavigationController,
+                let detail = destination.topViewController as? DetailViewController else {
+                    assertionFailure("Wrong kind of destination")
+                    return
+            }
+            
+            let launch = self.launches[selectedIndexPath.row]
+            detail.launchID = launch.id
+            self.detailViewController = detail
+        }
     }
     
     // MARK: - Table View
@@ -76,6 +77,10 @@ class MasterViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         
+        cell.imageView?.image = nil
+        cell.textLabel?.text = nil
+        cell.detailTextLabel?.text = nil
+        
         guard let listSection = ListSection(rawValue: indexPath.section) else {
             assertionFailure("Invalid section")
             return cell
@@ -84,7 +89,16 @@ class MasterViewController: UITableViewController {
         switch listSection {
         case .launches:
             let launch = self.launches[indexPath.row]
-            cell.textLabel?.text = launch.site
+            cell.textLabel?.text = launch.mission?.name
+            cell.detailTextLabel?.text = launch.site
+            
+            let placeholder = UIImage(named: "placeholder")!
+            
+            if let missionPatch = launch.mission?.missionPatch {
+                cell.imageView?.sd_setImage(with: URL(string: missionPatch)!, placeholderImage: placeholder)
+            } else {
+                cell.imageView?.image = placeholder
+            }
         }
         
         return cell

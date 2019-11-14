@@ -20,6 +20,7 @@
 		9B8B0F2B237CE707001326EB /* ApolloWebSocket in Frameworks */ = {isa = PBXBuildFile; productRef = 9B8B0F2A237CE707001326EB /* ApolloWebSocket */; };
 		9B8B0F32237CE996001326EB /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8B0F31237CE996001326EB /* API.swift */; };
 		9B8B0F34237CE9DF001326EB /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8B0F33237CE9DF001326EB /* Network.swift */; };
+		9B97EF1E237E0D9C00A714ED /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 9B97EF1D237E0D9C00A714ED /* SDWebImage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B97EF1E237E0D9C00A714ED /* SDWebImage in Frameworks */,
 				9B8B0F29237CE707001326EB /* Apollo in Frameworks */,
 				9B8B0F2B237CE707001326EB /* ApolloWebSocket in Frameworks */,
 			);
@@ -165,6 +167,7 @@
 			packageProductDependencies = (
 				9B8B0F28237CE707001326EB /* Apollo */,
 				9B8B0F2A237CE707001326EB /* ApolloWebSocket */,
+				9B97EF1D237E0D9C00A714ED /* SDWebImage */,
 			);
 			productName = RocketReserver;
 			productReference = 9B8B0EF2237CE6A8001326EB /* RocketReserver.app */;
@@ -240,6 +243,7 @@
 			mainGroup = 9B8B0EE9237CE6A8001326EB;
 			packageReferences = (
 				9B8B0F27237CE707001326EB /* XCRemoteSwiftPackageReference "apollo-ios" */,
+				9B97EF1C237E0D9C00A714ED /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			productRefGroup = 9B8B0EF3237CE6A8001326EB /* Products */;
 			projectDirPath = "";
@@ -643,6 +647,14 @@
 				minimumVersion = 0.19.0;
 			};
 		};
+		9B97EF1C237E0D9C00A714ED /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.3.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -655,6 +667,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 9B8B0F27237CE707001326EB /* XCRemoteSwiftPackageReference "apollo-ios" */;
 			productName = ApolloWebSocket;
+		};
+		9B97EF1D237E0D9C00A714ED /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9B97EF1C237E0D9C00A714ED /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
