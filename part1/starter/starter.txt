@@ -1,1 +1,0 @@
-This part of the tutorial starts with creating a brand new project in Xcode - there is no starter project. 
