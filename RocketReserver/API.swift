@@ -461,3 +461,52 @@ public final class LaunchListQuery: GraphQLQuery {
     }
   }
 }
+
+public final class LoginMutation: GraphQLMutation {
+  /// The raw GraphQL definition of this operation.
+  public let operationDefinition =
+    """
+    mutation Login($email: String) {
+      login(email: $email)
+    }
+    """
+
+  public let operationName = "Login"
+
+  public var email: String?
+
+  public init(email: String? = nil) {
+    self.email = email
+  }
+
+  public var variables: GraphQLMap? {
+    return ["email": email]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes = ["Mutation"]
+
+    public static let selections: [GraphQLSelection] = [
+      GraphQLField("login", arguments: ["email": GraphQLVariable("email")], type: .scalar(String.self)),
+    ]
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(login: String? = nil) {
+      self.init(unsafeResultMap: ["__typename": "Mutation", "login": login])
+    }
+
+    public var login: String? {
+      get {
+        return resultMap["login"] as? String
+      }
+      set {
+        resultMap.updateValue(newValue, forKey: "login")
+      }
+    }
+  }
+}

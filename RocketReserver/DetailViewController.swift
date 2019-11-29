@@ -8,6 +8,7 @@
 
 import UIKit
 import Apollo
+import KeychainSwift
 
 class DetailViewController: UIViewController {
     
@@ -106,6 +107,39 @@ class DetailViewController: UIViewController {
                 }
             }
         }
+    }
+    
+    @IBAction private func bookOrCancelTapped() {
+        guard self.isLoggedIn() else {
+            self.performSegue(withIdentifier: "showLogin", sender: self)
+            return
+        }
+        
+        guard let launch = self.launch else {
+            // We don't have enough information yet to know
+            // if we're booking or cancelling, bail.
+            return
+        }
+        
+        if launch.isBooked == true {
+            self.cancelTrip(with: launch.id)
+        } else {
+            self.bookTrip(with: launch.id)
+        }
+    }
+    
+    
+    private func bookTrip(with id: GraphQLID) {
+        print("Book trip!")
+    }
+    
+    private func cancelTrip(with id: GraphQLID) {
+        
+    }
+    
+    private func isLoggedIn() -> Bool {
+        let keychain = KeychainSwift()
+        return keychain.get(LoginViewController.loginKeychainKey) != nil
     }
 }
 
