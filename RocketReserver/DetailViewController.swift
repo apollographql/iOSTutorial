@@ -80,15 +80,22 @@ class DetailViewController: UIViewController {
         self.configureView()
     }
     
-    private func loadLaunchDetails() {
+    private func loadLaunchDetails(forceReload: Bool = false) {
         guard
             let launchID = self.launchID,
-            launchID != self.launch?.id else {
+            (forceReload || launchID != self.launch?.id) else {
                 // This is the launch we're alrady displaying, or the ID is nil.
                 return
         }
         
-        Network.shared.apollo.fetch(query: LaunchDetailsQuery(id: launchID)) { [weak self] result in
+        let cachePolicy: CachePolicy
+        if forceReload {
+            cachePolicy = .fetchIgnoringCacheCompletely
+        } else {
+            cachePolicy = .returnCacheDataElseFetch
+        }
+        
+        Network.shared.apollo.fetch(query: LaunchDetailsQuery(id: launchID), cachePolicy: cachePolicy) { [weak self] result in
             
             guard let self = self else {
                 return
@@ -129,13 +136,54 @@ class DetailViewController: UIViewController {
         }
     }
     
-    
     private func bookTrip(with id: GraphQLID) {
-        print("Book trip!")
+        Network.shared.apollo.perform(mutation: BookTripMutation(id: id)) { [weak self] result in
+            guard let self = self else {
+                return 
+            }
+            
+            switch result {
+            case .success(let graphQLResult):
+                if let bookingResult = graphQLResult.data?.bookTrips {
+                    if bookingResult.success {
+                        self.showAlert(title: "Success!", message: bookingResult.message ?? "Trip booked successfully")
+                        self.loadLaunchDetails(forceReload: true)
+                    } else {
+                        self.showAlert(title: "Could not book trip", message: bookingResult.message ?? "Unknown failure.")
+                    }
+                }
+                
+                if let errors = graphQLResult.errors {
+                    self.showAlertForErrors(errors)
+                }
+            case .failure(let error):
+                self.showAlert(title: "Network Error",
+                               message: error.localizedDescription)
+            }
+        }
     }
     
     private func cancelTrip(with id: GraphQLID) {
-        
+        Network.shared.apollo.perform(mutation: CancelTripMutation(id: id)) { result in
+            switch result {
+            case .success(let graphQLResult):
+                if let cancelResult = graphQLResult.data?.cancelTrip {
+                    if cancelResult.success {
+                        self.showAlert(title: "Trip cancelled", message: cancelResult.message ?? "Your trip has been officially cancelled.")
+                        self.loadLaunchDetails(forceReload: true)
+                    } else {
+                        self.showAlert(title: "Could not cancel trip", message: cancelResult.message ?? "Unknown failure.")
+                    }
+                }
+                
+                if let errors = graphQLResult.errors {
+                    self.showAlertForErrors(errors)
+                }
+            case .failure(let error):
+                self.showAlert(title: "Network Error",
+                               message: error.localizedDescription)
+            }
+        }
     }
     
     private func isLoggedIn() -> Bool {

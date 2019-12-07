@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B4AA8A6239BCEB4003E1300 /* BookTrip.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 9B4AA8A5239BCEB4003E1300 /* BookTrip.graphql */; };
+		9B4AA8A8239BCEC5003E1300 /* CancelTrip.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 9B4AA8A7239BCEC5003E1300 /* CancelTrip.graphql */; };
 		9B4AA8AA239BDDB7003E1300 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4AA8A9239BDDB7003E1300 /* UIViewController+Alert.swift */; };
 		9B685F51238BE4A10084DA15 /* Login.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 9B685F50238BE4A10084DA15 /* Login.graphql */; };
 		9B685F54238BE6D70084DA15 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 9B685F53238BE6D70084DA15 /* KeychainSwift */; };
@@ -46,6 +48,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9B4AA8A5239BCEB4003E1300 /* BookTrip.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = BookTrip.graphql; sourceTree = "<group>"; };
+		9B4AA8A7239BCEC5003E1300 /* CancelTrip.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = CancelTrip.graphql; sourceTree = "<group>"; };
 		9B4AA8A9239BDDB7003E1300 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 		9B685F50238BE4A10084DA15 /* Login.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = Login.graphql; sourceTree = "<group>"; };
 		9B685F55238BE71F0084DA15 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -132,6 +136,8 @@
 				9B8B0EFB237CE6A8001326EB /* DetailViewController.swift */,
 				9B4AA8A9239BDDB7003E1300 /* UIViewController+Alert.swift */,
 				9B8B0EFD237CE6A8001326EB /* Main.storyboard */,
+				9B4AA8A5239BCEB4003E1300 /* BookTrip.graphql */,
+				9B4AA8A7239BCEC5003E1300 /* CancelTrip.graphql */,
 				9B8B0F2D237CE84B001326EB /* schema.json */,
 				9B8B0F30237CE90F001326EB /* LaunchList.graphql */,
 				9B97EF1F237E133D00A714ED /* LaunchDetails.graphql */,
@@ -278,7 +284,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B8B0F04237CE6AB001326EB /* LaunchScreen.storyboard in Resources */,
+				9B4AA8A6239BCEB4003E1300 /* BookTrip.graphql in Resources */,
 				9B8B0F01237CE6AB001326EB /* Assets.xcassets in Resources */,
+				9B4AA8A8239BCEC5003E1300 /* CancelTrip.graphql in Resources */,
 				9B685F51238BE4A10084DA15 /* Login.graphql in Resources */,
 				9B8B0EFF237CE6A8001326EB /* Main.storyboard in Resources */,
 				9B97EF20237E133D00A714ED /* LaunchDetails.graphql in Resources */,
