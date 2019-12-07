@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B4AA8AA239BDDB7003E1300 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4AA8A9239BDDB7003E1300 /* UIViewController+Alert.swift */; };
 		9B685F51238BE4A10084DA15 /* Login.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 9B685F50238BE4A10084DA15 /* Login.graphql */; };
 		9B685F54238BE6D70084DA15 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 9B685F53238BE6D70084DA15 /* KeychainSwift */; };
 		9B685F56238BE71F0084DA15 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B685F55238BE71F0084DA15 /* LoginViewController.swift */; };
@@ -45,6 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9B4AA8A9239BDDB7003E1300 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 		9B685F50238BE4A10084DA15 /* Login.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = Login.graphql; sourceTree = "<group>"; };
 		9B685F55238BE71F0084DA15 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9B8B0EF2237CE6A8001326EB /* RocketReserver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RocketReserver.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -128,6 +130,7 @@
 				9B8B0EF7237CE6A8001326EB /* SceneDelegate.swift */,
 				9B8B0EF9237CE6A8001326EB /* MasterViewController.swift */,
 				9B8B0EFB237CE6A8001326EB /* DetailViewController.swift */,
+				9B4AA8A9239BDDB7003E1300 /* UIViewController+Alert.swift */,
 				9B8B0EFD237CE6A8001326EB /* Main.storyboard */,
 				9B8B0F2D237CE84B001326EB /* schema.json */,
 				9B8B0F30237CE90F001326EB /* LaunchList.graphql */,
@@ -331,6 +334,7 @@
 				9B8B0EFA237CE6A8001326EB /* MasterViewController.swift in Sources */,
 				9B8B0EFC237CE6A8001326EB /* DetailViewController.swift in Sources */,
 				9B8B0F32237CE996001326EB /* API.swift in Sources */,
+				9B4AA8AA239BDDB7003E1300 /* UIViewController+Alert.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -96,14 +96,15 @@ class DetailViewController: UIViewController {
             
             switch result {
             case .failure(let error):
-                print("NETWORK ERROR: \(error)")
+                self.showAlert(title: "Network Error",
+                               message: error.localizedDescription)
             case .success(let graphQLResult):
                 if let launch = graphQLResult.data?.launch {
                     self.launch = launch
                 }
                 
                 if let errors = graphQLResult.errors {
-                    print("GRAPHQL ERRORS: \(errors)")
+                    self.showAlertForErrors(errors)
                 }
             }
         }

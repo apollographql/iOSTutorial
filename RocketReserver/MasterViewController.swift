@@ -164,14 +164,6 @@ class MasterViewController: UITableViewController {
       self.loadMoreLaunches(from: connection.cursor)
     }
     
-    private func showErrorAlert(title: String, message: String) {
-        let alert = UIAlertController(title: title,
-                                      message: message,
-                                      preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default))
-        self.present(alert, animated: true)
-    }
-    
     private func loadMoreLaunches(from cursor: String?) {
         self.activeRequest = Network.shared.apollo.fetch(query: LaunchListQuery(cursor: cursor)) { [weak self] result in
             guard let self = self else {
@@ -191,15 +183,11 @@ class MasterViewController: UITableViewController {
                 }
                 
                 if let errors = graphQLResult.errors {
-                    let message = errors
-                        .map { $0.localizedDescription }
-                        .joined(separator: "\n")
-                    self.showErrorAlert(title: "GraphQL Error(s)",
-                                        message: message)
+                    self.showAlertForErrors(errors)
                 }
             case .failure(let error):
-                self.showErrorAlert(title: "Network Error",
-                                    message: error.localizedDescription)
+                self.showAlert(title: "Network Error",
+                               message: error.localizedDescription)
             }
         }
     }
