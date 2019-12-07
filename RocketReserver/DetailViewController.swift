@@ -122,7 +122,7 @@ class DetailViewController: UIViewController {
             return
         }
         
-        if launch.isBooked == true {
+        if launch.isBooked {
             self.cancelTrip(with: launch.id)
         } else {
             self.bookTrip(with: launch.id)
