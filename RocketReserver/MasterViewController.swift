@@ -35,6 +35,11 @@ class MasterViewController: UITableViewController {
     // MARK: - Segues
 
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if identifier == "showProfile" {
+            // This should always occur
+            return true
+        }
+        
       guard let selectedIndexPath = self.tableView.indexPathForSelectedRow else {
         return false
       }
@@ -62,6 +67,11 @@ class MasterViewController: UITableViewController {
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showProfile" {
+            // No setup is required.
+            return
+        }
+        
         guard let selectedIndexPath = self.tableView.indexPathForSelectedRow else {
             // Nothing is selected, nothing to do
             return
@@ -87,6 +97,17 @@ class MasterViewController: UITableViewController {
         case .loading:
             assertionFailure("Shouldn't have gotten here!")
         }
+    }
+    
+    // MARK: - IBActions
+    
+    @IBAction private func launchTypeSelectorTapped(_ sender: UISegmentedControl) {
+        // TODO: In the future, actually have this do something.
+        sender.selectedSegmentIndex = 0
+    }
+    
+    @IBAction private func profileTapped() {
+        self.performSegue(withIdentifier: "showProfile", sender: nil)
     }
     
     // MARK: - Table View
