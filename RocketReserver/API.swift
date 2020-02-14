@@ -1,3 +1,4 @@
+// @generated
 //  This file was automatically generated and should not be edited.
 
 import Apollo
@@ -5,7 +6,7 @@ import Foundation
 
 public final class BookTripMutation: GraphQLMutation {
   /// The raw GraphQL definition of this operation.
-  public let operationDefinition =
+  public let operationDefinition: String =
     """
     mutation BookTrip($id: ID!) {
       bookTrips(launchIds: [$id]) {
@@ -20,7 +21,7 @@ public final class BookTripMutation: GraphQLMutation {
     }
     """
 
-  public let operationName = "BookTrip"
+  public let operationName: String = "BookTrip"
 
   public var id: GraphQLID
 
@@ -33,7 +34,7 @@ public final class BookTripMutation: GraphQLMutation {
   }
 
   public struct Data: GraphQLSelectionSet {
-    public static let possibleTypes = ["Mutation"]
+    public static let possibleTypes: [String] = ["Mutation"]
 
     public static let selections: [GraphQLSelection] = [
       GraphQLField("bookTrips", arguments: ["launchIds": [GraphQLVariable("id")]], type: .nonNull(.object(BookTrip.selections))),
@@ -59,7 +60,7 @@ public final class BookTripMutation: GraphQLMutation {
     }
 
     public struct BookTrip: GraphQLSelectionSet {
-      public static let possibleTypes = ["TripUpdateResponse"]
+      public static let possibleTypes: [String] = ["TripUpdateResponse"]
 
       public static let selections: [GraphQLSelection] = [
         GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
@@ -115,7 +116,7 @@ public final class BookTripMutation: GraphQLMutation {
       }
 
       public struct Launch: GraphQLSelectionSet {
-        public static let possibleTypes = ["Launch"]
+        public static let possibleTypes: [String] = ["Launch"]
 
         public static let selections: [GraphQLSelection] = [
           GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
@@ -156,7 +157,7 @@ public final class BookTripMutation: GraphQLMutation {
 
 public final class CancelTripMutation: GraphQLMutation {
   /// The raw GraphQL definition of this operation.
-  public let operationDefinition =
+  public let operationDefinition: String =
     """
     mutation CancelTrip($id: ID!) {
       cancelTrip(launchId: $id) {
@@ -171,7 +172,7 @@ public final class CancelTripMutation: GraphQLMutation {
     }
     """
 
-  public let operationName = "CancelTrip"
+  public let operationName: String = "CancelTrip"
 
   public var id: GraphQLID
 
@@ -184,7 +185,7 @@ public final class CancelTripMutation: GraphQLMutation {
   }
 
   public struct Data: GraphQLSelectionSet {
-    public static let possibleTypes = ["Mutation"]
+    public static let possibleTypes: [String] = ["Mutation"]
 
     public static let selections: [GraphQLSelection] = [
       GraphQLField("cancelTrip", arguments: ["launchId": GraphQLVariable("id")], type: .nonNull(.object(CancelTrip.selections))),
@@ -210,7 +211,7 @@ public final class CancelTripMutation: GraphQLMutation {
     }
 
     public struct CancelTrip: GraphQLSelectionSet {
-      public static let possibleTypes = ["TripUpdateResponse"]
+      public static let possibleTypes: [String] = ["TripUpdateResponse"]
 
       public static let selections: [GraphQLSelection] = [
         GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
@@ -266,7 +267,7 @@ public final class CancelTripMutation: GraphQLMutation {
       }
 
       public struct Launch: GraphQLSelectionSet {
-        public static let possibleTypes = ["Launch"]
+        public static let possibleTypes: [String] = ["Launch"]
 
         public static let selections: [GraphQLSelection] = [
           GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
@@ -307,7 +308,7 @@ public final class CancelTripMutation: GraphQLMutation {
 
 public final class LaunchDetailsQuery: GraphQLQuery {
   /// The raw GraphQL definition of this operation.
-  public let operationDefinition =
+  public let operationDefinition: String =
     """
     query LaunchDetails($id: ID!) {
       launch(id: $id) {
@@ -329,7 +330,7 @@ public final class LaunchDetailsQuery: GraphQLQuery {
     }
     """
 
-  public let operationName = "LaunchDetails"
+  public let operationName: String = "LaunchDetails"
 
   public var id: GraphQLID
 
@@ -342,7 +343,7 @@ public final class LaunchDetailsQuery: GraphQLQuery {
   }
 
   public struct Data: GraphQLSelectionSet {
-    public static let possibleTypes = ["Query"]
+    public static let possibleTypes: [String] = ["Query"]
 
     public static let selections: [GraphQLSelection] = [
       GraphQLField("launch", arguments: ["id": GraphQLVariable("id")], type: .object(Launch.selections)),
@@ -368,7 +369,7 @@ public final class LaunchDetailsQuery: GraphQLQuery {
     }
 
     public struct Launch: GraphQLSelectionSet {
-      public static let possibleTypes = ["Launch"]
+      public static let possibleTypes: [String] = ["Launch"]
 
       public static let selections: [GraphQLSelection] = [
         GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
@@ -444,7 +445,7 @@ public final class LaunchDetailsQuery: GraphQLQuery {
       }
 
       public struct Mission: GraphQLSelectionSet {
-        public static let possibleTypes = ["Mission"]
+        public static let possibleTypes: [String] = ["Mission"]
 
         public static let selections: [GraphQLSelection] = [
           GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
@@ -491,7 +492,7 @@ public final class LaunchDetailsQuery: GraphQLQuery {
       }
 
       public struct Rocket: GraphQLSelectionSet {
-        public static let possibleTypes = ["Rocket"]
+        public static let possibleTypes: [String] = ["Rocket"]
 
         public static let selections: [GraphQLSelection] = [
           GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
@@ -542,7 +543,7 @@ public final class LaunchDetailsQuery: GraphQLQuery {
 
 public final class LaunchListQuery: GraphQLQuery {
   /// The raw GraphQL definition of this operation.
-  public let operationDefinition =
+  public let operationDefinition: String =
     """
     query LaunchList($cursor: String) {
       launches(after: $cursor) {
@@ -563,7 +564,7 @@ public final class LaunchListQuery: GraphQLQuery {
     }
     """
 
-  public let operationName = "LaunchList"
+  public let operationName: String = "LaunchList"
 
   public var cursor: String?
 
@@ -576,7 +577,7 @@ public final class LaunchListQuery: GraphQLQuery {
   }
 
   public struct Data: GraphQLSelectionSet {
-    public static let possibleTypes = ["Query"]
+    public static let possibleTypes: [String] = ["Query"]
 
     public static let selections: [GraphQLSelection] = [
       GraphQLField("launches", arguments: ["after": GraphQLVariable("cursor")], type: .nonNull(.object(Launch.selections))),
@@ -602,7 +603,7 @@ public final class LaunchListQuery: GraphQLQuery {
     }
 
     public struct Launch: GraphQLSelectionSet {
-      public static let possibleTypes = ["LaunchConnection"]
+      public static let possibleTypes: [String] = ["LaunchConnection"]
 
       public static let selections: [GraphQLSelection] = [
         GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
@@ -658,7 +659,7 @@ public final class LaunchListQuery: GraphQLQuery {
       }
 
       public struct Launch: GraphQLSelectionSet {
-        public static let possibleTypes = ["Launch"]
+        public static let possibleTypes: [String] = ["Launch"]
 
         public static let selections: [GraphQLSelection] = [
           GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
@@ -714,7 +715,7 @@ public final class LaunchListQuery: GraphQLQuery {
         }
 
         public struct Mission: GraphQLSelectionSet {
-          public static let possibleTypes = ["Mission"]
+          public static let possibleTypes: [String] = ["Mission"]
 
           public static let selections: [GraphQLSelection] = [
             GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
@@ -766,14 +767,14 @@ public final class LaunchListQuery: GraphQLQuery {
 
 public final class LoginMutation: GraphQLMutation {
   /// The raw GraphQL definition of this operation.
-  public let operationDefinition =
+  public let operationDefinition: String =
     """
     mutation Login($email: String) {
       login(email: $email)
     }
     """
 
-  public let operationName = "Login"
+  public let operationName: String = "Login"
 
   public var email: String?
 
@@ -786,7 +787,7 @@ public final class LoginMutation: GraphQLMutation {
   }
 
   public struct Data: GraphQLSelectionSet {
-    public static let possibleTypes = ["Mutation"]
+    public static let possibleTypes: [String] = ["Mutation"]
 
     public static let selections: [GraphQLSelection] = [
       GraphQLField("login", arguments: ["email": GraphQLVariable("email")], type: .scalar(String.self)),

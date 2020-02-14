@@ -14,8 +14,8 @@ class Network {
   static let shared = Network()
     
     private(set) lazy var apollo: ApolloClient = {
-        let httpNetworkTransport = HTTPNetworkTransport(url: URL(string: "https://n1kqy.sse.codesandbox.io/")!, delegate: self)
-        
+        let httpNetworkTransport = HTTPNetworkTransport(url: URL(string: "https://apollo-fullstack-tutorial.herokuapp.com/")!)
+        httpNetworkTransport.delegate = self
         return ApolloClient(networkTransport: httpNetworkTransport)
     }()
 }
