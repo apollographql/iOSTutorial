@@ -36,9 +36,11 @@ public final class BookTripMutation: GraphQLMutation {
   public struct Data: GraphQLSelectionSet {
     public static let possibleTypes: [String] = ["Mutation"]
 
-    public static let selections: [GraphQLSelection] = [
-      GraphQLField("bookTrips", arguments: ["launchIds": [GraphQLVariable("id")]], type: .nonNull(.object(BookTrip.selections))),
-    ]
+    public static var selections: [GraphQLSelection] {
+      return [
+        GraphQLField("bookTrips", arguments: ["launchIds": [GraphQLVariable("id")]], type: .nonNull(.object(BookTrip.selections))),
+      ]
+    }
 
     public private(set) var resultMap: ResultMap
 
@@ -62,12 +64,14 @@ public final class BookTripMutation: GraphQLMutation {
     public struct BookTrip: GraphQLSelectionSet {
       public static let possibleTypes: [String] = ["TripUpdateResponse"]
 
-      public static let selections: [GraphQLSelection] = [
-        GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-        GraphQLField("success", type: .nonNull(.scalar(Bool.self))),
-        GraphQLField("message", type: .scalar(String.self)),
-        GraphQLField("launches", type: .list(.object(Launch.selections))),
-      ]
+      public static var selections: [GraphQLSelection] {
+        return [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("success", type: .nonNull(.scalar(Bool.self))),
+          GraphQLField("message", type: .scalar(String.self)),
+          GraphQLField("launches", type: .list(.object(Launch.selections))),
+        ]
+      }
 
       public private(set) var resultMap: ResultMap
 
@@ -118,10 +122,12 @@ public final class BookTripMutation: GraphQLMutation {
       public struct Launch: GraphQLSelectionSet {
         public static let possibleTypes: [String] = ["Launch"]
 
-        public static let selections: [GraphQLSelection] = [
-          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-          GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
-        ]
+        public static var selections: [GraphQLSelection] {
+          return [
+            GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+            GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
+          ]
+        }
 
         public private(set) var resultMap: ResultMap
 
@@ -187,9 +193,11 @@ public final class CancelTripMutation: GraphQLMutation {
   public struct Data: GraphQLSelectionSet {
     public static let possibleTypes: [String] = ["Mutation"]
 
-    public static let selections: [GraphQLSelection] = [
-      GraphQLField("cancelTrip", arguments: ["launchId": GraphQLVariable("id")], type: .nonNull(.object(CancelTrip.selections))),
-    ]
+    public static var selections: [GraphQLSelection] {
+      return [
+        GraphQLField("cancelTrip", arguments: ["launchId": GraphQLVariable("id")], type: .nonNull(.object(CancelTrip.selections))),
+      ]
+    }
 
     public private(set) var resultMap: ResultMap
 
@@ -213,12 +221,14 @@ public final class CancelTripMutation: GraphQLMutation {
     public struct CancelTrip: GraphQLSelectionSet {
       public static let possibleTypes: [String] = ["TripUpdateResponse"]
 
-      public static let selections: [GraphQLSelection] = [
-        GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-        GraphQLField("success", type: .nonNull(.scalar(Bool.self))),
-        GraphQLField("message", type: .scalar(String.self)),
-        GraphQLField("launches", type: .list(.object(Launch.selections))),
-      ]
+      public static var selections: [GraphQLSelection] {
+        return [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("success", type: .nonNull(.scalar(Bool.self))),
+          GraphQLField("message", type: .scalar(String.self)),
+          GraphQLField("launches", type: .list(.object(Launch.selections))),
+        ]
+      }
 
       public private(set) var resultMap: ResultMap
 
@@ -269,10 +279,12 @@ public final class CancelTripMutation: GraphQLMutation {
       public struct Launch: GraphQLSelectionSet {
         public static let possibleTypes: [String] = ["Launch"]
 
-        public static let selections: [GraphQLSelection] = [
-          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-          GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
-        ]
+        public static var selections: [GraphQLSelection] {
+          return [
+            GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+            GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
+          ]
+        }
 
         public private(set) var resultMap: ResultMap
 
@@ -345,9 +357,11 @@ public final class LaunchDetailsQuery: GraphQLQuery {
   public struct Data: GraphQLSelectionSet {
     public static let possibleTypes: [String] = ["Query"]
 
-    public static let selections: [GraphQLSelection] = [
-      GraphQLField("launch", arguments: ["id": GraphQLVariable("id")], type: .object(Launch.selections)),
-    ]
+    public static var selections: [GraphQLSelection] {
+      return [
+        GraphQLField("launch", arguments: ["id": GraphQLVariable("id")], type: .object(Launch.selections)),
+      ]
+    }
 
     public private(set) var resultMap: ResultMap
 
@@ -371,14 +385,16 @@ public final class LaunchDetailsQuery: GraphQLQuery {
     public struct Launch: GraphQLSelectionSet {
       public static let possibleTypes: [String] = ["Launch"]
 
-      public static let selections: [GraphQLSelection] = [
-        GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-        GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
-        GraphQLField("site", type: .scalar(String.self)),
-        GraphQLField("mission", type: .object(Mission.selections)),
-        GraphQLField("rocket", type: .object(Rocket.selections)),
-        GraphQLField("isBooked", type: .nonNull(.scalar(Bool.self))),
-      ]
+      public static var selections: [GraphQLSelection] {
+        return [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
+          GraphQLField("site", type: .scalar(String.self)),
+          GraphQLField("mission", type: .object(Mission.selections)),
+          GraphQLField("rocket", type: .object(Rocket.selections)),
+          GraphQLField("isBooked", type: .nonNull(.scalar(Bool.self))),
+        ]
+      }
 
       public private(set) var resultMap: ResultMap
 
@@ -447,11 +463,13 @@ public final class LaunchDetailsQuery: GraphQLQuery {
       public struct Mission: GraphQLSelectionSet {
         public static let possibleTypes: [String] = ["Mission"]
 
-        public static let selections: [GraphQLSelection] = [
-          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-          GraphQLField("name", type: .scalar(String.self)),
-          GraphQLField("missionPatch", arguments: ["size": "LARGE"], type: .scalar(String.self)),
-        ]
+        public static var selections: [GraphQLSelection] {
+          return [
+            GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+            GraphQLField("name", type: .scalar(String.self)),
+            GraphQLField("missionPatch", arguments: ["size": "LARGE"], type: .scalar(String.self)),
+          ]
+        }
 
         public private(set) var resultMap: ResultMap
 
@@ -494,11 +512,13 @@ public final class LaunchDetailsQuery: GraphQLQuery {
       public struct Rocket: GraphQLSelectionSet {
         public static let possibleTypes: [String] = ["Rocket"]
 
-        public static let selections: [GraphQLSelection] = [
-          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-          GraphQLField("name", type: .scalar(String.self)),
-          GraphQLField("type", type: .scalar(String.self)),
-        ]
+        public static var selections: [GraphQLSelection] {
+          return [
+            GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+            GraphQLField("name", type: .scalar(String.self)),
+            GraphQLField("type", type: .scalar(String.self)),
+          ]
+        }
 
         public private(set) var resultMap: ResultMap
 
@@ -579,9 +599,11 @@ public final class LaunchListQuery: GraphQLQuery {
   public struct Data: GraphQLSelectionSet {
     public static let possibleTypes: [String] = ["Query"]
 
-    public static let selections: [GraphQLSelection] = [
-      GraphQLField("launches", arguments: ["after": GraphQLVariable("cursor")], type: .nonNull(.object(Launch.selections))),
-    ]
+    public static var selections: [GraphQLSelection] {
+      return [
+        GraphQLField("launches", arguments: ["after": GraphQLVariable("cursor")], type: .nonNull(.object(Launch.selections))),
+      ]
+    }
 
     public private(set) var resultMap: ResultMap
 
@@ -605,12 +627,14 @@ public final class LaunchListQuery: GraphQLQuery {
     public struct Launch: GraphQLSelectionSet {
       public static let possibleTypes: [String] = ["LaunchConnection"]
 
-      public static let selections: [GraphQLSelection] = [
-        GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-        GraphQLField("hasMore", type: .nonNull(.scalar(Bool.self))),
-        GraphQLField("cursor", type: .nonNull(.scalar(String.self))),
-        GraphQLField("launches", type: .nonNull(.list(.object(Launch.selections)))),
-      ]
+      public static var selections: [GraphQLSelection] {
+        return [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("hasMore", type: .nonNull(.scalar(Bool.self))),
+          GraphQLField("cursor", type: .nonNull(.scalar(String.self))),
+          GraphQLField("launches", type: .nonNull(.list(.object(Launch.selections)))),
+        ]
+      }
 
       public private(set) var resultMap: ResultMap
 
@@ -661,12 +685,14 @@ public final class LaunchListQuery: GraphQLQuery {
       public struct Launch: GraphQLSelectionSet {
         public static let possibleTypes: [String] = ["Launch"]
 
-        public static let selections: [GraphQLSelection] = [
-          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-          GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
-          GraphQLField("site", type: .scalar(String.self)),
-          GraphQLField("mission", type: .object(Mission.selections)),
-        ]
+        public static var selections: [GraphQLSelection] {
+          return [
+            GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+            GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
+            GraphQLField("site", type: .scalar(String.self)),
+            GraphQLField("mission", type: .object(Mission.selections)),
+          ]
+        }
 
         public private(set) var resultMap: ResultMap
 
@@ -717,11 +743,13 @@ public final class LaunchListQuery: GraphQLQuery {
         public struct Mission: GraphQLSelectionSet {
           public static let possibleTypes: [String] = ["Mission"]
 
-          public static let selections: [GraphQLSelection] = [
-            GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-            GraphQLField("name", type: .scalar(String.self)),
-            GraphQLField("missionPatch", arguments: ["size": "SMALL"], type: .scalar(String.self)),
-          ]
+          public static var selections: [GraphQLSelection] {
+            return [
+              GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+              GraphQLField("name", type: .scalar(String.self)),
+              GraphQLField("missionPatch", arguments: ["size": "SMALL"], type: .scalar(String.self)),
+            ]
+          }
 
           public private(set) var resultMap: ResultMap
 
@@ -789,9 +817,11 @@ public final class LoginMutation: GraphQLMutation {
   public struct Data: GraphQLSelectionSet {
     public static let possibleTypes: [String] = ["Mutation"]
 
-    public static let selections: [GraphQLSelection] = [
-      GraphQLField("login", arguments: ["email": GraphQLVariable("email")], type: .scalar(String.self)),
-    ]
+    public static var selections: [GraphQLSelection] {
+      return [
+        GraphQLField("login", arguments: ["email": GraphQLVariable("email")], type: .scalar(String.self)),
+      ]
+    }
 
     public private(set) var resultMap: ResultMap
 
