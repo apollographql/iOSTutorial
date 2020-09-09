@@ -11,25 +11,58 @@ import Apollo
 import KeychainSwift
 
 class Network {
-  static let shared = Network()
+    static let shared = Network()
     
     private(set) lazy var apollo: ApolloClient = {
-        let httpNetworkTransport = HTTPNetworkTransport(url: URL(string: "https://apollo-fullstack-tutorial.herokuapp.com/")!)
-        httpNetworkTransport.delegate = self
-        return ApolloClient(networkTransport: httpNetworkTransport)
+        let client = URLSessionClient()
+        let cache = InMemoryNormalizedCache()
+        let store = ApolloStore(cache: cache)
+        let provider = NetworkInterceptorProvider(store: store, client: client)
+        let requestChainTransport = RequestChainNetworkTransport(interceptorProvider: provider,
+                                                                 endpointURL: URL(string: "https://apollo-fullstack-tutorial.herokuapp.com/")!)
+        return ApolloClient(networkTransport: requestChainTransport)
     }()
 }
 
-extension Network: HTTPNetworkTransportPreflightDelegate {
-    func networkTransport(_ networkTransport: HTTPNetworkTransport,         shouldSend request: URLRequest) -> Bool {
-        return true
+struct NetworkInterceptorProvider: InterceptorProvider {
+    
+    private let store: ApolloStore
+    private let client: URLSessionClient
+    
+    init(store: ApolloStore,
+         client: URLSessionClient) {
+        self.store = store
+        self.client = client
     }
     
-    func networkTransport(_ networkTransport: HTTPNetworkTransport,
-                          willSend request: inout URLRequest) {
+    func interceptors<Operation: GraphQLOperation>(for operation: Operation) -> [ApolloInterceptor] {
+        return [
+            MaxRetryInterceptor(),
+            LegacyCacheReadInterceptor(store: self.store),
+            TokenAddingInterceptor(),
+            NetworkFetchInterceptor(client: self.client),
+            ResponseCodeInterceptor(),
+            LegacyParsingInterceptor(cacheKeyForObject: self.store.cacheKeyForObject),
+            AutomaticPersistedQueryInterceptor(),
+            LegacyCacheWriteInterceptor(store: self.store)
+        ]
+    }
+}
+
+class TokenAddingInterceptor: ApolloInterceptor {
+    func interceptAsync<Operation: GraphQLOperation>(
+        chain: RequestChain,
+        request: HTTPRequest<Operation>,
+        response: HTTPResponse<Operation>?,
+        completion: @escaping (Result<GraphQLResult<Operation.Data>, Error>) -> Void) {
+        
         let keychain = KeychainSwift()
         if let token = keychain.get(LoginViewController.loginKeychainKey) {
-            request.addValue(token, forHTTPHeaderField: "Authorization")
+            request.addHeader(name: "Authorization", value: token)
         } // else do nothing
+        
+        chain.proceedAsync(request: request,
+                           response: response,
+                           completion: completion)
     }
 }
