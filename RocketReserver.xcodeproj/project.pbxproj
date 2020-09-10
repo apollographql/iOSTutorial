@@ -12,6 +12,8 @@
 		9B4AA8A8239BCEC5003E1300 /* CancelTrip.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 9B4AA8A7239BCEC5003E1300 /* CancelTrip.graphql */; };
 		9B4AA8AA239BDDB7003E1300 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4AA8A9239BDDB7003E1300 /* UIViewController+Alert.swift */; };
 		9B5A56D825084C190015FBC3 /* AdvancedSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5A56D725084C190015FBC3 /* AdvancedSample.swift */; };
+		9B5A56DA250961B80015FBC3 /* TokenAddingInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5A56D9250961B80015FBC3 /* TokenAddingInterceptor.swift */; };
+		9B5A56DC25099A700015FBC3 /* NetworkInterceptorProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5A56DB25099A700015FBC3 /* NetworkInterceptorProvider.swift */; };
 		9B685F51238BE4A10084DA15 /* Login.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 9B685F50238BE4A10084DA15 /* Login.graphql */; };
 		9B685F54238BE6D70084DA15 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 9B685F53238BE6D70084DA15 /* KeychainSwift */; };
 		9B685F56238BE71F0084DA15 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B685F55238BE71F0084DA15 /* LoginViewController.swift */; };
@@ -55,6 +57,8 @@
 		9B4AA8A7239BCEC5003E1300 /* CancelTrip.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = CancelTrip.graphql; sourceTree = "<group>"; };
 		9B4AA8A9239BDDB7003E1300 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 		9B5A56D725084C190015FBC3 /* AdvancedSample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedSample.swift; sourceTree = "<group>"; };
+		9B5A56D9250961B80015FBC3 /* TokenAddingInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenAddingInterceptor.swift; sourceTree = "<group>"; };
+		9B5A56DB25099A700015FBC3 /* NetworkInterceptorProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkInterceptorProvider.swift; sourceTree = "<group>"; };
 		9B685F50238BE4A10084DA15 /* Login.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = Login.graphql; sourceTree = "<group>"; };
 		9B685F55238BE71F0084DA15 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9B8B0EF2237CE6A8001326EB /* RocketReserver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RocketReserver.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -133,6 +137,8 @@
 			children = (
 				9B8B0F31237CE996001326EB /* API.swift */,
 				9B8B0F33237CE9DF001326EB /* Network.swift */,
+				9B5A56DB25099A700015FBC3 /* NetworkInterceptorProvider.swift */,
+				9B5A56D9250961B80015FBC3 /* TokenAddingInterceptor.swift */,
 				9B5A56D725084C190015FBC3 /* AdvancedSample.swift */,
 				9B8B0EF5237CE6A8001326EB /* AppDelegate.swift */,
 				9B685F55238BE71F0084DA15 /* LoginViewController.swift */,
@@ -345,7 +351,9 @@
 				9B8B0EF6237CE6A8001326EB /* AppDelegate.swift in Sources */,
 				9B8B0EF8237CE6A8001326EB /* SceneDelegate.swift in Sources */,
 				9B8B0F34237CE9DF001326EB /* Network.swift in Sources */,
+				9B5A56DA250961B80015FBC3 /* TokenAddingInterceptor.swift in Sources */,
 				9B8B0EFA237CE6A8001326EB /* MasterViewController.swift in Sources */,
+				9B5A56DC25099A700015FBC3 /* NetworkInterceptorProvider.swift in Sources */,
 				9B8B0EFC237CE6A8001326EB /* DetailViewController.swift in Sources */,
 				9B0705F923AC34CB00DCA904 /* ProfileViewController.swift in Sources */,
 				9B5A56D825084C190015FBC3 /* AdvancedSample.swift in Sources */,
