@@ -5,8 +5,8 @@
         "package": "Apollo",
         "repositoryURL": "https://github.com/apollographql/apollo-ios.git",
         "state": {
-          "branch": "explore/interceptors",
-          "revision": "ca3b14dc361fc51cfc6e204244c742de4558c931",
+          "branch": "betas/networking-stack",
+          "revision": "686f8d553e1d6384684743bca5f052cb593f44cf",
           "version": null
         }
       },

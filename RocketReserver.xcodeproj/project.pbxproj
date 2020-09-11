@@ -695,7 +695,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/apollographql/apollo-ios.git";
 			requirement = {
-				branch = explore/interceptors;
+				branch = "betas/networking-stack";
 				kind = branch;
 			};
 		};
