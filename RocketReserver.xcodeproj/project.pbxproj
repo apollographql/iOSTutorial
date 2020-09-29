@@ -695,8 +695,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/apollographql/apollo-ios.git";
 			requirement = {
-				branch = "betas/networking-stack";
-				kind = branch;
+				kind = upToNextMinorVersion;
+				minimumVersion = 0.34.0;
 			};
 		};
 		9B97EF1C237E0D9C00A714ED /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
