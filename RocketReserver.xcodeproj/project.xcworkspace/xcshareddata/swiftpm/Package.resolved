@@ -6,8 +6,17 @@
         "repositoryURL": "https://github.com/apollographql/apollo-ios.git",
         "state": {
           "branch": null,
-          "revision": "6061c2cd6f6997ce3dc486d52fd3bf8287e54d30",
-          "version": "0.38.0"
+          "revision": "ac158ccaad973ff44f8c2a78a50933c29f34bdd9",
+          "version": "0.39.0"
+        }
+      },
+      {
+        "package": "InflectorKit",
+        "repositoryURL": "https://github.com/apollographql/InflectorKit",
+        "state": {
+          "branch": null,
+          "revision": "b1d0099abe36facd198113633f502889842906af",
+          "version": "0.0.2"
         }
       },
       {
