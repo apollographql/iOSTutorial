@@ -71,15 +71,15 @@ enum AdvancedSample {
         func interceptors<Operation: GraphQLOperation>(for operation: Operation) -> [ApolloInterceptor] {
             return [
                 MaxRetryInterceptor(),
-                LegacyCacheReadInterceptor(store: self.store),
+                CacheReadInterceptor(store: self.store),
                 TokenAddingInterceptor(),
                 RequestLoggingInterceptor(),
                 NetworkFetchInterceptor(client: self.client),
                 ResponseLoggingInterceptor(),
                 ResponseCodeInterceptor(),
-                LegacyParsingInterceptor(cacheKeyForObject: self.store.cacheKeyForObject),
+                JSONResponseParsingInterceptor(cacheKeyForObject: self.store.cacheKeyForObject),
                 AutomaticPersistedQueryInterceptor(),
-                LegacyCacheWriteInterceptor(store: self.store)
+                CacheWriteInterceptor(store: self.store)
             ]
         }
     }

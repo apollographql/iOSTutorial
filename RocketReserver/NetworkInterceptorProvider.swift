@@ -9,7 +9,7 @@
 import Foundation
 import Apollo
 
-class NetworkInterceptorProvider: LegacyInterceptorProvider {
+class NetworkInterceptorProvider: DefaultInterceptorProvider {
     
     override func interceptors<Operation: GraphQLOperation>(for operation: Operation) -> [ApolloInterceptor] {
         var interceptors = super.interceptors(for: operation)
