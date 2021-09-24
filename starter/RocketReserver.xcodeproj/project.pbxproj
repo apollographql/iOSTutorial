@@ -18,27 +18,8 @@
 		9B8B0EFF237CE6A8001326EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B8B0EFD237CE6A8001326EB /* Main.storyboard */; };
 		9B8B0F01237CE6AB001326EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B8B0F00237CE6AB001326EB /* Assets.xcassets */; };
 		9B8B0F04237CE6AB001326EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B8B0F02237CE6AB001326EB /* LaunchScreen.storyboard */; };
-		9B8B0F0F237CE6AB001326EB /* RocketReserverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8B0F0E237CE6AB001326EB /* RocketReserverTests.swift */; };
-		9B8B0F1A237CE6AB001326EB /* RocketReserverUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8B0F19237CE6AB001326EB /* RocketReserverUITests.swift */; };
 		9B97EF1E237E0D9C00A714ED /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 9B97EF1D237E0D9C00A714ED /* SDWebImage */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		9B8B0F0B237CE6AB001326EB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9B8B0EEA237CE6A8001326EB /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 9B8B0EF1237CE6A8001326EB;
-			remoteInfo = RocketReserver;
-		};
-		9B8B0F16237CE6AB001326EB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9B8B0EEA237CE6A8001326EB /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 9B8B0EF1237CE6A8001326EB;
-			remoteInfo = RocketReserver;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		9B0705F823AC34CB00DCA904 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -53,12 +34,6 @@
 		9B8B0F00237CE6AB001326EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9B8B0F03237CE6AB001326EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9B8B0F05237CE6AB001326EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9B8B0F0A237CE6AB001326EB /* RocketReserverTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RocketReserverTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9B8B0F0E237CE6AB001326EB /* RocketReserverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketReserverTests.swift; sourceTree = "<group>"; };
-		9B8B0F10237CE6AB001326EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9B8B0F15237CE6AB001326EB /* RocketReserverUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RocketReserverUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9B8B0F19237CE6AB001326EB /* RocketReserverUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketReserverUITests.swift; sourceTree = "<group>"; };
-		9B8B0F1B237CE6AB001326EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,20 +46,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9B8B0F07237CE6AB001326EB /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9B8B0F12237CE6AB001326EB /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -92,8 +53,6 @@
 			isa = PBXGroup;
 			children = (
 				9B8B0EF4237CE6A8001326EB /* RocketReserver */,
-				9B8B0F0D237CE6AB001326EB /* RocketReserverTests */,
-				9B8B0F18237CE6AB001326EB /* RocketReserverUITests */,
 				9B8B0EF3237CE6A8001326EB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -102,8 +61,6 @@
 			isa = PBXGroup;
 			children = (
 				9B8B0EF2237CE6A8001326EB /* RocketReserver.app */,
-				9B8B0F0A237CE6AB001326EB /* RocketReserverTests.xctest */,
-				9B8B0F15237CE6AB001326EB /* RocketReserverUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -124,24 +81,6 @@
 				9B8B0F05237CE6AB001326EB /* Info.plist */,
 			);
 			path = RocketReserver;
-			sourceTree = "<group>";
-		};
-		9B8B0F0D237CE6AB001326EB /* RocketReserverTests */ = {
-			isa = PBXGroup;
-			children = (
-				9B8B0F0E237CE6AB001326EB /* RocketReserverTests.swift */,
-				9B8B0F10237CE6AB001326EB /* Info.plist */,
-			);
-			path = RocketReserverTests;
-			sourceTree = "<group>";
-		};
-		9B8B0F18237CE6AB001326EB /* RocketReserverUITests */ = {
-			isa = PBXGroup;
-			children = (
-				9B8B0F19237CE6AB001326EB /* RocketReserverUITests.swift */,
-				9B8B0F1B237CE6AB001326EB /* Info.plist */,
-			);
-			path = RocketReserverUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,42 +107,6 @@
 			productReference = 9B8B0EF2237CE6A8001326EB /* RocketReserver.app */;
 			productType = "com.apple.product-type.application";
 		};
-		9B8B0F09237CE6AB001326EB /* RocketReserverTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 9B8B0F21237CE6AB001326EB /* Build configuration list for PBXNativeTarget "RocketReserverTests" */;
-			buildPhases = (
-				9B8B0F06237CE6AB001326EB /* Sources */,
-				9B8B0F07237CE6AB001326EB /* Frameworks */,
-				9B8B0F08237CE6AB001326EB /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				9B8B0F0C237CE6AB001326EB /* PBXTargetDependency */,
-			);
-			name = RocketReserverTests;
-			productName = RocketReserverTests;
-			productReference = 9B8B0F0A237CE6AB001326EB /* RocketReserverTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		9B8B0F14237CE6AB001326EB /* RocketReserverUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 9B8B0F24237CE6AB001326EB /* Build configuration list for PBXNativeTarget "RocketReserverUITests" */;
-			buildPhases = (
-				9B8B0F11237CE6AB001326EB /* Sources */,
-				9B8B0F12237CE6AB001326EB /* Frameworks */,
-				9B8B0F13237CE6AB001326EB /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				9B8B0F17237CE6AB001326EB /* PBXTargetDependency */,
-			);
-			name = RocketReserverUITests;
-			productName = RocketReserverUITests;
-			productReference = 9B8B0F15237CE6AB001326EB /* RocketReserverUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -216,14 +119,6 @@
 				TargetAttributes = {
 					9B8B0EF1237CE6A8001326EB = {
 						CreatedOnToolsVersion = 11.2.1;
-					};
-					9B8B0F09237CE6AB001326EB = {
-						CreatedOnToolsVersion = 11.2.1;
-						TestTargetID = 9B8B0EF1237CE6A8001326EB;
-					};
-					9B8B0F14237CE6AB001326EB = {
-						CreatedOnToolsVersion = 11.2.1;
-						TestTargetID = 9B8B0EF1237CE6A8001326EB;
 					};
 				};
 			};
@@ -245,8 +140,6 @@
 			projectRoot = "";
 			targets = (
 				9B8B0EF1237CE6A8001326EB /* RocketReserver */,
-				9B8B0F09237CE6AB001326EB /* RocketReserverTests */,
-				9B8B0F14237CE6AB001326EB /* RocketReserverUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -259,20 +152,6 @@
 				9B8B0F04237CE6AB001326EB /* LaunchScreen.storyboard in Resources */,
 				9B8B0F01237CE6AB001326EB /* Assets.xcassets in Resources */,
 				9B8B0EFF237CE6A8001326EB /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9B8B0F08237CE6AB001326EB /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9B8B0F13237CE6AB001326EB /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,36 +172,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9B8B0F06237CE6AB001326EB /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9B8B0F0F237CE6AB001326EB /* RocketReserverTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9B8B0F11237CE6AB001326EB /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9B8B0F1A237CE6AB001326EB /* RocketReserverUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		9B8B0F0C237CE6AB001326EB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 9B8B0EF1237CE6A8001326EB /* RocketReserver */;
-			targetProxy = 9B8B0F0B237CE6AB001326EB /* PBXContainerItemProxy */;
-		};
-		9B8B0F17237CE6AB001326EB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 9B8B0EF1237CE6A8001326EB /* RocketReserver */;
-			targetProxy = 9B8B0F16237CE6AB001326EB /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		9B8B0EFD237CE6A8001326EB /* Main.storyboard */ = {
@@ -494,86 +344,6 @@
 			};
 			name = Release;
 		};
-		9B8B0F22237CE6AB001326EB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = RocketReserverTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.apollographql.RocketReserverTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RocketReserver.app/RocketReserver";
-			};
-			name = Debug;
-		};
-		9B8B0F23237CE6AB001326EB /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = RocketReserverTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.apollographql.RocketReserverTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RocketReserver.app/RocketReserver";
-			};
-			name = Release;
-		};
-		9B8B0F25237CE6AB001326EB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = RocketReserverUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.apollographql.RocketReserverUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = RocketReserver;
-			};
-			name = Debug;
-		};
-		9B8B0F26237CE6AB001326EB /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = RocketReserverUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.apollographql.RocketReserverUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = RocketReserver;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -591,24 +361,6 @@
 			buildConfigurations = (
 				9B8B0F1F237CE6AB001326EB /* Debug */,
 				9B8B0F20237CE6AB001326EB /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		9B8B0F21237CE6AB001326EB /* Build configuration list for PBXNativeTarget "RocketReserverTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				9B8B0F22237CE6AB001326EB /* Debug */,
-				9B8B0F23237CE6AB001326EB /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		9B8B0F24237CE6AB001326EB /* Build configuration list for PBXNativeTarget "RocketReserverUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				9B8B0F25237CE6AB001326EB /* Debug */,
-				9B8B0F26237CE6AB001326EB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
