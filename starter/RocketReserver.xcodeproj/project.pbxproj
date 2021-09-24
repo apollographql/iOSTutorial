@@ -8,10 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9B0705F923AC34CB00DCA904 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0705F823AC34CB00DCA904 /* ProfileViewController.swift */; };
-		9B4AA8A6239BCEB4003E1300 /* BookTrip.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 9B4AA8A5239BCEB4003E1300 /* BookTrip.graphql */; };
-		9B4AA8A8239BCEC5003E1300 /* CancelTrip.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 9B4AA8A7239BCEC5003E1300 /* CancelTrip.graphql */; };
 		9B4AA8AA239BDDB7003E1300 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4AA8A9239BDDB7003E1300 /* UIViewController+Alert.swift */; };
-		9B685F51238BE4A10084DA15 /* Login.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 9B685F50238BE4A10084DA15 /* Login.graphql */; };
 		9B685F54238BE6D70084DA15 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 9B685F53238BE6D70084DA15 /* KeychainSwift */; };
 		9B685F56238BE71F0084DA15 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B685F55238BE71F0084DA15 /* LoginViewController.swift */; };
 		9B8B0EF6237CE6A8001326EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8B0EF5237CE6A8001326EB /* AppDelegate.swift */; };
@@ -24,7 +21,6 @@
 		9B8B0F0F237CE6AB001326EB /* RocketReserverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8B0F0E237CE6AB001326EB /* RocketReserverTests.swift */; };
 		9B8B0F1A237CE6AB001326EB /* RocketReserverUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8B0F19237CE6AB001326EB /* RocketReserverUITests.swift */; };
 		9B97EF1E237E0D9C00A714ED /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 9B97EF1D237E0D9C00A714ED /* SDWebImage */; };
-		9B97EF20237E133D00A714ED /* LaunchDetails.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 9B97EF1F237E133D00A714ED /* LaunchDetails.graphql */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,10 +42,7 @@
 
 /* Begin PBXFileReference section */
 		9B0705F823AC34CB00DCA904 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		9B4AA8A5239BCEB4003E1300 /* BookTrip.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = BookTrip.graphql; sourceTree = "<group>"; };
-		9B4AA8A7239BCEC5003E1300 /* CancelTrip.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = CancelTrip.graphql; sourceTree = "<group>"; };
 		9B4AA8A9239BDDB7003E1300 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
-		9B685F50238BE4A10084DA15 /* Login.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = Login.graphql; sourceTree = "<group>"; };
 		9B685F55238BE71F0084DA15 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9B8B0EF2237CE6A8001326EB /* RocketReserver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RocketReserver.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B8B0EF5237CE6A8001326EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -67,8 +60,6 @@
 		9B8B0F19237CE6AB001326EB /* RocketReserverUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketReserverUITests.swift; sourceTree = "<group>"; };
 		9B8B0F1B237CE6AB001326EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B8B0F2D237CE84B001326EB /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
-		9B8B0F30237CE90F001326EB /* LaunchList.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = LaunchList.graphql; sourceTree = "<group>"; };
-		9B97EF1F237E133D00A714ED /* LaunchDetails.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = LaunchDetails.graphql; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,15 +120,10 @@
 				9B0705F823AC34CB00DCA904 /* ProfileViewController.swift */,
 				9B4AA8A9239BDDB7003E1300 /* UIViewController+Alert.swift */,
 				9B8B0EFD237CE6A8001326EB /* Main.storyboard */,
-				9B4AA8A5239BCEB4003E1300 /* BookTrip.graphql */,
-				9B4AA8A7239BCEC5003E1300 /* CancelTrip.graphql */,
 				9B8B0F2D237CE84B001326EB /* schema.json */,
-				9B8B0F30237CE90F001326EB /* LaunchList.graphql */,
-				9B97EF1F237E133D00A714ED /* LaunchDetails.graphql */,
 				9B8B0F00237CE6AB001326EB /* Assets.xcassets */,
 				9B8B0F02237CE6AB001326EB /* LaunchScreen.storyboard */,
 				9B8B0F05237CE6AB001326EB /* Info.plist */,
-				9B685F50238BE4A10084DA15 /* Login.graphql */,
 			);
 			path = RocketReserver;
 			sourceTree = "<group>";
@@ -273,12 +259,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B8B0F04237CE6AB001326EB /* LaunchScreen.storyboard in Resources */,
-				9B4AA8A6239BCEB4003E1300 /* BookTrip.graphql in Resources */,
 				9B8B0F01237CE6AB001326EB /* Assets.xcassets in Resources */,
-				9B4AA8A8239BCEC5003E1300 /* CancelTrip.graphql in Resources */,
-				9B685F51238BE4A10084DA15 /* Login.graphql in Resources */,
 				9B8B0EFF237CE6A8001326EB /* Main.storyboard in Resources */,
-				9B97EF20237E133D00A714ED /* LaunchDetails.graphql in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
