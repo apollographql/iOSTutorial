@@ -1,5 +1,5 @@
 //
-//  MasterViewController.swift
+//  LaunchesViewController.swift
 //  RocketReserver
 //
 //  Created by Ellen Shapiro on 11/13/19.
@@ -10,7 +10,7 @@ import UIKit
 import SDWebImage
 import Apollo
 
-class MasterViewController: UITableViewController {
+class LaunchesViewController: UITableViewController {
     
     var detailViewController: DetailViewController? = nil
     var launches = [LaunchListQuery.Data.Launch.Launch]()

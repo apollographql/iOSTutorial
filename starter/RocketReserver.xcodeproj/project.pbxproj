@@ -19,7 +19,7 @@
 		9B685F56238BE71F0084DA15 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B685F55238BE71F0084DA15 /* LoginViewController.swift */; };
 		9B8B0EF6237CE6A8001326EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8B0EF5237CE6A8001326EB /* AppDelegate.swift */; };
 		9B8B0EF8237CE6A8001326EB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8B0EF7237CE6A8001326EB /* SceneDelegate.swift */; };
-		9B8B0EFA237CE6A8001326EB /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8B0EF9237CE6A8001326EB /* MasterViewController.swift */; };
+		9B8B0EFA237CE6A8001326EB /* LaunchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8B0EF9237CE6A8001326EB /* LaunchesViewController.swift */; };
 		9B8B0EFC237CE6A8001326EB /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8B0EFB237CE6A8001326EB /* DetailViewController.swift */; };
 		9B8B0EFF237CE6A8001326EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B8B0EFD237CE6A8001326EB /* Main.storyboard */; };
 		9B8B0F01237CE6AB001326EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B8B0F00237CE6AB001326EB /* Assets.xcassets */; };
@@ -64,7 +64,7 @@
 		9B8B0EF2237CE6A8001326EB /* RocketReserver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RocketReserver.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B8B0EF5237CE6A8001326EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B8B0EF7237CE6A8001326EB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		9B8B0EF9237CE6A8001326EB /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		9B8B0EF9237CE6A8001326EB /* LaunchesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesViewController.swift; sourceTree = "<group>"; };
 		9B8B0EFB237CE6A8001326EB /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		9B8B0EFE237CE6A8001326EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9B8B0F00237CE6AB001326EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -143,7 +143,7 @@
 				9B8B0EF5237CE6A8001326EB /* AppDelegate.swift */,
 				9B685F55238BE71F0084DA15 /* LoginViewController.swift */,
 				9B8B0EF7237CE6A8001326EB /* SceneDelegate.swift */,
-				9B8B0EF9237CE6A8001326EB /* MasterViewController.swift */,
+				9B8B0EF9237CE6A8001326EB /* LaunchesViewController.swift */,
 				9B8B0EFB237CE6A8001326EB /* DetailViewController.swift */,
 				9B0705F823AC34CB00DCA904 /* ProfileViewController.swift */,
 				9B4AA8A9239BDDB7003E1300 /* UIViewController+Alert.swift */,
@@ -352,7 +352,7 @@
 				9B8B0EF8237CE6A8001326EB /* SceneDelegate.swift in Sources */,
 				9B8B0F34237CE9DF001326EB /* Network.swift in Sources */,
 				9B5A56DA250961B80015FBC3 /* TokenAddingInterceptor.swift in Sources */,
-				9B8B0EFA237CE6A8001326EB /* MasterViewController.swift in Sources */,
+				9B8B0EFA237CE6A8001326EB /* LaunchesViewController.swift in Sources */,
 				9B5A56DC25099A700015FBC3 /* NetworkInterceptorProvider.swift in Sources */,
 				9B8B0EFC237CE6A8001326EB /* DetailViewController.swift in Sources */,
 				9B0705F923AC34CB00DCA904 /* ProfileViewController.swift in Sources */,
