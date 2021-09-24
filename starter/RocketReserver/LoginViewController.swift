@@ -42,26 +42,7 @@ class LoginViewController: UIViewController {
             return
         }
         
-        Network.shared.apollo.perform(mutation: LoginMutation(email: email)) { [weak self] result in
-            defer {
-                self?.enableSubmitButton(true)
-            }
-
-            switch result {
-            case .success(let graphQLResult):
-                if let token = graphQLResult.data?.login {
-                    let keychain = KeychainSwift()
-                    keychain.set(token, forKey: LoginViewController.loginKeychainKey)
-                    self?.dismiss(animated: true)
-                }
-                
-                if let errors = graphQLResult.errors {
-                    print("Errors from server: \(errors)")
-                }
-            case .failure(let error):
-                print("Error: \(error)")
-            }
-        }
+        // TODO: Actually log the user in
     }
     
     private func validate(email: String) -> Bool {

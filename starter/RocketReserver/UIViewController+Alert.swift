@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Apollo
 
 extension UIViewController {
     
@@ -24,14 +23,5 @@ extension UIViewController {
         self.present(alert, animated: true)
     }
     
-    /// Shows an error alert for the given GraphQL errors
-    ///
-    /// - Parameter errors: The error(s) to display
-    func showAlertForErrors(_ errors: [GraphQLError]) {
-        let message = errors
-            .map { $0.localizedDescription }
-            .joined(separator: "\n")
-        self.showAlert(title: "GraphQL Error(s)",
-                       message: message)
-    }
+    // TODO: Add a method to show an alert with GraphQL Errors
 }

@@ -36,7 +36,7 @@ class ProfileViewController: UIViewController {
     }
     
     @IBAction private func updateImageTapped() {
-        
+        // TODO: Update the image
     }
 }
 
