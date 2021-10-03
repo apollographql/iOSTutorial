@@ -81,9 +81,6 @@ class LaunchesViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         
-        cell.imageView?.image = nil
-        cell.textLabel?.text = nil
-        cell.detailTextLabel?.text = nil
         
         // TODO: Configure
         cell.textLabel?.text = "Placeholder"
