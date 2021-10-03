@@ -15,7 +15,7 @@ class LaunchesViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.loadMoreLaunchesIfTheyExist()
+        self.loadLaunches()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -88,12 +88,8 @@ class LaunchesViewController: UITableViewController {
         return cell
     }
     
-    private func loadMoreLaunchesIfTheyExist() {
-        // TODO: Load the next page of launches, if there is one
-    }
-    
-    private func loadMoreLaunches(from cursor: String?) {
-        // TODO: Load a page of launches from the given cursor
+    private func loadLaunches() {
+        // TODO: Load a list of launches
     }
 }
 
