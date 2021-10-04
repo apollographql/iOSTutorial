@@ -40,7 +40,7 @@ class DetailViewController: UIViewController {
         self.configureView()
     }
     
-    private func loadLaunchDetails(forceReload: Bool = false) {
+    private func loadLaunchDetails() {
         // TODO: Actually load launch details
     }
     
