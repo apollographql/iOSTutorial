@@ -20,7 +20,7 @@ class DetailViewController: UIViewController {
     
     var launchID: GraphQLID? {
       didSet {
-        self.loadLaunchDetails()
+        self.configureView()
       }
     }
     
