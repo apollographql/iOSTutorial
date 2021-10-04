@@ -37,9 +37,6 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.launchSiteLabel.text = nil
-        self.rocketNameLabel.text = nil
         self.configureView()
     }
     
