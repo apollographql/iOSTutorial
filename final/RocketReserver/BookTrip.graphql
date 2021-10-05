@@ -1,5 +1,5 @@
 mutation BookTrip($id:ID!) {
-  bookTrips(launchIds: [$id]) {
+  bookTrips(launchIds:[$id]) {
     success
     message
     launches {

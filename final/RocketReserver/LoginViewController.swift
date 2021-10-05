@@ -42,25 +42,32 @@ class LoginViewController: UIViewController {
             return
         }
         
-        Network.shared.apollo.perform(mutation: LoginMutation(email: email)) { [weak self] result in
-            defer {
-                self?.enableSubmitButton(true)
+        Network.shared.apollo.perform(mutation: LoginMutation(loginEmail: email)) { [weak self] result in
+          defer {
+            // Re-enable the submit button when this scope exits
+            self?.enableSubmitButton(true)
+          }
+
+          switch result {
+          case .failure(let error):
+            self?.showAlert(title: "Network Error",
+                            message: error.localizedDescription)
+          case .success(let graphQLResult):
+          
+            if let token = graphQLResult.data?.login {
+              let keychain = KeychainSwift()
+              keychain.set(token, forKey: LoginViewController.loginKeychainKey)
+              self?.dismiss(animated: true)
             }
 
-            switch result {
-            case .success(let graphQLResult):
-                if let token = graphQLResult.data?.login {
-                    let keychain = KeychainSwift()
-                    keychain.set(token, forKey: LoginViewController.loginKeychainKey)
-                    self?.dismiss(animated: true)
-                }
-                
-                if let errors = graphQLResult.errors {
-                    print("Errors from server: \(errors)")
-                }
-            case .failure(let error):
-                print("Error: \(error)")
+            if let errors = graphQLResult.errors {
+              let message = errors
+                             .map { $0.localizedDescription }
+                             .joined(separator: "\n")
+              self?.showAlert(title: "GraphQL Error(s)",
+                             message: message)
             }
+          }
         }
     }
     

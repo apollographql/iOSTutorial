@@ -1,6 +1,6 @@
-mutation CancelTrip($id:ID!) {
+mutation CancelTrip($id: ID!) {
   cancelTrip(launchId: $id) {
-      success
+    success
     message
     launches {
       id

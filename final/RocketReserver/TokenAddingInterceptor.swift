@@ -1,11 +1,3 @@
-//
-//  TokenAddingInterceptor.swift
-//  RocketReserver
-//
-//  Created by Ellen Shapiro on 9/9/20.
-//  Copyright © 2020 Apollo GraphQL. All rights reserved.
-//
-
 import Foundation
 import Apollo
 import KeychainSwift
@@ -17,13 +9,13 @@ class TokenAddingInterceptor: ApolloInterceptor {
         response: HTTPResponse<Operation>?,
         completion: @escaping (Result<GraphQLResult<Operation.Data>, Error>) -> Void) {
         
-        let keychain = KeychainSwift()
-        if let token = keychain.get(LoginViewController.loginKeychainKey) {
-            request.addHeader(name: "Authorization", value: token)
-        } // else do nothing
-        
-        chain.proceedAsync(request: request,
-                           response: response,
-                           completion: completion)
+            let keychain = KeychainSwift()
+            if let token = keychain.get(LoginViewController.loginKeychainKey) {
+                request.addHeader(name: "Authorization", value: token)
+            } // else do nothing
+                    
+            chain.proceedAsync(request: request,
+                               response: response,
+                               completion: completion)
     }
 }

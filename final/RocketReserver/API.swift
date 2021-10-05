@@ -322,8 +322,8 @@ public final class LaunchDetailsQuery: GraphQLQuery {
   /// The raw GraphQL definition of this operation.
   public let operationDefinition: String =
     """
-    query LaunchDetails($id: ID!) {
-      launch(id: $id) {
+    query LaunchDetails($launchId: ID!) {
+      launch(id: $launchId) {
         __typename
         id
         site
@@ -344,14 +344,14 @@ public final class LaunchDetailsQuery: GraphQLQuery {
 
   public let operationName: String = "LaunchDetails"
 
-  public var id: GraphQLID
+  public var launchId: GraphQLID
 
-  public init(id: GraphQLID) {
-    self.id = id
+  public init(launchId: GraphQLID) {
+    self.launchId = launchId
   }
 
   public var variables: GraphQLMap? {
-    return ["id": id]
+    return ["launchId": launchId]
   }
 
   public struct Data: GraphQLSelectionSet {
@@ -359,7 +359,7 @@ public final class LaunchDetailsQuery: GraphQLQuery {
 
     public static var selections: [GraphQLSelection] {
       return [
-        GraphQLField("launch", arguments: ["id": GraphQLVariable("id")], type: .object(Launch.selections)),
+        GraphQLField("launch", arguments: ["id": GraphQLVariable("launchId")], type: .object(Launch.selections)),
       ]
     }
 
@@ -797,21 +797,21 @@ public final class LoginMutation: GraphQLMutation {
   /// The raw GraphQL definition of this operation.
   public let operationDefinition: String =
     """
-    mutation Login($email: String) {
-      login(email: $email)
+    mutation Login($loginEmail: String) {
+      login(email: $loginEmail)
     }
     """
 
   public let operationName: String = "Login"
 
-  public var email: String?
+  public var loginEmail: String?
 
-  public init(email: String? = nil) {
-    self.email = email
+  public init(loginEmail: String? = nil) {
+    self.loginEmail = loginEmail
   }
 
   public var variables: GraphQLMap? {
-    return ["email": email]
+    return ["loginEmail": loginEmail]
   }
 
   public struct Data: GraphQLSelectionSet {
@@ -819,7 +819,7 @@ public final class LoginMutation: GraphQLMutation {
 
     public static var selections: [GraphQLSelection] {
       return [
-        GraphQLField("login", arguments: ["email": GraphQLVariable("email")], type: .scalar(String.self)),
+        GraphQLField("login", arguments: ["email": GraphQLVariable("loginEmail")], type: .scalar(String.self)),
       ]
     }
 

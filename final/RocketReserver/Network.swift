@@ -2,13 +2,12 @@
 //  Network.swift
 //  RocketReserver
 //
-//  Created by Ellen Shapiro on 11/13/19.
-//  Copyright © 2019 Apollo GraphQL. All rights reserved.
+//  Created by Ellen Shapiro on 10/3/21.
+//  Copyright © 2021 Apollo GraphQL. All rights reserved.
 //
 
 import Foundation
 import Apollo
-import KeychainSwift
 
 class Network {
     static let shared = Network()

@@ -24,14 +24,13 @@ extension UIViewController {
         self.present(alert, animated: true)
     }
     
-    /// Shows an error alert for the given GraphQL errors
+    /// Shows an alert with the given GraphQL Errors
     ///
-    /// - Parameter errors: The error(s) to display
+    /// - Parameter errors: An array of GraphQL errors.
     func showAlertForErrors(_ errors: [GraphQLError]) {
         let message = errors
-            .map { $0.localizedDescription }
-            .joined(separator: "\n")
-        self.showAlert(title: "GraphQL Error(s)",
-                       message: message)
-    }
+          .map { $0.localizedDescription }
+          .joined(separator: "\n")
+        self.showAlert(title: "GraphQL Error(s)", message: message)
+      }
 }

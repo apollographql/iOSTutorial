@@ -12,30 +12,31 @@ import KeychainSwift
 
 class DetailViewController: UIViewController {
     
-    @IBOutlet private var missionPatchImageView: UIImageView!
-    @IBOutlet private var missionNameLabel: UILabel!
-    @IBOutlet private var rocketNameLabel: UILabel!
-    @IBOutlet private var launchSiteLabel: UILabel!
-    @IBOutlet private var bookCancelButton: UIBarButtonItem!
-    
     private var launch: LaunchDetailsQuery.Data.Launch? {
         didSet {
             self.configureView()
         }
     }
     
+    @IBOutlet private var missionPatchImageView: UIImageView!
+    @IBOutlet private var missionNameLabel: UILabel!
+    @IBOutlet private var rocketNameLabel: UILabel!
+    @IBOutlet private var launchSiteLabel: UILabel!
+    @IBOutlet private var bookCancelButton: UIBarButtonItem!
+    
     var launchID: GraphQLID? {
-      didSet {
-        self.loadLaunchDetails()
-      }
+        didSet {
+            self.loadLaunchDetails()
+        }
     }
     
     func configureView() {
+        // Update the user interface for the detail item.
         guard
             self.missionNameLabel != nil,
             let launch = self.launch else {
                 return
-        }
+            }
         
         self.missionNameLabel.text = launch.mission?.name
         self.title = launch.mission?.name
@@ -57,7 +58,7 @@ class DetailViewController: UIViewController {
         if
             let rocketName = launch.rocket?.name ,
             let rocketType = launch.rocket?.type {
-                self.rocketNameLabel.text = "🚀 \(rocketName) (\(rocketType))"
+            self.rocketNameLabel.text = "🚀 \(rocketName) (\(rocketType))"
         } else {
             self.rocketNameLabel.text = nil
         }
@@ -67,7 +68,8 @@ class DetailViewController: UIViewController {
             self.bookCancelButton.tintColor = .red
         } else {
             self.bookCancelButton.title = "Book now!"
-            self.bookCancelButton.tintColor = self.view.tintColor
+            // Get the color from the main window rather than the view to prevent alerts from draining color
+            self.bookCancelButton.tintColor = UIApplication.shared.windows.first?.tintColor
         }
     }
     
@@ -86,17 +88,17 @@ class DetailViewController: UIViewController {
             (forceReload || launchID != self.launch?.id) else {
                 // This is the launch we're already displaying, or the ID is nil.
                 return
-        }
+            }
         
         let cachePolicy: CachePolicy
         if forceReload {
-            cachePolicy = .fetchIgnoringCacheCompletely
+            cachePolicy = .fetchIgnoringCacheData
         } else {
             cachePolicy = .returnCacheDataElseFetch
         }
         
-        Network.shared.apollo.fetch(query: LaunchDetailsQuery(id: launchID), cachePolicy: cachePolicy) { [weak self] result in
-            
+        
+        Network.shared.apollo.fetch(query: LaunchDetailsQuery(launchId: launchID), cachePolicy: cachePolicy) { [weak self] result in
             guard let self = self else {
                 return
             }
@@ -111,7 +113,11 @@ class DetailViewController: UIViewController {
                 }
                 
                 if let errors = graphQLResult.errors {
-                    self.showAlertForErrors(errors)
+                    let message = errors
+                        .map { $0.localizedDescription }
+                        .joined(separator: "\n")
+                    self.showAlert(title: "GraphQL Error(s)",
+                                   message: message)
                 }
             }
         }
@@ -139,21 +145,24 @@ class DetailViewController: UIViewController {
     private func bookTrip(with id: GraphQLID) {
         Network.shared.apollo.perform(mutation: BookTripMutation(id: id)) { [weak self] result in
             guard let self = self else {
-                return 
+                return
             }
-            
             switch result {
             case .success(let graphQLResult):
                 if let bookingResult = graphQLResult.data?.bookTrips {
                     if bookingResult.success {
-                        self.showAlert(title: "Success!", message: bookingResult.message ?? "Trip booked successfully")
                         self.loadLaunchDetails(forceReload: true)
+                        
+                        self.showAlert(title: "Success!",
+                                       message: bookingResult.message ?? "Trip booked successfully")
                     } else {
-                        self.showAlert(title: "Could not book trip", message: bookingResult.message ?? "Unknown failure.")
+                        self.showAlert(title: "Could not book trip",
+                                       message: bookingResult.message ?? "Unknown failure.")
                     }
                 }
                 
                 if let errors = graphQLResult.errors {
+                    // From UIViewController+Alert.swift
                     self.showAlertForErrors(errors)
                 }
             case .failure(let error):
@@ -164,19 +173,27 @@ class DetailViewController: UIViewController {
     }
     
     private func cancelTrip(with id: GraphQLID) {
-        Network.shared.apollo.perform(mutation: CancelTripMutation(id: id)) { result in
+        Network.shared.apollo.perform(mutation: CancelTripMutation(id: id)) { [weak self] result in
+            guard let self = self else {
+                return
+            }
             switch result {
             case .success(let graphQLResult):
                 if let cancelResult = graphQLResult.data?.cancelTrip {
                     if cancelResult.success {
-                        self.showAlert(title: "Trip cancelled", message: cancelResult.message ?? "Your trip has been officially cancelled.")
                         self.loadLaunchDetails(forceReload: true)
-                    } else {
-                        self.showAlert(title: "Could not cancel trip", message: cancelResult.message ?? "Unknown failure.")
+                        if cancelResult.success {
+                            self.showAlert(title: "Trip cancelled",
+                                           message: cancelResult.message ?? "Your trip has been officially cancelled.")
+                        } else {
+                            self.showAlert(title: "Could not cancel trip",
+                                           message: cancelResult.message ?? "Unknown failure.")
+                        }
                     }
                 }
                 
                 if let errors = graphQLResult.errors {
+                    // From UIViewController+Alert.swift
                     self.showAlertForErrors(errors)
                 }
             case .failure(let error):
