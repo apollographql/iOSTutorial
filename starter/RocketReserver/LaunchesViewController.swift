@@ -35,7 +35,6 @@ class LaunchesViewController: UITableViewController {
         }
         
         // TODO: Handle whether a segue should be performed depending on what row in what section was tapped
-        self.tableView.deselectRow(at: selectedIndexPath, animated: true)
         return true
     }
     
