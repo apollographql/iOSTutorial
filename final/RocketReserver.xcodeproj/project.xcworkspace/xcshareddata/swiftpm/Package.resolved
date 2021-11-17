@@ -6,8 +6,8 @@
         "repositoryURL": "https://github.com/apollographql/apollo-ios.git",
         "state": {
           "branch": null,
-          "revision": "84c8fc2448d6b7285481bfa25da12668083859eb",
-          "version": "0.49.1"
+          "revision": "d93568fb58f3eed95c2a0068d830a39a6e9d6c97",
+          "version": "0.50.0"
         }
       },
       {
@@ -33,8 +33,8 @@
         "repositoryURL": "https://github.com/stephencelis/SQLite.swift.git",
         "state": {
           "branch": null,
-          "revision": "0a9893ec030501a3956bee572d6b4fdd3ae158a1",
-          "version": "0.12.2"
+          "revision": "60a65015f6402b7c34b9a924f755ca0a73afeeaa",
+          "version": "0.13.1"
         }
       }
     ]
