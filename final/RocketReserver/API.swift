@@ -843,3 +843,47 @@ public final class LoginMutation: GraphQLMutation {
     }
   }
 }
+
+public final class TripsBookedSubscription: GraphQLSubscription {
+  /// The raw GraphQL definition of this operation.
+  public let operationDefinition: String =
+    """
+    subscription TripsBooked {
+      tripsBooked
+    }
+    """
+
+  public let operationName: String = "TripsBooked"
+
+  public init() {
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes: [String] = ["Subscription"]
+
+    public static var selections: [GraphQLSelection] {
+      return [
+        GraphQLField("tripsBooked", type: .scalar(Int.self)),
+      ]
+    }
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(tripsBooked: Int? = nil) {
+      self.init(unsafeResultMap: ["__typename": "Subscription", "tripsBooked": tripsBooked])
+    }
+
+    public var tripsBooked: Int? {
+      get {
+        return resultMap["tripsBooked"] as? Int
+      }
+      set {
+        resultMap.updateValue(newValue, forKey: "tripsBooked")
+      }
+    }
+  }
+}
