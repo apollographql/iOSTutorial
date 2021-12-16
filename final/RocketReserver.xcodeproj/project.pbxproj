@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		33257088276A92B500F3E8B4 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33257087276A92B500F3E8B4 /* NotificationView.swift */; };
 		33D3ED9C270CC44100F6C07C /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 33637B9E270270AA00298B4C /* Apollo */; };
 		33D3ED9D270CC44100F6C07C /* ApolloWebSocket in Frameworks */ = {isa = PBXBuildFile; productRef = 33637BA0270270AA00298B4C /* ApolloWebSocket */; };
 		9B0705F923AC34CB00DCA904 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0705F823AC34CB00DCA904 /* ProfileViewController.swift */; };
@@ -32,6 +33,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		33257087276A92B500F3E8B4 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		9B0705F823AC34CB00DCA904 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		9B4AA8A5239BCEB4003E1300 /* BookTrip.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = BookTrip.graphql; sourceTree = "<group>"; };
 		9B4AA8A7239BCEC5003E1300 /* CancelTrip.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = CancelTrip.graphql; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 				9B8B0EFB237CE6A8001326EB /* DetailViewController.swift */,
 				9B0705F823AC34CB00DCA904 /* ProfileViewController.swift */,
 				9B4AA8A9239BDDB7003E1300 /* UIViewController+Alert.swift */,
+				33257087276A92B500F3E8B4 /* NotificationView.swift */,
 				9B8B0EFD237CE6A8001326EB /* Main.storyboard */,
 				9B8B0F2D237CE84B001326EB /* schema.json */,
 				9B4AA8A5239BCEB4003E1300 /* BookTrip.graphql */,
@@ -234,6 +237,7 @@
 				9B0705F923AC34CB00DCA904 /* ProfileViewController.swift in Sources */,
 				9B8B0F32237CE996001326EB /* API.swift in Sources */,
 				9B4AA8AA239BDDB7003E1300 /* UIViewController+Alert.swift in Sources */,
+				33257088276A92B500F3E8B4 /* NotificationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

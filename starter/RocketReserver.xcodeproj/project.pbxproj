@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		33257088276A92B500F3E8B4 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33257087276A92B500F3E8B4 /* NotificationView.swift */; };
 		9B0705F923AC34CB00DCA904 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0705F823AC34CB00DCA904 /* ProfileViewController.swift */; };
 		9B4AA8AA239BDDB7003E1300 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4AA8A9239BDDB7003E1300 /* UIViewController+Alert.swift */; };
 		9B685F54238BE6D70084DA15 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 9B685F53238BE6D70084DA15 /* KeychainSwift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		33257087276A92B500F3E8B4 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		9B0705F823AC34CB00DCA904 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		9B4AA8A9239BDDB7003E1300 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 		9B685F55238BE71F0084DA15 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 				9B8B0EFB237CE6A8001326EB /* DetailViewController.swift */,
 				9B0705F823AC34CB00DCA904 /* ProfileViewController.swift */,
 				9B4AA8A9239BDDB7003E1300 /* UIViewController+Alert.swift */,
+				33257087276A92B500F3E8B4 /* NotificationView.swift */,
 				9B8B0EFD237CE6A8001326EB /* Main.storyboard */,
 				9B8B0F00237CE6AB001326EB /* Assets.xcassets */,
 				9B8B0F02237CE6AB001326EB /* LaunchScreen.storyboard */,
@@ -169,6 +172,7 @@
 				9B8B0EFC237CE6A8001326EB /* DetailViewController.swift in Sources */,
 				9B0705F923AC34CB00DCA904 /* ProfileViewController.swift in Sources */,
 				9B4AA8AA239BDDB7003E1300 /* UIViewController+Alert.swift in Sources */,
+				33257088276A92B500F3E8B4 /* NotificationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
