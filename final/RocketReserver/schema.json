@@ -14,12 +14,12 @@
       {
         "kind": "OBJECT",
         "name": "Query",
-        "description": "",
+        "description": null,
         "specifiedByUrl": null,
         "fields": [
           {
             "name": "launches",
-            "description": "",
+            "description": null,
             "args": [
               {
                 "name": "pageSize",
@@ -60,11 +60,11 @@
           },
           {
             "name": "launch",
-            "description": "",
+            "description": null,
             "args": [
               {
                 "name": "id",
-                "description": "",
+                "description": null,
                 "type": {
                   "kind": "NON_NULL",
                   "name": null,
@@ -89,7 +89,7 @@
           },
           {
             "name": "me",
-            "description": "",
+            "description": null,
             "args": [],
             "type": {
               "kind": "OBJECT",
@@ -100,8 +100,8 @@
             "deprecationReason": null
           },
           {
-            "name": "tripsBooked",
-            "description": "",
+            "name": "totalTripsBooked",
+            "description": null,
             "args": [],
             "type": {
               "kind": "SCALAR",
@@ -147,7 +147,7 @@
         "fields": [
           {
             "name": "cursor",
-            "description": "",
+            "description": null,
             "args": [],
             "type": {
               "kind": "NON_NULL",
@@ -163,7 +163,7 @@
           },
           {
             "name": "hasMore",
-            "description": "",
+            "description": null,
             "args": [],
             "type": {
               "kind": "NON_NULL",
@@ -179,7 +179,7 @@
           },
           {
             "name": "launches",
-            "description": "",
+            "description": null,
             "args": [],
             "type": {
               "kind": "NON_NULL",
@@ -217,12 +217,12 @@
       {
         "kind": "OBJECT",
         "name": "Launch",
-        "description": "",
+        "description": null,
         "specifiedByUrl": null,
         "fields": [
           {
             "name": "id",
-            "description": "",
+            "description": null,
             "args": [],
             "type": {
               "kind": "NON_NULL",
@@ -238,7 +238,7 @@
           },
           {
             "name": "site",
-            "description": "",
+            "description": null,
             "args": [],
             "type": {
               "kind": "SCALAR",
@@ -250,7 +250,7 @@
           },
           {
             "name": "mission",
-            "description": "",
+            "description": null,
             "args": [],
             "type": {
               "kind": "OBJECT",
@@ -262,7 +262,7 @@
           },
           {
             "name": "rocket",
-            "description": "",
+            "description": null,
             "args": [],
             "type": {
               "kind": "OBJECT",
@@ -274,7 +274,7 @@
           },
           {
             "name": "isBooked",
-            "description": "",
+            "description": null,
             "args": [],
             "type": {
               "kind": "NON_NULL",
@@ -308,12 +308,12 @@
       {
         "kind": "OBJECT",
         "name": "Mission",
-        "description": "",
+        "description": null,
         "specifiedByUrl": null,
         "fields": [
           {
             "name": "name",
-            "description": "",
+            "description": null,
             "args": [],
             "type": {
               "kind": "SCALAR",
@@ -325,11 +325,11 @@
           },
           {
             "name": "missionPatch",
-            "description": "",
+            "description": null,
             "args": [
               {
                 "name": "size",
-                "description": "",
+                "description": null,
                 "type": {
                   "kind": "ENUM",
                   "name": "PatchSize",
@@ -357,7 +357,7 @@
       {
         "kind": "ENUM",
         "name": "PatchSize",
-        "description": "",
+        "description": null,
         "specifiedByUrl": null,
         "fields": null,
         "inputFields": null,
@@ -365,13 +365,13 @@
         "enumValues": [
           {
             "name": "SMALL",
-            "description": "",
+            "description": null,
             "isDeprecated": false,
             "deprecationReason": null
           },
           {
             "name": "LARGE",
-            "description": "",
+            "description": null,
             "isDeprecated": false,
             "deprecationReason": null
           }
@@ -381,12 +381,12 @@
       {
         "kind": "OBJECT",
         "name": "Rocket",
-        "description": "",
+        "description": null,
         "specifiedByUrl": null,
         "fields": [
           {
             "name": "id",
-            "description": "",
+            "description": null,
             "args": [],
             "type": {
               "kind": "NON_NULL",
@@ -402,7 +402,7 @@
           },
           {
             "name": "name",
-            "description": "",
+            "description": null,
             "args": [],
             "type": {
               "kind": "SCALAR",
@@ -414,7 +414,7 @@
           },
           {
             "name": "type",
-            "description": "",
+            "description": null,
             "args": [],
             "type": {
               "kind": "SCALAR",
@@ -433,12 +433,12 @@
       {
         "kind": "OBJECT",
         "name": "User",
-        "description": "",
+        "description": null,
         "specifiedByUrl": null,
         "fields": [
           {
             "name": "id",
-            "description": "",
+            "description": null,
             "args": [],
             "type": {
               "kind": "NON_NULL",
@@ -454,7 +454,7 @@
           },
           {
             "name": "email",
-            "description": "",
+            "description": null,
             "args": [],
             "type": {
               "kind": "NON_NULL",
@@ -470,7 +470,7 @@
           },
           {
             "name": "profileImage",
-            "description": "",
+            "description": null,
             "args": [],
             "type": {
               "kind": "SCALAR",
@@ -482,7 +482,7 @@
           },
           {
             "name": "trips",
-            "description": "",
+            "description": null,
             "args": [],
             "type": {
               "kind": "NON_NULL",
@@ -499,6 +499,18 @@
             },
             "isDeprecated": false,
             "deprecationReason": null
+          },
+          {
+            "name": "token",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
           }
         ],
         "inputFields": null,
@@ -509,16 +521,16 @@
       {
         "kind": "OBJECT",
         "name": "Mutation",
-        "description": "",
+        "description": null,
         "specifiedByUrl": null,
         "fields": [
           {
             "name": "bookTrips",
-            "description": "",
+            "description": null,
             "args": [
               {
                 "name": "launchIds",
-                "description": "",
+                "description": null,
                 "type": {
                   "kind": "NON_NULL",
                   "name": null,
@@ -551,11 +563,11 @@
           },
           {
             "name": "cancelTrip",
-            "description": "",
+            "description": null,
             "args": [
               {
                 "name": "launchId",
-                "description": "",
+                "description": null,
                 "type": {
                   "kind": "NON_NULL",
                   "name": null,
@@ -584,44 +596,15 @@
           },
           {
             "name": "login",
-            "description": "",
+            "description": null,
             "args": [
               {
                 "name": "email",
-                "description": "",
+                "description": null,
                 "type": {
                   "kind": "SCALAR",
                   "name": "String",
                   "ofType": null
-                },
-                "defaultValue": null,
-                "isDeprecated": false,
-                "deprecationReason": null
-              }
-            ],
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "uploadProfileImage",
-            "description": "",
-            "args": [
-              {
-                "name": "file",
-                "description": "",
-                "type": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "SCALAR",
-                    "name": "Upload",
-                    "ofType": null
-                  }
                 },
                 "defaultValue": null,
                 "isDeprecated": false,
@@ -645,12 +628,12 @@
       {
         "kind": "OBJECT",
         "name": "TripUpdateResponse",
-        "description": "",
+        "description": null,
         "specifiedByUrl": null,
         "fields": [
           {
             "name": "success",
-            "description": "",
+            "description": null,
             "args": [],
             "type": {
               "kind": "NON_NULL",
@@ -666,7 +649,7 @@
           },
           {
             "name": "message",
-            "description": "",
+            "description": null,
             "args": [],
             "type": {
               "kind": "SCALAR",
@@ -678,7 +661,7 @@
           },
           {
             "name": "launches",
-            "description": "",
+            "description": null,
             "args": [],
             "type": {
               "kind": "LIST",
@@ -699,25 +682,14 @@
         "possibleTypes": null
       },
       {
-        "kind": "SCALAR",
-        "name": "Upload",
-        "description": "The `Upload` scalar type represents a file upload.",
-        "specifiedByUrl": null,
-        "fields": null,
-        "inputFields": null,
-        "interfaces": null,
-        "enumValues": null,
-        "possibleTypes": null
-      },
-      {
         "kind": "OBJECT",
         "name": "Subscription",
-        "description": "",
+        "description": null,
         "specifiedByUrl": null,
         "fields": [
           {
             "name": "tripsBooked",
-            "description": "",
+            "description": null,
             "args": [],
             "type": {
               "kind": "SCALAR",
@@ -1482,7 +1454,20 @@
           {
             "name": "args",
             "description": null,
-            "args": [],
+            "args": [
+              {
+                "name": "includeDeprecated",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "Boolean",
+                  "ofType": null
+                },
+                "defaultValue": "false",
+                "isDeprecated": false,
+                "deprecationReason": null
+              }
+            ],
             "type": {
               "kind": "NON_NULL",
               "name": null,
@@ -1636,67 +1621,18 @@
         "possibleTypes": null
       },
       {
-        "kind": "ENUM",
-        "name": "CacheControlScope",
-        "description": "",
+        "kind": "SCALAR",
+        "name": "Upload",
+        "description": "The `Upload` scalar type represents a file upload.",
         "specifiedByUrl": null,
         "fields": null,
         "inputFields": null,
         "interfaces": null,
-        "enumValues": [
-          {
-            "name": "PUBLIC",
-            "description": "",
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "PRIVATE",
-            "description": "",
-            "isDeprecated": false,
-            "deprecationReason": null
-          }
-        ],
+        "enumValues": null,
         "possibleTypes": null
       }
     ],
     "directives": [
-      {
-        "name": "cacheControl",
-        "description": "",
-        "isRepeatable": false,
-        "locations": [
-          "FIELD_DEFINITION",
-          "OBJECT",
-          "INTERFACE"
-        ],
-        "args": [
-          {
-            "name": "maxAge",
-            "description": "",
-            "type": {
-              "kind": "SCALAR",
-              "name": "Int",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "scope",
-            "description": "",
-            "type": {
-              "kind": "ENUM",
-              "name": "CacheControlScope",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          }
-        ]
-      },
       {
         "name": "skip",
         "description": "Directs the executor to skip this field or fragment when the `if` argument is true.",

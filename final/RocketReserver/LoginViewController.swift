@@ -54,7 +54,7 @@ class LoginViewController: UIViewController {
                             message: error.localizedDescription)
           case .success(let graphQLResult):
           
-            if let token = graphQLResult.data?.login {
+            if let token = graphQLResult.data?.login?.token {
               let keychain = KeychainSwift()
               keychain.set(token, forKey: LoginViewController.loginKeychainKey)
               self?.dismiss(animated: true)

@@ -1,3 +1,5 @@
 mutation Login($loginEmail: String) {
-  login(email: $loginEmail)
+  login(email: $loginEmail) {
+    token
+  }
 }

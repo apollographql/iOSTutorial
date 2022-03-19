@@ -798,7 +798,10 @@ public final class LoginMutation: GraphQLMutation {
   public let operationDefinition: String =
     """
     mutation Login($loginEmail: String) {
-      login(email: $loginEmail)
+      login(email: $loginEmail) {
+        __typename
+        token
+      }
     }
     """
 
@@ -819,7 +822,7 @@ public final class LoginMutation: GraphQLMutation {
 
     public static var selections: [GraphQLSelection] {
       return [
-        GraphQLField("login", arguments: ["email": GraphQLVariable("loginEmail")], type: .scalar(String.self)),
+        GraphQLField("login", arguments: ["email": GraphQLVariable("loginEmail")], type: .object(Login.selections)),
       ]
     }
 
@@ -829,16 +832,55 @@ public final class LoginMutation: GraphQLMutation {
       self.resultMap = unsafeResultMap
     }
 
-    public init(login: String? = nil) {
-      self.init(unsafeResultMap: ["__typename": "Mutation", "login": login])
+    public init(login: Login? = nil) {
+      self.init(unsafeResultMap: ["__typename": "Mutation", "login": login.flatMap { (value: Login) -> ResultMap in value.resultMap }])
     }
 
-    public var login: String? {
+    public var login: Login? {
       get {
-        return resultMap["login"] as? String
+        return (resultMap["login"] as? ResultMap).flatMap { Login(unsafeResultMap: $0) }
       }
       set {
-        resultMap.updateValue(newValue, forKey: "login")
+        resultMap.updateValue(newValue?.resultMap, forKey: "login")
+      }
+    }
+
+    public struct Login: GraphQLSelectionSet {
+      public static let possibleTypes: [String] = ["User"]
+
+      public static var selections: [GraphQLSelection] {
+        return [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("token", type: .scalar(String.self)),
+        ]
+      }
+
+      public private(set) var resultMap: ResultMap
+
+      public init(unsafeResultMap: ResultMap) {
+        self.resultMap = unsafeResultMap
+      }
+
+      public init(token: String? = nil) {
+        self.init(unsafeResultMap: ["__typename": "User", "token": token])
+      }
+
+      public var __typename: String {
+        get {
+          return resultMap["__typename"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      public var token: String? {
+        get {
+          return resultMap["token"] as? String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "token")
+        }
       }
     }
   }
