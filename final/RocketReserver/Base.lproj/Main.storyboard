@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="H1p-Uh-vWS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="H1p-Uh-vWS">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -212,22 +212,13 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GYC-WF-4oT">
-                                <rect key="frame" x="25.5" y="204" width="89" height="30"/>
-                                <state key="normal" title="Select Image"/>
-                                <connections>
-                                    <action selector="updateImageTapped" destination="5C3-Qa-Pba" eventType="touchUpInside" id="ZLG-Kh-0dd"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="5Bn-Sa-mTm"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="rKm-ga-SMq" firstAttribute="leading" secondItem="5Bn-Sa-mTm" secondAttribute="leading" constant="20" id="9HY-Wr-vgR"/>
                             <constraint firstItem="rKm-ga-SMq" firstAttribute="top" secondItem="5Bn-Sa-mTm" secondAttribute="top" constant="40" id="Ca6-mf-HmB"/>
-                            <constraint firstItem="GYC-WF-4oT" firstAttribute="centerX" secondItem="wfU-fG-RXk" secondAttribute="centerX" id="RZD-gc-fYJ"/>
                             <constraint firstItem="5Bn-Sa-mTm" firstAttribute="trailing" secondItem="rKm-ga-SMq" secondAttribute="trailing" constant="20" id="g9H-Di-n7w"/>
-                            <constraint firstItem="GYC-WF-4oT" firstAttribute="top" secondItem="rKm-ga-SMq" secondAttribute="bottom" constant="8" id="iff-yu-Cxh"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="My Profile" id="tf3-xR-RO3">
@@ -241,7 +232,6 @@
                         <outlet property="emailLabel" destination="eV9-sW-sZY" id="Bm4-pM-sVs"/>
                         <outlet property="idLabel" destination="QbE-Ch-Ia3" id="pdn-6K-3YZ"/>
                         <outlet property="profileImageView" destination="wfU-fG-RXk" id="xnj-6h-dKc"/>
-                        <outlet property="selectImageButton" destination="GYC-WF-4oT" id="ikS-cl-Dqh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ETK-5o-x5e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -265,13 +255,13 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Arm-wq-HPj">
-                                            <rect key="frame" x="8" y="10" width="33" height="20.5"/>
+                                            <rect key="frame" x="20" y="10" width="33" height="20.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ajy-q4-Dbz">
-                                            <rect key="frame" x="8" y="31.5" width="44" height="14.5"/>
+                                            <rect key="frame" x="20" y="31.5" width="44" height="14.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
