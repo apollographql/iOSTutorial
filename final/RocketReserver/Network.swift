@@ -18,11 +18,14 @@ class Network {
         let cache = InMemoryNormalizedCache()
         let store = ApolloStore(cache: cache)
         let provider = NetworkInterceptorProvider(client: client, store: store)
-        let url = URL(string: "https://apollo-fullstack-tutorial.herokuapp.com/")!
+        let url = URL(string: "https://apollo-fullstack-tutorial.herokuapp.com/graphql")!
         let transport = RequestChainNetworkTransport(interceptorProvider: provider,
                                                      endpointURL: url)
 
-        let webSocket = WebSocket(url: URL(string: "wss://apollo-fullstack-tutorial.herokuapp.com/graphql")!)
+        let webSocket = WebSocket(
+          url: URL(string: "wss://apollo-fullstack-tutorial.herokuapp.com/graphql")!,
+          protocol: .graphql_ws
+        )
         let webSocketTransport = WebSocketTransport(websocket: webSocket)
         let splitTransport = SplitNetworkTransport(uploadingNetworkTransport: transport,
                                                    webSocketNetworkTransport: webSocketTransport)
