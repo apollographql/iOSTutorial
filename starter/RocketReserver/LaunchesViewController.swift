@@ -30,7 +30,7 @@ class LaunchesViewController: UITableViewController {
             return true
         }
         
-        guard let selectedIndexPath = self.tableView.indexPathForSelectedRow else {
+        guard let _ = self.tableView.indexPathForSelectedRow else {
             return false
         }
         
