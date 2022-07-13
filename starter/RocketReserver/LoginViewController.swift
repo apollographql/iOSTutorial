@@ -45,7 +45,26 @@ class LoginViewController: UIViewController {
     }
     
     private func validate(email: String) -> Bool {
-        return email.contains("@")
+        // we assume that the email is valid at first, at we'll try to find if it's not
+        var returnValue = true
+        let emailRegEx = #"^\S+@\S+\.\S+$"#
+        
+        do {
+            let regex = try NSRegularExpression(pattern: emailRegEx)
+            let nsString = email as NSString
+            let results = regex.matches(in: email, range: NSRange(location: 0, length: nsString.length))
+            
+            if results.count == 0
+            {
+                returnValue = false
+            }
+            
+        } catch let error as NSError {
+            print("invalid regex: \(error.localizedDescription)")
+            returnValue = false
+        }
+        
+        return  returnValue
     }
     
     private func enableSubmitButton(_ isEnabled: Bool) {
