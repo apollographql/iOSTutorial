@@ -1,0 +1,43 @@
+{
+  "schemaNamespace" : "RocketReserverAPI",
+  "input" : {
+    "operationSearchPaths" : [
+      "**/*.graphql"
+    ],
+    "schemaSearchPaths" : [
+      "**/*.graphqls"
+    ]
+  },
+  "output" : {
+    "testMocks" : {
+      "none" : {
+      }
+    },
+    "schemaTypes" : {
+      "path" : "./RocketReserverAPI",
+      "moduleType" : {
+        "swiftPackageManager" : {
+        }
+      }
+    },
+    "operations" : {
+      "inSchemaModule" : {
+      }
+    }
+  },
+  "schemaDownloadConfiguration": {
+    "downloadMethod": {
+        "introspection": {
+            "endpointURL": "https://apollo-fullstack-tutorial.herokuapp.com/graphql",
+            "httpMethod": {
+                "POST": {}
+            },
+            "includeDeprecatedInputValues": false,
+            "outputFormat": "SDL"
+        }
+    },
+    "downloadTimeout": 60,
+    "headers": [],
+    "outputPath": "./graphql/schema.graphqls"
+  }
+}

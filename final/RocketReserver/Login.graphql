@@ -1,5 +1,0 @@
-mutation Login($loginEmail: String) {
-  login(email: $loginEmail) {
-    token
-  }
-}

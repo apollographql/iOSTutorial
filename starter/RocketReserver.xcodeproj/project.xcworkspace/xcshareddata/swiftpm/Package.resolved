@@ -1,25 +1,32 @@
 {
-  "object": {
-    "pins": [
-      {
-        "package": "KeychainSwift",
-        "repositoryURL": "https://github.com/evgenyneu/keychain-swift.git",
-        "state": {
-          "branch": null,
-          "revision": "d9b76fba09c2eb5c0bb9312092d309c833996cd2",
-          "version": "18.0.0"
-        }
-      },
-      {
-        "package": "SDWebImage",
-        "repositoryURL": "https://github.com/SDWebImage/SDWebImage.git",
-        "state": {
-          "branch": null,
-          "revision": "76dd4b49110b8624317fc128e7fa0d8a252018bc",
-          "version": "5.11.1"
-        }
+  "pins" : [
+    {
+      "identity" : "keychain-swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/evgenyneu/keychain-swift.git",
+      "state" : {
+        "revision" : "d9b76fba09c2eb5c0bb9312092d309c833996cd2",
+        "version" : "18.0.0"
       }
-    ]
-  },
-  "version": 1
+    },
+    {
+      "identity" : "sdwebimage",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SDWebImage/SDWebImage.git",
+      "state" : {
+        "revision" : "20df851f2ae27efbaeeff73e9babdf4fd839a144",
+        "version" : "5.15.6"
+      }
+    },
+    {
+      "identity" : "sdwebimageswiftui",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SDWebImage/SDWebImageSwiftUI",
+      "state" : {
+        "revision" : "e837c37d45449fbd3b4745c10c5b5274e73edead",
+        "version" : "2.2.3"
+      }
+    }
+  ],
+  "version" : 2
 }
