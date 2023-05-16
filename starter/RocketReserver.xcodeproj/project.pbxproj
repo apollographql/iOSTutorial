@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		66EEA7802A13C9AD00BB8C72 /* schema.graphqls in Resources */ = {isa = PBXBuildFile; fileRef = 66EEA77F2A13C9AD00BB8C72 /* schema.graphqls */; };
 		66F96F9B29FAC0D600713B80 /* RocketReserverApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F96F9A29FAC0D600713B80 /* RocketReserverApp.swift */; };
 		66F96F9D29FAC0D600713B80 /* LaunchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F96F9C29FAC0D600713B80 /* LaunchListView.swift */; };
 		66F96F9F29FAC0D700713B80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66F96F9E29FAC0D700713B80 /* Assets.xcassets */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		66EEA77F2A13C9AD00BB8C72 /* schema.graphqls */ = {isa = PBXFileReference; lastKnownFileType = text; path = schema.graphqls; sourceTree = "<group>"; };
 		66F96F9729FAC0D600713B80 /* RocketReserver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RocketReserver.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66F96F9A29FAC0D600713B80 /* RocketReserverApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketReserverApp.swift; sourceTree = "<group>"; };
 		66F96F9C29FAC0D600713B80 /* LaunchListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchListView.swift; sourceTree = "<group>"; };
@@ -52,17 +54,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		66D7A5392A05687B009DDB89 /* graphl */ = {
+		66EEA77E2A13C94400BB8C72 /* graphql */ = {
 			isa = PBXGroup;
 			children = (
+				66EEA77F2A13C9AD00BB8C72 /* schema.graphqls */,
 			);
-			path = graphl;
+			path = graphql;
 			sourceTree = "<group>";
 		};
 		66F96F8E29FAC0D600713B80 = {
 			isa = PBXGroup;
 			children = (
-				66D7A5392A05687B009DDB89 /* graphl */,
+				66EEA77E2A13C94400BB8C72 /* graphql */,
 				66F96F9929FAC0D600713B80 /* RocketReserver */,
 				66F96F9829FAC0D600713B80 /* Products */,
 				66F96FCF29FAD2EC00713B80 /* Frameworks */,
@@ -178,6 +181,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				66F96FA229FAC0D700713B80 /* Preview Assets.xcassets in Resources */,
+				66EEA7802A13C9AD00BB8C72 /* schema.graphqls in Resources */,
 				66F96F9F29FAC0D700713B80 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

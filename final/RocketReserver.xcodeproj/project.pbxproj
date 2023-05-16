@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		66EEA7762A13C4BF00BB8C72 /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 66EEA7752A13C4BF00BB8C72 /* Apollo */; };
+		66EEA7782A13C4BF00BB8C72 /* ApolloWebSocket in Frameworks */ = {isa = PBXBuildFile; productRef = 66EEA7772A13C4BF00BB8C72 /* ApolloWebSocket */; };
 		66F96F9B29FAC0D600713B80 /* RocketReserverApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F96F9A29FAC0D600713B80 /* RocketReserverApp.swift */; };
 		66F96F9D29FAC0D600713B80 /* LaunchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F96F9C29FAC0D600713B80 /* LaunchListView.swift */; };
 		66F96F9F29FAC0D700713B80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66F96F9E29FAC0D700713B80 /* Assets.xcassets */; };
 		66F96FA229FAC0D700713B80 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66F96FA129FAC0D700713B80 /* Preview Assets.xcassets */; };
 		66F96FC529FAC7F200713B80 /* LaunchRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F96FC429FAC7F200713B80 /* LaunchRow.swift */; };
 		66F96FC729FACE1A00713B80 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F96FC629FACE1A00713B80 /* DetailView.swift */; };
-		66F96FCA29FAD20F00713B80 /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 66F96FC929FAD20F00713B80 /* Apollo */; };
-		66F96FCC29FAD20F00713B80 /* ApolloWebSocket in Frameworks */ = {isa = PBXBuildFile; productRef = 66F96FCB29FAD20F00713B80 /* ApolloWebSocket */; };
 		66F96FD129FAD2EC00713B80 /* RocketReserverAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 66F96FD029FAD2EC00713B80 /* RocketReserverAPI */; };
 		66F96FD329FAD3EE00713B80 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F96FD229FAD3EE00713B80 /* Network.swift */; };
 		66F96FD629FADBB700713B80 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 66F96FD529FADBB700713B80 /* SDWebImageSwiftUI */; };
@@ -62,10 +62,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				66F96FD629FADBB700713B80 /* SDWebImageSwiftUI in Frameworks */,
+				66EEA7762A13C4BF00BB8C72 /* Apollo in Frameworks */,
+				66EEA7782A13C4BF00BB8C72 /* ApolloWebSocket in Frameworks */,
 				66F96FD129FAD2EC00713B80 /* RocketReserverAPI in Frameworks */,
 				66F96FDA29FADCC800713B80 /* KeychainSwift in Frameworks */,
-				66F96FCA29FAD20F00713B80 /* Apollo in Frameworks */,
-				66F96FCC29FAD20F00713B80 /* ApolloWebSocket in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,11 +167,11 @@
 			);
 			name = RocketReserver;
 			packageProductDependencies = (
-				66F96FC929FAD20F00713B80 /* Apollo */,
-				66F96FCB29FAD20F00713B80 /* ApolloWebSocket */,
 				66F96FD029FAD2EC00713B80 /* RocketReserverAPI */,
 				66F96FD529FADBB700713B80 /* SDWebImageSwiftUI */,
 				66F96FD929FADCC800713B80 /* KeychainSwift */,
+				66EEA7752A13C4BF00BB8C72 /* Apollo */,
+				66EEA7772A13C4BF00BB8C72 /* ApolloWebSocket */,
 			);
 			productName = RocketReserver;
 			productReference = 66F96F9729FAC0D600713B80 /* RocketReserver.app */;
@@ -202,9 +202,9 @@
 			);
 			mainGroup = 66F96F8E29FAC0D600713B80;
 			packageReferences = (
-				66F96FC829FAD20F00713B80 /* XCRemoteSwiftPackageReference "apollo-ios" */,
 				66F96FD429FADBB700713B80 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 				66F96FD829FADCC800713B80 /* XCRemoteSwiftPackageReference "keychain-swift" */,
+				66EEA7742A13C4BF00BB8C72 /* XCRemoteSwiftPackageReference "apollo-ios" */,
 			);
 			productRefGroup = 66F96F9829FAC0D600713B80 /* Products */;
 			projectDirPath = "";
@@ -447,12 +447,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		66F96FC829FAD20F00713B80 /* XCRemoteSwiftPackageReference "apollo-ios" */ = {
+		66EEA7742A13C4BF00BB8C72 /* XCRemoteSwiftPackageReference "apollo-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/apollographql/apollo-ios";
 			requirement = {
 				kind = upToNextMinorVersion;
-				minimumVersion = 1.1.0;
+				minimumVersion = 1.2.0;
 			};
 		};
 		66F96FD429FADBB700713B80 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
@@ -474,14 +474,14 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		66F96FC929FAD20F00713B80 /* Apollo */ = {
+		66EEA7752A13C4BF00BB8C72 /* Apollo */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 66F96FC829FAD20F00713B80 /* XCRemoteSwiftPackageReference "apollo-ios" */;
+			package = 66EEA7742A13C4BF00BB8C72 /* XCRemoteSwiftPackageReference "apollo-ios" */;
 			productName = Apollo;
 		};
-		66F96FCB29FAD20F00713B80 /* ApolloWebSocket */ = {
+		66EEA7772A13C4BF00BB8C72 /* ApolloWebSocket */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 66F96FC829FAD20F00713B80 /* XCRemoteSwiftPackageReference "apollo-ios" */;
+			package = 66EEA7742A13C4BF00BB8C72 /* XCRemoteSwiftPackageReference "apollo-ios" */;
 			productName = ApolloWebSocket;
 		};
 		66F96FD029FAD2EC00713B80 /* RocketReserverAPI */ = {

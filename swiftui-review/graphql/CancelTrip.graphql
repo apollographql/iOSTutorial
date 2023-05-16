@@ -1,6 +1,0 @@
-mutation CancelTrip($launchId: ID!) {
-  cancelTrip(launchId: $launchId) {
-    success
-    message
-  }
-}
