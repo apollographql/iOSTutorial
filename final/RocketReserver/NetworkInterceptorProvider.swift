@@ -1,11 +1,3 @@
-//
-//  NetworkInterceptorProvider.swift
-//  RocketReserver
-//
-//  Created by Zach FettersMoore on 4/28/23.
-//  Copyright © 2023 Apollo GraphQL. All rights reserved.
-//
-
 import Foundation
 import Apollo
 import ApolloAPI
