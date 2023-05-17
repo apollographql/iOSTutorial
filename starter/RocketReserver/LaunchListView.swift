@@ -12,7 +12,7 @@ struct LaunchListView: View {
                 }
             }
             .task {
-                // TODO
+                // TODO (Section 6 - https://www.apollographql.com/docs/ios/tutorial/tutorial-connect-queries-to-ui#use-launches-in-the-ui)
             }
             .navigationTitle("Rocket Launches")
             .appAlert($viewModel.appAlert)

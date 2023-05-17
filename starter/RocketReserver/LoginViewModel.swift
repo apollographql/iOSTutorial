@@ -27,7 +27,7 @@ class LoginViewModel: ObservableObject {
             return
         }
         
-        // TODO
+        // TODO (Section 10 - https://www.apollographql.com/docs/ios/tutorial/tutorial-first-mutation#implement-the-login-logic)
     }
     
     private func validate(email: String) -> Bool {
