@@ -1,79 +1,83 @@
-//
-//  NotificationView.swift
-//  RocketReserver
-//
-//  Created by Ellen Shapiro on 12/15/21.
-//  Copyright © 2021 Apollo GraphQL. All rights reserved.
-//
+import SwiftUI
 
-import UIKit
-
-class NotificationView: UIView {
+struct NotificationView: View {
+    var message: String
     
-    private let label = UILabel()
-    private static let padding: CGFloat = 10.0
-    static func show(in view: UIView,
-                     with text: String,
-                     for duration: TimeInterval) {
-        
-        let notification = NotificationView(text: text)
-        
-        let fadeInOut = duration / 4
-        
-        view.addSubview(notification)
-        notification.translatesAutoresizingMaskIntoConstraints = false
-        
-        view.addConstraints([
-            notification.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Self.padding),
-            notification.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Self.padding),
-            notification.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -Self.padding),
-        ])
-        view.layoutIfNeeded()
+    var body: some View {
+        VStack {
+            HStack {
+                Spacer(minLength: 10)
+                Text(message)
+                    .font(.system(size: 14))
+                    .foregroundColor(.white)
+                Spacer(minLength: 10)
+            }
+            .padding(10)
+            .background(.black.opacity(0.8))
+            .cornerRadius(8)
+        }
+        .padding(.horizontal, 16)
+    }
+}
 
-        notification.alpha = 0
-        UIView.animate(withDuration: fadeInOut,
-                       delay: 0.1,
-                       options: [.curveEaseIn],
-                       animations: {
-            notification.alpha = 1
-            view.layoutIfNeeded()
-        })
+struct NotificationView_Previews: PreviewProvider {
+    static var previews: some View {
+        NotificationView(message: "This is the message.")
+    }
+}
+
+struct NotificationViewModifier: ViewModifier {
+    @Binding var message: String?
+    @State private var workItem: DispatchWorkItem?
+    
+    func body(content: Content) -> some View {
+        content
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .overlay(
+                ZStack {
+                    mainNotificationView()
+                        .offset(y: -30)
+                }
+                .animation(.spring(), value: message)
+            )
+            .onChange(of: message) { value in
+                showNotification()
+            }
+    }
+    
+    @ViewBuilder func mainNotificationView() -> some View {
+        if let message = message {
+            VStack {
+                Spacer()
+                NotificationView(message: message)
+            }
+            .transition(.move(edge: .bottom))
+        }
+    }
+    
+    private func showNotification() {
+        workItem?.cancel()
         
-        UIView.animate(withDuration: fadeInOut,
-                       delay: duration - fadeInOut,
-                       options: [.curveEaseOut],
-                       animations: {
-            notification.alpha = 0
-        }) { _ in
-            notification.removeFromSuperview()
+        let task = DispatchWorkItem {
+            dismissNotification()
         }
         
+        workItem = task
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: task)
     }
     
-    convenience init(text: String) {
-        self.init(frame: .zero)
+    private func dismissNotification() {
+        withAnimation {
+            message = nil
+        }
         
-        self.backgroundColor = .black
-        self.setupLabel()
-        self.label.text = text
-        
-        self.clipsToBounds = true
-        self.layer.cornerRadius = Self.padding
+        workItem?.cancel()
+        workItem = nil
     }
-    
-    private func setupLabel() {
-        self.label.translatesAutoresizingMaskIntoConstraints = false
-        self.label.textColor = .white
-        self.label.textAlignment = .center
-        self.label.font = .boldSystemFont(ofSize: self.label.font.pointSize)
-        
-        self.addSubview(self.label)
+}
 
-        self.addConstraints([
-            self.label.topAnchor.constraint(equalTo: self.topAnchor, constant: Self.padding),
-            self.label.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -Self.padding),
-            self.label.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: Self.padding),
-            self.label.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -Self.padding),
-        ])
+extension View {
+    func notificationView(message: Binding<String?>) -> some View {
+        self.modifier(NotificationViewModifier(message: message))
     }
 }
