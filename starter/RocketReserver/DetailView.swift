@@ -11,7 +11,7 @@ struct DetailView: View {
     
     var body: some View {
         VStack {
-            if let launch = "PLACEHOLDER" {
+            if let launch = Optional("PLACEHOLDER") {
                 HStack(spacing: 10) {
                     placeholderImg
                         .resizable()
@@ -19,17 +19,17 @@ struct DetailView: View {
                         .frame(width: 165, height: 165)
                     
                     VStack(alignment: .leading, spacing: 4) {
-                        if let missionName = "Mission Name" {
+                        if let missionName = Optional("Mission Name") {
                             Text(missionName)
                                 .font(.system(size: 24, weight: .bold))
                         }
                         
-                        if let rocketName = "Rocket Name" {
+                        if let rocketName = Optional("Rocket Name") {
                             Text("🚀 \(rocketName)")
                                 .font(.system(size: 18))
                         }
                         
-                        if let launchSite = "Launch Site" {
+                        if let launchSite = Optional("Launch Site") {
                             Text(launchSite)
                                 .font(.system(size: 14))
                         }
