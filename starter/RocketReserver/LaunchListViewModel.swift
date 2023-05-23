@@ -6,7 +6,7 @@ class LaunchListViewModel: ObservableObject {
     @Published var notificationMessage: String?
     
     init() {
-        
+        // TODO (Section 13 - https://www.apollographql.com/docs/ios/tutorial/tutorial-subscriptions#use-your-subscription)
     }
     
     // MARK: - Subscriptions
