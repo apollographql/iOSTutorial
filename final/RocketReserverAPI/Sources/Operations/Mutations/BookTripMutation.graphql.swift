@@ -5,17 +5,9 @@
 
 public class BookTripMutation: GraphQLMutation {
   public static let operationName: String = "BookTrip"
-  public static let document: ApolloAPI.DocumentType = .notPersisted(
+  public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"""
-      mutation BookTrip($id: ID!) {
-        bookTrips(launchIds: [$id]) {
-          __typename
-          success
-          message
-        }
-      }
-      """#
+      #"mutation BookTrip($id: ID!) { bookTrips(launchIds: [$id]) { __typename success message } }"#
     ))
 
   public var id: ID

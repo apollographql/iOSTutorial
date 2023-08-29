@@ -5,16 +5,17 @@ import PackageDescription
 let package = Package(
   name: "RocketReserverAPI",
   platforms: [
-    .iOS(.v16),
-    .macOS(.v13),
-    .tvOS(.v16),
-    .watchOS(.v9),
+    .iOS(.v12),
+    .macOS(.v10_14),
+    .tvOS(.v12),
+    .watchOS(.v5),
   ],
   products: [
     .library(name: "RocketReserverAPI", targets: ["RocketReserverAPI"]),
+    .library(name: "RocketReserverTestMocks", targets: ["RocketReserverTestMocks"]),
   ],
   dependencies: [
-    .package(url: "https://github.com/apollographql/apollo-ios.git", .upToNextMajor(from: .init(1, 4, 0 )))
+    .package(url: "https://github.com/apollographql/apollo-ios.git", from: "1.0.0"),
   ],
   targets: [
     .target(
@@ -23,6 +24,14 @@ let package = Package(
         .product(name: "ApolloAPI", package: "apollo-ios"),
       ],
       path: "./Sources"
+    ),
+    .target(
+      name: "RocketReserverTestMocks",
+      dependencies: [
+        .product(name: "ApolloTestSupport", package: "apollo-ios"),
+        .target(name: "RocketReserverAPI"),
+      ],
+      path: "./RocketReserverTestMocks"
     ),
   ]
 )

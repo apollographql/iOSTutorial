@@ -4,6 +4,7 @@ import ApolloAPI
 import KeychainSwift
 
 class AuthorizationInterceptor: ApolloInterceptor {
+    var id: String = "AuthID"
     
     func interceptAsync<Operation>(
         chain: RequestChain,
