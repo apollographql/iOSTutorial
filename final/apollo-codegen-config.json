@@ -10,7 +10,8 @@
   },
   "output" : {
     "testMocks" : {
-      "none" : {
+      "swiftPackage" : {
+          "targetName" : "RocketReserverTestMocks"
       }
     },
     "schemaTypes" : {

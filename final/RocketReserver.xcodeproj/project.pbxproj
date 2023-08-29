@@ -373,7 +373,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RocketReserver/Preview Content\"";
-				DEVELOPMENT_TEAM = L3FHPF43MA;
+				DEVELOPMENT_TEAM = J2C764CY4K;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -386,7 +386,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.apollographql.RocketReserver.RocketReserver;
+				PRODUCT_BUNDLE_IDENTIFIER = bio.chase.RocketReserver.RocketReserver;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -402,7 +402,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RocketReserver/Preview Content\"";
-				DEVELOPMENT_TEAM = L3FHPF43MA;
+				DEVELOPMENT_TEAM = J2C764CY4K;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -452,7 +452,7 @@
 			repositoryURL = "https://github.com/apollographql/apollo-ios";
 			requirement = {
 				kind = upToNextMinorVersion;
-				minimumVersion = 1.2.0;
+				minimumVersion = 1.4.0;
 			};
 		};
 		66F96FD429FADBB700713B80 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
