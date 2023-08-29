@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0EA78C1F2A9E4AA2005728C9 /* TestMocksTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA78C1E2A9E4AA2005728C9 /* TestMocksTest.swift */; };
+		0EA78C212A9E4AD0005728C9 /* RocketReserverTestMocks in Frameworks */ = {isa = PBXBuildFile; productRef = 0EA78C202A9E4AD0005728C9 /* RocketReserverTestMocks */; };
 		66EEA7762A13C4BF00BB8C72 /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 66EEA7752A13C4BF00BB8C72 /* Apollo */; };
 		66EEA7782A13C4BF00BB8C72 /* ApolloWebSocket in Frameworks */ = {isa = PBXBuildFile; productRef = 66EEA7772A13C4BF00BB8C72 /* ApolloWebSocket */; };
 		66F96F9B29FAC0D600713B80 /* RocketReserverApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F96F9A29FAC0D600713B80 /* RocketReserverApp.swift */; };
@@ -30,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0EA78C1E2A9E4AA2005728C9 /* TestMocksTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestMocksTest.swift; sourceTree = "<group>"; };
 		66D7A53B2A056886009DDB89 /* schema.graphqls */ = {isa = PBXFileReference; lastKnownFileType = text; path = schema.graphqls; sourceTree = "<group>"; };
 		66D7A53C2A056886009DDB89 /* Login.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = Login.graphql; sourceTree = "<group>"; };
 		66D7A53D2A056886009DDB89 /* LaunchDetails.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = LaunchDetails.graphql; sourceTree = "<group>"; };
@@ -65,6 +68,7 @@
 				66EEA7762A13C4BF00BB8C72 /* Apollo in Frameworks */,
 				66EEA7782A13C4BF00BB8C72 /* ApolloWebSocket in Frameworks */,
 				66F96FD129FAD2EC00713B80 /* RocketReserverAPI in Frameworks */,
+				0EA78C212A9E4AD0005728C9 /* RocketReserverTestMocks in Frameworks */,
 				66F96FDA29FADCC800713B80 /* KeychainSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -131,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				66F96FA129FAC0D700713B80 /* Preview Assets.xcassets */,
+				0EA78C1E2A9E4AA2005728C9 /* TestMocksTest.swift */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -172,6 +177,7 @@
 				66F96FD929FADCC800713B80 /* KeychainSwift */,
 				66EEA7752A13C4BF00BB8C72 /* Apollo */,
 				66EEA7772A13C4BF00BB8C72 /* ApolloWebSocket */,
+				0EA78C202A9E4AD0005728C9 /* RocketReserverTestMocks */,
 			);
 			productName = RocketReserver;
 			productReference = 66F96F9729FAC0D600713B80 /* RocketReserver.app */;
@@ -237,6 +243,7 @@
 				66F96FDE29FAEDBF00713B80 /* DetailViewModel.swift in Sources */,
 				66F96FEA29FC183200713B80 /* NotificationView.swift in Sources */,
 				66F96FC729FACE1A00713B80 /* DetailView.swift in Sources */,
+				0EA78C1F2A9E4AA2005728C9 /* TestMocksTest.swift in Sources */,
 				66F96FDC29FAE88E00713B80 /* LaunchListViewModel.swift in Sources */,
 				66F96FE829FC0D7700713B80 /* View+Alert.swift in Sources */,
 				66F96FC529FAC7F200713B80 /* LaunchRow.swift in Sources */,
@@ -474,6 +481,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		0EA78C202A9E4AD0005728C9 /* RocketReserverTestMocks */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = RocketReserverTestMocks;
+		};
 		66EEA7752A13C4BF00BB8C72 /* Apollo */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 66EEA7742A13C4BF00BB8C72 /* XCRemoteSwiftPackageReference "apollo-ios" */;
