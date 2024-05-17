@@ -4,7 +4,7 @@
 import ApolloAPI
 
 public extension Objects {
-  static let Launch = Object(
+  static let Launch = ApolloAPI.Object(
     typename: "Launch",
     implementedInterfaces: []
   )

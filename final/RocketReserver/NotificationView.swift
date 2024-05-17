@@ -40,7 +40,7 @@ struct NotificationViewModifier: ViewModifier {
                 }
                 .animation(.spring(), value: message)
             )
-            .onChange(of: message) { value in
+            .onChange(of: message) {
                 showNotification()
             }
     }

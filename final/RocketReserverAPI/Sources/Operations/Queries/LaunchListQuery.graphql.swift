@@ -5,27 +5,9 @@
 
 public class LaunchListQuery: GraphQLQuery {
   public static let operationName: String = "LaunchList"
-  public static let document: ApolloAPI.DocumentType = .notPersisted(
+  public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"""
-      query LaunchList($cursor: String) {
-        launches(after: $cursor) {
-          __typename
-          cursor
-          hasMore
-          launches {
-            __typename
-            id
-            site
-            mission {
-              __typename
-              name
-              missionPatch(size: SMALL)
-            }
-          }
-        }
-      }
-      """#
+      #"query LaunchList($cursor: String) { launches(after: $cursor) { __typename cursor hasMore launches { __typename id site mission { __typename name missionPatch(size: SMALL) } } } }"#
     ))
 
   public var cursor: GraphQLNullable<String>

@@ -4,7 +4,7 @@
 import ApolloAPI
 
 public extension Objects {
-  static let TripUpdateResponse = Object(
+  static let TripUpdateResponse = ApolloAPI.Object(
     typename: "TripUpdateResponse",
     implementedInterfaces: []
   )

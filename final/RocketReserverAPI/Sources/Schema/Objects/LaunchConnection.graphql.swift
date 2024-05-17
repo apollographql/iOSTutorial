@@ -7,7 +7,7 @@ public extension Objects {
   /// Simple wrapper around our list of launches that contains a cursor to the
   /// last item in the list. Pass this cursor to the launches query to fetch results
   /// after these.
-  static let LaunchConnection = Object(
+  static let LaunchConnection = ApolloAPI.Object(
     typename: "LaunchConnection",
     implementedInterfaces: []
   )
