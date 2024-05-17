@@ -20,7 +20,7 @@ where Schema == RocketReserverAPI.SchemaMetadata {}
 public enum SchemaMetadata: ApolloAPI.SchemaMetadata {
   public static let configuration: ApolloAPI.SchemaConfiguration.Type = SchemaConfiguration.self
 
-  public static func objectType(forTypename typename: String) -> Object? {
+  public static func objectType(forTypename typename: String) -> ApolloAPI.Object? {
     switch typename {
     case "Mutation": return RocketReserverAPI.Objects.Mutation
     case "User": return RocketReserverAPI.Objects.User

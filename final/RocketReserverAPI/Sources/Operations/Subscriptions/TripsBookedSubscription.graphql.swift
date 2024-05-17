@@ -5,13 +5,9 @@
 
 public class TripsBookedSubscription: GraphQLSubscription {
   public static let operationName: String = "TripsBooked"
-  public static let document: ApolloAPI.DocumentType = .notPersisted(
+  public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"""
-      subscription TripsBooked {
-        tripsBooked
-      }
-      """#
+      #"subscription TripsBooked { tripsBooked }"#
     ))
 
   public init() {}

@@ -5,28 +5,9 @@
 
 public class LaunchDetailsQuery: GraphQLQuery {
   public static let operationName: String = "LaunchDetails"
-  public static let document: ApolloAPI.DocumentType = .notPersisted(
+  public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"""
-      query LaunchDetails($launchId: ID!) {
-        launch(id: $launchId) {
-          __typename
-          id
-          site
-          mission {
-            __typename
-            name
-            missionPatch(size: LARGE)
-          }
-          rocket {
-            __typename
-            name
-            type
-          }
-          isBooked
-        }
-      }
-      """#
+      #"query LaunchDetails($launchId: ID!) { launch(id: $launchId) { __typename id site mission { __typename name missionPatch(size: LARGE) } rocket { __typename name type } isBooked } }"#
     ))
 
   public var launchId: ID
