@@ -5,7 +5,7 @@ struct LaunchListView: View {
     @StateObject private var viewModel = LaunchListViewModel()
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             List {
                 ForEach(0..<10) { index in
                     LaunchRow()
