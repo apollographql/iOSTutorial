@@ -15,14 +15,10 @@ class DetailViewModel: ObservableObject {
         self.launchID = launchID
     }
     
-    func loadLaunchDetails(forceReload: Bool = false) {
-        guard forceReload || launchID != launch?.id else {
-            return
-        }
-        
-        let cachePolicy: CachePolicy = forceReload ? .fetchIgnoringCacheData : .returnCacheDataElseFetch
-        
-        Network.shared.apollo.fetch(query: LaunchDetailsQuery(launchId: launchID), cachePolicy: cachePolicy) { [weak self] result in
+    func loadLaunchDetails() {
+        Network.shared.apollo.fetch(
+            query: LaunchDetailsQuery(launchId: launchID), cachePolicy: .returnCacheDataAndFetch
+        ) { [weak self] result in
             guard let self = self else {
                 return
             }
@@ -67,7 +63,6 @@ class DetailViewModel: ObservableObject {
                     if bookingResult.success {
                         self.appAlert = .basic(title: "Success!",
                                                message: bookingResult.message ?? "Trip booked successfully")
-                        self.loadLaunchDetails(forceReload: true)
                     } else {
                         self.appAlert = .basic(title: "Could not book trip",
                                                message: bookingResult.message ?? "Unknown failure")
@@ -95,7 +90,6 @@ class DetailViewModel: ObservableObject {
                     if cancelResult.success {
                         self.appAlert = .basic(title: "Trip cancelled",
                                                message: cancelResult.message ?? "Your trip has been officially cancelled")
-                        self.loadLaunchDetails(forceReload: true)
                     } else {
                         self.appAlert = .basic(title: "Could not cancel trip",
                                                message: cancelResult.message ?? "Unknown failure.")
