@@ -6,7 +6,8 @@ import SwiftUI
 class DetailViewModel: ObservableObject {
     
     let launchID: RocketReserverAPI.ID
-    
+    private var watcher: GraphQLQueryWatcher<LaunchDetailsQuery>?
+
     @Published var launch: LaunchDetailsQuery.Data.Launch?
     @Published var isShowingLogin = false
     @Published var appAlert: AppAlert?
@@ -16,7 +17,7 @@ class DetailViewModel: ObservableObject {
     }
     
     func loadLaunchDetails() {
-        Network.shared.apollo.fetch(
+        watcher = Network.shared.apollo.watch(
             query: LaunchDetailsQuery(launchId: launchID), cachePolicy: .returnCacheDataAndFetch
         ) { [weak self] result in
             guard let self = self else {
@@ -37,7 +38,11 @@ class DetailViewModel: ObservableObject {
             }
         }
     }
-    
+
+    deinit {
+        watcher?.cancel()
+    }
+
     func bookOrCancel() {
         guard self.isLoggedIn() else {
             isShowingLogin = true
