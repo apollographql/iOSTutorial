@@ -1,9 +1,12 @@
 import SwiftUI
+import KeychainSwift
 
 struct LaunchListView: View {
     
     @StateObject private var viewModel = LaunchListViewModel()
-    
+    @State private var isShowingLogin = false
+    @State private var isShowingUser = false
+
     var body: some View {
         NavigationStack {
             List {
@@ -26,11 +29,32 @@ struct LaunchListView: View {
                 viewModel.loadMoreLaunchesIfTheyExist()
             }
             .navigationTitle("Rocket Launches")
+            .toolbar {
+                Button("User", systemImage: "person.circle") {
+                    guard self.isLoggedIn() else {
+                        isShowingLogin = true
+                        return
+                    }
+
+                    self.isShowingUser.toggle()
+                }
+                .sheet(isPresented: $isShowingUser) {
+                    UserView()
+                }
+            }
+            .sheet(isPresented: $isShowingLogin) {
+                LoginView(isPresented: $isShowingLogin)
+            }
             .appAlert($viewModel.appAlert)
         }
         .notificationView(message: $viewModel.notificationMessage)
     }
-    
+
+    private func isLoggedIn() -> Bool {
+        let keychain = KeychainSwift()
+        return keychain.get(LoginView.loginKeychainKey) != nil
+    }
+
 }
 
 struct LaunchListView_Previews: PreviewProvider {

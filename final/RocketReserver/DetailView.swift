@@ -6,7 +6,8 @@ struct DetailView: View {
     private let placeholderImg = Image("placeholder")
     
     @StateObject private var viewModel: DetailViewModel
-    
+    @State private var isShowingUser = false
+
     init(launchID: RocketReserverAPI.ID) {
         _viewModel = StateObject(wrappedValue: DetailViewModel(launchID: launchID))
     }
@@ -60,6 +61,16 @@ struct DetailView: View {
         .padding(10)
         .navigationTitle(viewModel.launch?.mission?.name ?? "")
         .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            Button("User", systemImage: "person.circle") {
+                if !viewModel.isShowingLogin {
+                    self.isShowingUser.toggle()
+                }
+            }
+            .sheet(isPresented: $isShowingUser) {
+                UserView()
+            }
+        }
         .task {
             viewModel.loadLaunchDetails()
         }
