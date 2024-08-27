@@ -22,7 +22,7 @@ public class LoginMutation: GraphQLMutation {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: ApolloAPI.ParentType { RocketReserverAPI.Objects.Mutation }
+    public static var __parentType: any ApolloAPI.ParentType { RocketReserverAPI.Objects.Mutation }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("login", Login?.self, arguments: ["email": .variable("email")]),
     ] }
@@ -36,7 +36,7 @@ public class LoginMutation: GraphQLMutation {
       public let __data: DataDict
       public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: ApolloAPI.ParentType { RocketReserverAPI.Objects.User }
+      public static var __parentType: any ApolloAPI.ParentType { RocketReserverAPI.Objects.User }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .field("token", String?.self),

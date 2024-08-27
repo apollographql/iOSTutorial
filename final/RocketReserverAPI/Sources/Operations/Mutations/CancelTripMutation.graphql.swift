@@ -22,7 +22,7 @@ public class CancelTripMutation: GraphQLMutation {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: ApolloAPI.ParentType { RocketReserverAPI.Objects.Mutation }
+    public static var __parentType: any ApolloAPI.ParentType { RocketReserverAPI.Objects.Mutation }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("cancelTrip", CancelTrip.self, arguments: ["launchId": .variable("launchId")]),
     ] }
@@ -36,7 +36,7 @@ public class CancelTripMutation: GraphQLMutation {
       public let __data: DataDict
       public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: ApolloAPI.ParentType { RocketReserverAPI.Objects.TripUpdateResponse }
+      public static var __parentType: any ApolloAPI.ParentType { RocketReserverAPI.Objects.TripUpdateResponse }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .field("success", Bool.self),

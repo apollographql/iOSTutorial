@@ -16,7 +16,7 @@ public class TripsBookedSubscription: GraphQLSubscription {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: ApolloAPI.ParentType { RocketReserverAPI.Objects.Subscription }
+    public static var __parentType: any ApolloAPI.ParentType { RocketReserverAPI.Objects.Subscription }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("tripsBooked", Int?.self),
     ] }
