@@ -18,6 +18,9 @@ struct UserView: View {
                         }
                     }
                 }
+                if (viewModel.trips?.count ?? 0) == 0 {
+                    Text("No trips booked")
+                }
             }
             .task {
                 viewModel.loadTrips()
