@@ -3,7 +3,7 @@ import SDWebImageSwiftUI
 import SwiftUI
 
 struct LaunchRow: View {
-    let launch: LaunchListQuery.Data.Launches.Launch
+    let launch: LaunchListDetail
     private let placeholderImg = Image("placeholder")
     
     var body: some View {
