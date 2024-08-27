@@ -11,11 +11,11 @@ class Network {
         let cache = InMemoryNormalizedCache()
         let store = ApolloStore(cache: cache)
         let provider = NetworkInterceptorProvider(client: client, store: store)
-        let url = URL(string: "https://apollo-fullstack-tutorial.herokuapp.com/graphql")!
+        let url = URL(string: "https://ios-spacex-router-1da713d90333.herokuapp.com/")!
         let transport = RequestChainNetworkTransport(interceptorProvider: provider, endpointURL: url)
 
         let webSocket = WebSocket(
-            url: URL(string: "wss://apollo-fullstack-tutorial.herokuapp.com/graphql")!,
+            url: URL(string: "wss://ios-spacex-subgraph-c17ee3a300af.herokuapp.com/graphql")!,
             protocol: .graphql_ws
         )
 
