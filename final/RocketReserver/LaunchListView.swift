@@ -30,14 +30,16 @@ struct LaunchListView: View {
             }
             .navigationTitle("Rocket Launches")
             .toolbar {
-                Button("User", systemImage: "person.circle") {
+                Button(action: {
                     guard self.isLoggedIn() else {
                         isShowingLogin = true
                         return
                     }
 
                     self.isShowingUser.toggle()
-                }
+                }, label: {
+                    Image(systemName: "person.circle")
+                })
                 .sheet(isPresented: $isShowingUser) {
                     UserView()
                 }
