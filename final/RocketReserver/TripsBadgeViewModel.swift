@@ -5,16 +5,17 @@ import SwiftUI
 
 class TripsBadgeViewModel: ObservableObject {
 
+    private var watcher: GraphQLQueryWatcher<MeQuery>?
+
     @Published var count: Int = 0
     @Published var appAlert: AppAlert?
 
     func loadUserTrips() {
-        guard isLoggedIn() else {
-            count = 0
+        guard isLoggedIn(), watcher == nil else {
             return
         }
 
-        _ = Network.shared.apollo.watch(
+        watcher = Network.shared.apollo.watch(
             query: MeQuery(), cachePolicy: .returnCacheDataAndFetch
         ) { [weak self] result in
             guard let self = self else {
@@ -32,6 +33,10 @@ class TripsBadgeViewModel: ObservableObject {
                 self.appAlert = .errors(errors: [error])
             }
         }
+    }
+
+    deinit {
+        watcher?.cancel()
     }
 
     private func isLoggedIn() -> Bool {
