@@ -39,6 +39,9 @@ struct LaunchListView: View {
                     self.isShowingUser.toggle()
                 }, label: {
                     Image(systemName: "person.circle")
+                    .overlay(
+                        TripBadgeView()
+                    )
                 })
                 .sheet(isPresented: $isShowingUser) {
                     UserView()

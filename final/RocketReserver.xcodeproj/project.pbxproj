@@ -27,6 +27,8 @@
 		66F96FE629FC070600713B80 /* NetworkInterceptorProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F96FE529FC070600713B80 /* NetworkInterceptorProvider.swift */; };
 		66F96FE829FC0D7700713B80 /* View+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F96FE729FC0D7700713B80 /* View+Alert.swift */; };
 		66F96FEA29FC183200713B80 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F96FE929FC183200713B80 /* NotificationView.swift */; };
+		E6072AF32C7FEEEB00ED4E49 /* TripsBadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6072AF22C7FEEEB00ED4E49 /* TripsBadgeView.swift */; };
+		E61F95BD2C8264C300A55230 /* TripsBadgeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61F95BC2C8264C300A55230 /* TripsBadgeViewModel.swift */; };
 		E67B2DF02C7D02BC0095602B /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67B2DEF2C7D02BC0095602B /* UserView.swift */; };
 		E67B2DF22C7D03180095602B /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67B2DF12C7D03180095602B /* UserViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -56,6 +58,8 @@
 		66F96FE729FC0D7700713B80 /* View+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Alert.swift"; sourceTree = "<group>"; };
 		66F96FE929FC183200713B80 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		66F96FEB29FC2BF400713B80 /* RocketReserverAPI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = RocketReserverAPI; sourceTree = "<group>"; };
+		E6072AF22C7FEEEB00ED4E49 /* TripsBadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsBadgeView.swift; sourceTree = "<group>"; };
+		E61F95BC2C8264C300A55230 /* TripsBadgeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsBadgeViewModel.swift; sourceTree = "<group>"; };
 		E67B2DEF2C7D02BC0095602B /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		E67B2DF12C7D03180095602B /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		E67B2DF32C7D27620095602B /* Me.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = Me.graphql; sourceTree = "<group>"; };
@@ -131,6 +135,8 @@
 				66F96FA029FAC0D700713B80 /* Preview Content */,
 				E67B2DEF2C7D02BC0095602B /* UserView.swift */,
 				E67B2DF12C7D03180095602B /* UserViewModel.swift */,
+				E6072AF22C7FEEEB00ED4E49 /* TripsBadgeView.swift */,
+				E61F95BC2C8264C300A55230 /* TripsBadgeViewModel.swift */,
 			);
 			path = RocketReserver;
 			sourceTree = "<group>";
@@ -253,8 +259,10 @@
 				66F96F9B29FAC0D600713B80 /* RocketReserverApp.swift in Sources */,
 				66F96FE229FB0A9600713B80 /* LoginViewModel.swift in Sources */,
 				66F96FE429FC069D00713B80 /* AuthorizationInterceptor.swift in Sources */,
+				E61F95BD2C8264C300A55230 /* TripsBadgeViewModel.swift in Sources */,
 				E67B2DF22C7D03180095602B /* UserViewModel.swift in Sources */,
 				E67B2DF02C7D02BC0095602B /* UserView.swift in Sources */,
+				E6072AF32C7FEEEB00ED4E49 /* TripsBadgeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
