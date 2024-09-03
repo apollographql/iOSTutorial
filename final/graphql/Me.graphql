@@ -6,3 +6,12 @@ query Me {
     }
   }
 }
+
+query MeTrips @apollo_client_ios_localCacheMutation {
+  me {
+    trips {
+      ... LaunchListDetail
+      isBooked
+    }
+  }
+}

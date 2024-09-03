@@ -61,6 +61,15 @@ struct DetailView: View {
         .padding(10)
         .navigationTitle(viewModel.launch?.mission?.name ?? "")
         .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            Button(action: { }, label: {
+                Image(systemName: "person.circle")
+                .overlay(
+                    TripBadgeView()
+                )
+            })
+            .disabled(true)
+        }
         .task {
             viewModel.loadLaunchDetails()
         }
