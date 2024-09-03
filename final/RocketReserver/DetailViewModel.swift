@@ -69,14 +69,18 @@ class DetailViewModel: ObservableObject {
                         self.appAlert = .basic(title: "Success!",
                                                message: bookingResult.message ?? "Trip booked successfully")
 
-                        Network.shared.apollo.store.withinReadWriteTransaction { transaction in
-                            let cacheMutation = MeTripsLocalCacheMutation()
+                        if let bookedTrip = bookingResult.launches?.first ?? nil {
+                            Network.shared.apollo.store.withinReadWriteTransaction { transaction in
+                                let cacheMutation = MeTripsLocalCacheMutation()
 
-                            try transaction.update(cacheMutation) { data in
-                                data.me?.trips.append(.init(
-                                    isBooked: true,
-                                    id: id
-                                ))
+                                try transaction.update(cacheMutation) { data in
+                                    data.me?.trips.append(.init(
+                                        isBooked: bookedTrip.isBooked,
+                                        id: bookedTrip.id,
+                                        site: bookedTrip.site,
+                                        mission: bookedTrip.mission
+                                    ))
+                                }
                             }
                         }
                     } else {
