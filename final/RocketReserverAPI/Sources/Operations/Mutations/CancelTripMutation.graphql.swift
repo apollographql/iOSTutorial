@@ -7,7 +7,7 @@ public class CancelTripMutation: GraphQLMutation {
   public static let operationName: String = "CancelTrip"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"mutation CancelTrip($launchId: ID!) { cancelTrip(launchId: $launchId) { __typename success message } }"#
+      #"mutation CancelTrip($launchId: ID!) { cancelTrip(launchId: $launchId) { __typename success message launches { __typename id isBooked } } }"#
     ))
 
   public var launchId: ID
@@ -41,10 +41,30 @@ public class CancelTripMutation: GraphQLMutation {
         .field("__typename", String.self),
         .field("success", Bool.self),
         .field("message", String?.self),
+        .field("launches", [Launch?]?.self),
       ] }
 
       public var success: Bool { __data["success"] }
       public var message: String? { __data["message"] }
+      public var launches: [Launch?]? { __data["launches"] }
+
+      /// CancelTrip.Launch
+      ///
+      /// Parent Type: `Launch`
+      public struct Launch: RocketReserverAPI.SelectionSet {
+        public let __data: DataDict
+        public init(_dataDict: DataDict) { __data = _dataDict }
+
+        public static var __parentType: any ApolloAPI.ParentType { RocketReserverAPI.Objects.Launch }
+        public static var __selections: [ApolloAPI.Selection] { [
+          .field("__typename", String.self),
+          .field("id", RocketReserverAPI.ID.self),
+          .field("isBooked", Bool.self),
+        ] }
+
+        public var id: RocketReserverAPI.ID { __data["id"] }
+        public var isBooked: Bool { __data["isBooked"] }
+      }
     }
   }
 }
