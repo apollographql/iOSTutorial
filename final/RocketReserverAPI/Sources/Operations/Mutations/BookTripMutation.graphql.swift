@@ -7,7 +7,8 @@ public class BookTripMutation: GraphQLMutation {
   public static let operationName: String = "BookTrip"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"mutation BookTrip($id: ID!) { bookTrips(launchIds: [$id]) { __typename success message launches { __typename id isBooked } } }"#
+      #"mutation BookTrip($id: ID!) { bookTrips(launchIds: [$id]) { __typename success message launches { __typename ...LaunchListDetail isBooked } } }"#,
+      fragments: [LaunchListDetail.self]
     ))
 
   public var id: ID
@@ -58,12 +59,23 @@ public class BookTripMutation: GraphQLMutation {
         public static var __parentType: any ApolloAPI.ParentType { RocketReserverAPI.Objects.Launch }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
-          .field("id", RocketReserverAPI.ID.self),
           .field("isBooked", Bool.self),
+          .fragment(LaunchListDetail.self),
         ] }
 
-        public var id: RocketReserverAPI.ID { __data["id"] }
         public var isBooked: Bool { __data["isBooked"] }
+        public var id: RocketReserverAPI.ID { __data["id"] }
+        public var site: String? { __data["site"] }
+        public var mission: Mission? { __data["mission"] }
+
+        public struct Fragments: FragmentContainer {
+          public let __data: DataDict
+          public init(_dataDict: DataDict) { __data = _dataDict }
+
+          public var launchListDetail: LaunchListDetail { _toFragment() }
+        }
+
+        public typealias Mission = LaunchListDetail.Mission
       }
     }
   }

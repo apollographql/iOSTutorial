@@ -3,7 +3,7 @@ mutation BookTrip($id: ID!) {
     success
     message
     launches {
-      id
+      ... LaunchListDetail
       isBooked
     }
   }
