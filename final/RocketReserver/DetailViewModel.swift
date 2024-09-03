@@ -106,6 +106,14 @@ class DetailViewModel: ObservableObject {
                     if cancelResult.success {
                         self.appAlert = .basic(title: "Trip cancelled",
                                                message: cancelResult.message ?? "Your trip has been officially cancelled")
+
+                        Network.shared.apollo.store.withinReadWriteTransaction { transaction in
+                            let cacheMutation = MeTripsLocalCacheMutation()
+
+                            try transaction.update(cacheMutation) { data in
+                                data.me?.trips.removeAll(where: { $0?.id == id })
+                            }
+                        }
                     } else {
                         self.appAlert = .basic(title: "Could not cancel trip",
                                                message: cancelResult.message ?? "Unknown failure.")
