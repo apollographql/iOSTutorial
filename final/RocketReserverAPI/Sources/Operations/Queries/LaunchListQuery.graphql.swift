@@ -6,6 +6,7 @@
 public class LaunchListQuery: GraphQLQuery {
   public static let operationName: String = "LaunchList"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
+    operationIdentifier: "e36bde514d89c67c77502cf15141ea4298d05951aff731bc00bd33dc2d1726d7",
     definition: .init(
       #"query LaunchList($cursor: String) { launches(after: $cursor) { __typename cursor hasMore launches { __typename ...LaunchListDetail } } }"#,
       fragments: [LaunchListDetail.self]

@@ -6,6 +6,7 @@
 public class MeQuery: GraphQLQuery {
   public static let operationName: String = "Me"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
+    operationIdentifier: "461f1e9fef673b78d9c0aeea35efcca1e89930d36c124f5e2988eb2d3e47b6fc",
     definition: .init(
       #"query Me { me { __typename trips { __typename ...LaunchListDetail isBooked } } }"#,
       fragments: [LaunchListDetail.self]

@@ -6,6 +6,7 @@
 public class LaunchDetailsQuery: GraphQLQuery {
   public static let operationName: String = "LaunchDetails"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
+    operationIdentifier: "d7744a7f83cbf4af89458955226445842978163c7a0bddce521e2e113da3b109",
     definition: .init(
       #"query LaunchDetails($launchId: ID!) { launch(id: $launchId) { __typename id site mission { __typename name missionPatch(size: LARGE) } rocket { __typename name type } isBooked } }"#
     ))
