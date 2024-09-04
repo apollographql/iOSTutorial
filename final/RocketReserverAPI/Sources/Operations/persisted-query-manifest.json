@@ -1,0 +1,54 @@
+{
+  "format": "apollo-persisted-query-manifest",
+  "version": 1,
+  "operations": [
+    {
+      "id": "461f1e9fef673b78d9c0aeea35efcca1e89930d36c124f5e2988eb2d3e47b6fc",
+      "body": "query Me { me { __typename trips { __typename ...LaunchListDetail isBooked } } }\nfragment LaunchListDetail on Launch { __typename id site mission { __typename name missionPatch(size: SMALL) } }",
+      "name": "Me",
+      "type": "query"
+    },
+    {
+      "id": "ace9720c2a09e6c4f3cb4b1274529f38eee4db09efcce25b6d5ad771d3e617bd",
+      "body": "query MeTrips { me { __typename trips { __typename ...LaunchListDetail isBooked } } }\nfragment LaunchListDetail on Launch { __typename id site mission { __typename name missionPatch(size: SMALL) } }",
+      "name": "MeTrips",
+      "type": "query"
+    },
+    {
+      "id": "efa1f4a8bcbcb0afb2d51e50dccc4f9edb8fee7795f49bd470fb688bb8fb5e3b",
+      "body": "mutation Login($email: String!) { login(email: $email) { __typename token } }",
+      "name": "Login",
+      "type": "mutation"
+    },
+    {
+      "id": "d7744a7f83cbf4af89458955226445842978163c7a0bddce521e2e113da3b109",
+      "body": "query LaunchDetails($launchId: ID!) { launch(id: $launchId) { __typename id site mission { __typename name missionPatch(size: LARGE) } rocket { __typename name type } isBooked } }",
+      "name": "LaunchDetails",
+      "type": "query"
+    },
+    {
+      "id": "6669e04c6fbeb58333331f745fb8f913bbbf14358309fba9ebb934ec35bbf2e9",
+      "body": "mutation BookTrip($id: ID!) { bookTrips(launchIds: [$id]) { __typename success message launches { __typename ...LaunchListDetail isBooked } } }\nfragment LaunchListDetail on Launch { __typename id site mission { __typename name missionPatch(size: SMALL) } }",
+      "name": "BookTrip",
+      "type": "mutation"
+    },
+    {
+      "id": "efbc2aedb0b53499cb2e72e21aa6c74789dae5d5b8e0195657cc95f1f5509b02",
+      "body": "subscription TripsBooked { tripsBooked }",
+      "name": "TripsBooked",
+      "type": "subscription"
+    },
+    {
+      "id": "e36bde514d89c67c77502cf15141ea4298d05951aff731bc00bd33dc2d1726d7",
+      "body": "query LaunchList($cursor: String) { launches(after: $cursor) { __typename cursor hasMore launches { __typename ...LaunchListDetail } } }\nfragment LaunchListDetail on Launch { __typename id site mission { __typename name missionPatch(size: SMALL) } }",
+      "name": "LaunchList",
+      "type": "query"
+    },
+    {
+      "id": "fc0763adcfa1b9ae4d3cb5e876beb0a00f66205598c8bf2d401333bba6000024",
+      "body": "mutation CancelTrip($launchId: ID!) { cancelTrip(launchId: $launchId) { __typename success message launches { __typename id isBooked } } }",
+      "name": "CancelTrip",
+      "type": "mutation"
+    }
+  ]
+}

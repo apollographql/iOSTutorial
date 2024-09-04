@@ -6,6 +6,7 @@
 public class CancelTripMutation: GraphQLMutation {
   public static let operationName: String = "CancelTrip"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
+    operationIdentifier: "fc0763adcfa1b9ae4d3cb5e876beb0a00f66205598c8bf2d401333bba6000024",
     definition: .init(
       #"mutation CancelTrip($launchId: ID!) { cancelTrip(launchId: $launchId) { __typename success message launches { __typename id isBooked } } }"#
     ))

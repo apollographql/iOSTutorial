@@ -6,6 +6,7 @@
 public class TripsBookedSubscription: GraphQLSubscription {
   public static let operationName: String = "TripsBooked"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
+    operationIdentifier: "efbc2aedb0b53499cb2e72e21aa6c74789dae5d5b8e0195657cc95f1f5509b02",
     definition: .init(
       #"subscription TripsBooked { tripsBooked }"#
     ))

@@ -63,6 +63,7 @@
 		E67B2DEF2C7D02BC0095602B /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		E67B2DF12C7D03180095602B /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		E67B2DF32C7D27620095602B /* Me.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = Me.graphql; sourceTree = "<group>"; };
+		E6F3F8F22C87D896002A01EB /* apollo-codegen-config.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "apollo-codegen-config.json"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +100,7 @@
 		66F96F8E29FAC0D600713B80 = {
 			isa = PBXGroup;
 			children = (
+				E6F3F8F22C87D896002A01EB /* apollo-codegen-config.json */,
 				66D7A53A2A056886009DDB89 /* graphql */,
 				66F96FCD29FAD2DD00713B80 /* Packages */,
 				66F96F9929FAC0D600713B80 /* RocketReserver */,

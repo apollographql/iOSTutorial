@@ -25,6 +25,17 @@
       }
     }
   },
+  "options" : {
+    "operationDocumentFormat" : [
+      "definition",
+      "operationId"
+    ]
+  },
+  "operationManifest" : {
+    "generateManifestOnCodeGeneration" : true,
+    "path" : "./RocketReserverAPI/Sources/Operations/persisted-query-manifest.json",
+    "version" : "persistedQueries"
+  },
   "schemaDownloadConfiguration": {
     "downloadMethod": {
         "introspection": {
