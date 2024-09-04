@@ -25,6 +25,12 @@
       }
     }
   },
+  "options" : {
+    "operationDocumentFormat" : [
+      "definition",
+      "operationId"
+    ]
+  },
   "schemaDownloadConfiguration": {
     "downloadMethod": {
         "introspection": {
