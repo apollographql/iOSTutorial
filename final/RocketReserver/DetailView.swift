@@ -6,7 +6,8 @@ struct DetailView: View {
     private let placeholderImg = Image("placeholder")
     
     @StateObject private var viewModel: DetailViewModel
-    
+    @State private var isShowingUser = false
+
     init(launchID: RocketReserverAPI.ID) {
         _viewModel = StateObject(wrappedValue: DetailViewModel(launchID: launchID))
     }

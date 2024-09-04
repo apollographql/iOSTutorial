@@ -3,12 +3,16 @@ query LaunchList($cursor: String) {
     cursor
     hasMore
     launches {
-      id
-      site
-      mission {
-        name
-        missionPatch(size: SMALL)
-      }
+      ... LaunchListDetail
     }
+  }
+}
+
+fragment LaunchListDetail on Launch {
+  id
+  site
+  mission {
+    name
+    missionPatch(size: SMALL)
   }
 }

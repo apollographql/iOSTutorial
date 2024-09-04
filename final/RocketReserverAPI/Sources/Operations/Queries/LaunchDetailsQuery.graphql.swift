@@ -22,7 +22,7 @@ public class LaunchDetailsQuery: GraphQLQuery {
     public let __data: DataDict
     public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: ApolloAPI.ParentType { RocketReserverAPI.Objects.Query }
+    public static var __parentType: any ApolloAPI.ParentType { RocketReserverAPI.Objects.Query }
     public static var __selections: [ApolloAPI.Selection] { [
       .field("launch", Launch?.self, arguments: ["id": .variable("launchId")]),
     ] }
@@ -36,7 +36,7 @@ public class LaunchDetailsQuery: GraphQLQuery {
       public let __data: DataDict
       public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: ApolloAPI.ParentType { RocketReserverAPI.Objects.Launch }
+      public static var __parentType: any ApolloAPI.ParentType { RocketReserverAPI.Objects.Launch }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .field("id", RocketReserverAPI.ID.self),
@@ -59,7 +59,7 @@ public class LaunchDetailsQuery: GraphQLQuery {
         public let __data: DataDict
         public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: ApolloAPI.ParentType { RocketReserverAPI.Objects.Mission }
+        public static var __parentType: any ApolloAPI.ParentType { RocketReserverAPI.Objects.Mission }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
           .field("name", String?.self),
@@ -77,7 +77,7 @@ public class LaunchDetailsQuery: GraphQLQuery {
         public let __data: DataDict
         public init(_dataDict: DataDict) { __data = _dataDict }
 
-        public static var __parentType: ApolloAPI.ParentType { RocketReserverAPI.Objects.Rocket }
+        public static var __parentType: any ApolloAPI.ParentType { RocketReserverAPI.Objects.Rocket }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
           .field("name", String?.self),

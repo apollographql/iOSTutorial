@@ -27,6 +27,8 @@
 		66F96FE629FC070600713B80 /* NetworkInterceptorProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F96FE529FC070600713B80 /* NetworkInterceptorProvider.swift */; };
 		66F96FE829FC0D7700713B80 /* View+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F96FE729FC0D7700713B80 /* View+Alert.swift */; };
 		66F96FEA29FC183200713B80 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F96FE929FC183200713B80 /* NotificationView.swift */; };
+		E67B2DF02C7D02BC0095602B /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67B2DEF2C7D02BC0095602B /* UserView.swift */; };
+		E67B2DF22C7D03180095602B /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67B2DF12C7D03180095602B /* UserViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +56,9 @@
 		66F96FE729FC0D7700713B80 /* View+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Alert.swift"; sourceTree = "<group>"; };
 		66F96FE929FC183200713B80 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		66F96FEB29FC2BF400713B80 /* RocketReserverAPI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = RocketReserverAPI; sourceTree = "<group>"; };
+		E67B2DEF2C7D02BC0095602B /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
+		E67B2DF12C7D03180095602B /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		E67B2DF32C7D27620095602B /* Me.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = Me.graphql; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +87,7 @@
 				66D7A53F2A056886009DDB89 /* TripsBooked.graphql */,
 				66D7A5402A056886009DDB89 /* LaunchList.graphql */,
 				66D7A5412A056886009DDB89 /* CancelTrip.graphql */,
+				E67B2DF32C7D27620095602B /* Me.graphql */,
 			);
 			path = graphql;
 			sourceTree = "<group>";
@@ -123,6 +129,8 @@
 				66F96FE929FC183200713B80 /* NotificationView.swift */,
 				66F96F9E29FAC0D700713B80 /* Assets.xcassets */,
 				66F96FA029FAC0D700713B80 /* Preview Content */,
+				E67B2DEF2C7D02BC0095602B /* UserView.swift */,
+				E67B2DF12C7D03180095602B /* UserViewModel.swift */,
 			);
 			path = RocketReserver;
 			sourceTree = "<group>";
@@ -245,6 +253,8 @@
 				66F96F9B29FAC0D600713B80 /* RocketReserverApp.swift in Sources */,
 				66F96FE229FB0A9600713B80 /* LoginViewModel.swift in Sources */,
 				66F96FE429FC069D00713B80 /* AuthorizationInterceptor.swift in Sources */,
+				E67B2DF22C7D03180095602B /* UserViewModel.swift in Sources */,
+				E67B2DF02C7D02BC0095602B /* UserView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
