@@ -9,12 +9,14 @@ struct LaunchRow: View {
     var body: some View {
         HStack {
             if let missionPatch = launch.mission?.missionPatch {
-                WebImage(url: URL(string: missionPatch))
-                    .resizable()
-                    .placeholder(placeholderImg)
-                    .indicator(.activity)
-                    .scaledToFit()
-                    .frame(width: 50, height: 50)
+                WebImage(url: URL(string: missionPatch)) { image in
+                    image.resizable()
+                } placeholder: {
+                    placeholderImg.resizable()
+                }
+                .indicator(.activity)
+                .scaledToFit()
+                .frame(width: 50, height: 50)
             } else {
                 placeholderImg
                     .resizable()

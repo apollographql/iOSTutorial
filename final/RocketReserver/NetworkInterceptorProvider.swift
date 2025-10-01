@@ -2,12 +2,10 @@ import Foundation
 import Apollo
 import ApolloAPI
 
-class NetworkInterceptorProvider: DefaultInterceptorProvider {
+struct NetworkInterceptorProvider: InterceptorProvider {
     
-    override func interceptors<Operation>(for operation: Operation) -> [ApolloInterceptor] where Operation : GraphQLOperation {
-        var interceptors = super.interceptors(for: operation)
-        interceptors.insert(AuthorizationInterceptor(), at: 0)
-        return interceptors
+    func httpInterceptors<Operation: GraphQLOperation>(for operation: Operation) -> [any HTTPInterceptor] {
+        return DefaultInterceptorProvider.shared.httpInterceptors(for: operation) + [AuthorizationInterceptor()]
     }
     
 }

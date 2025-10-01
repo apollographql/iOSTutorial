@@ -6,6 +6,7 @@ import ApolloAPI
 public extension Objects {
   static let Launch = ApolloAPI.Object(
     typename: "Launch",
-    implementedInterfaces: []
+    implementedInterfaces: [],
+    keyFields: nil
   )
 }

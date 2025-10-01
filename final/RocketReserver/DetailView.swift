@@ -16,12 +16,14 @@ struct DetailView: View {
             if let launch = viewModel.launch {
                 HStack(spacing: 10) {
                     if let missionPatch = launch.mission?.missionPatch {
-                        WebImage(url: URL(string: missionPatch))
-                            .resizable()
-                            .placeholder(placeholderImg)
-                            .indicator(.activity)
-                            .scaledToFit()
-                            .frame(width: 165, height: 165)
+                        WebImage(url: URL(string: missionPatch)) { image in
+                            image.resizable()
+                        } placeholder: {
+                            placeholderImg.resizable()
+                        }
+                        .indicator(.activity)
+                        .scaledToFit()
+                        .frame(width: 165, height: 165)
                     } else {
                         placeholderImg
                             .resizable()

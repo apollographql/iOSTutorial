@@ -6,6 +6,7 @@ import ApolloAPI
 public extension Objects {
   static let Rocket = ApolloAPI.Object(
     typename: "Rocket",
-    implementedInterfaces: []
+    implementedInterfaces: [],
+    keyFields: nil
   )
 }

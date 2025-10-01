@@ -20,9 +20,9 @@ class DetailViewModel: ObservableObject {
             return
         }
         
-        let cachePolicy: CachePolicy = forceReload ? .fetchIgnoringCacheData : .returnCacheDataElseFetch
+//        let cachePolicy: CachePolicy.Query.SingleResponse = forceReload ? .networkOnly : .cacheFirst
         
-        Network.shared.apollo.fetch(query: LaunchDetailsQuery(launchId: launchID), cachePolicy: cachePolicy) { [weak self] result in
+        Network.shared.apollo.fetch(query: LaunchDetailsQuery(launchId: launchID), cachePolicy: (forceReload ? .fetchIgnoringCacheData : .returnCacheDataElseFetch)) { [weak self] result in
             guard let self = self else {
                 return
             }
