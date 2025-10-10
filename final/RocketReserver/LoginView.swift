@@ -1,4 +1,5 @@
 import SwiftUI
+import Apollo
 
 struct LoginView: View {
     static let loginKeychainKey = "login"
@@ -6,8 +7,11 @@ struct LoginView: View {
     @State private var email: String = ""
     @StateObject var viewModel: LoginViewModel
     
-    init(isPresented: Binding<Bool>) {
-        _viewModel = StateObject(wrappedValue: LoginViewModel(isPresented: isPresented))
+    init(
+        apolloClient: ApolloClient,
+        isPresented: Binding<Bool>
+    ) {
+        _viewModel = StateObject(wrappedValue: LoginViewModel(apolloClient: apolloClient, isPresented: isPresented))
     }
     
     var body: some View {
@@ -32,7 +36,9 @@ struct LoginView: View {
                     .textFieldStyle(.roundedBorder)
                 
                 Button(viewModel.isSubmitEnabled ? "Submit" : "Submitting...") {
-                    viewModel.login(with: email)
+                    Task {
+                        await viewModel.login(with: email)
+                    }
                 }
                 .disabled(!viewModel.isSubmitEnabled)
                 

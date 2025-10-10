@@ -1,29 +1,39 @@
 import SwiftUI
+import Apollo
 
 struct LaunchListView: View {
+    @StateObject private var viewModel: LaunchListViewModel
+    let apolloClient: ApolloClient
     
-    @StateObject private var viewModel = LaunchListViewModel()
+    init(apolloClient: ApolloClient) {
+        self.apolloClient = apolloClient
+        _viewModel = StateObject(wrappedValue: LaunchListViewModel(apolloClient: apolloClient))
+    }
     
     var body: some View {
         NavigationStack {
             List {
                 ForEach(0..<viewModel.launches.count, id: \.self) { index in
-                    NavigationLink(destination: DetailView(launchID: viewModel.launches[index].id)) {
+                    NavigationLink(destination: DetailView(apolloClient: apolloClient, launchID: viewModel.launches[index].id)) {
                         LaunchRow(launch: viewModel.launches[index])
                     }
                 }
                 if viewModel.lastConnection?.hasMore != false {
-                    if viewModel.activeRequest == nil {
-                        Button(action: viewModel.loadMoreLaunchesIfTheyExist) {
-                            Text("Tap to load more")
-                        }
+                    if !viewModel.activeRequest {
+                        Button(action: {
+                            Task {
+                                await viewModel.loadMoreLaunchesIfTheyExist()
+                            }
+                        }, label: {
+                          Text("Tap to load more")
+                        })
                     } else {
                         Text("Loading...")
                     }
                 }
             }
             .task {
-                viewModel.loadMoreLaunchesIfTheyExist()
+                await viewModel.loadMoreLaunchesIfTheyExist()
             }
             .navigationTitle("Rocket Launches")
             .appAlert($viewModel.appAlert)
@@ -35,6 +45,6 @@ struct LaunchListView: View {
 
 struct LaunchListView_Previews: PreviewProvider {
     static var previews: some View {
-        LaunchListView()
+        LaunchListView(apolloClient: .default())
     }
 }

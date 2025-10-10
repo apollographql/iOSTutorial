@@ -2,40 +2,19 @@ import Apollo
 import RocketReserverAPI
 import SwiftUI
 
+@MainActor
 class LaunchListViewModel: ObservableObject {
+    
+    private let apolloClient: ApolloClient
     
     @Published var launches = [LaunchListQuery.Data.Launches.Launch]()
     @Published var lastConnection: LaunchListQuery.Data.Launches?
-    @Published var activeRequest: Cancellable?
-    var activeSubscription: Cancellable?
+    @Published var activeRequest: Bool = false
     @Published var appAlert: AppAlert?
     @Published var notificationMessage: String?
     
-    init() {
-        startSubscription()
-    }
-    
-    // MARK: - Subscriptions
-    
-    func startSubscription() {
-        activeSubscription = Network.shared.apollo.subscribe(subscription: TripsBookedSubscription()) { [weak self] result in
-            guard let self = self else {
-                return
-            }
-            
-            switch result {
-            case .success(let graphQLResult):
-                if let tripsBooked = graphQLResult.data?.tripsBooked {
-                    self.handleTripsBooked(value: tripsBooked)
-                }
-                
-                if let errors = graphQLResult.errors {
-                    self.appAlert = .errors(errors: errors)
-                }
-            case .failure(let error):
-                self.appAlert = .errors(errors: [error])
-            }
-        }
+    init(apolloClient: ApolloClient) {
+        self.apolloClient = apolloClient
     }
     
     private func handleTripsBooked(value: Int) {
@@ -56,9 +35,11 @@ class LaunchListViewModel: ObservableObject {
     
     // MARK: - Launch Loading
     
-    func loadMoreLaunchesIfTheyExist() {
+    func loadMoreLaunchesIfTheyExist() async {
+        guard !activeRequest else { return }
+        
         guard let connection = self.lastConnection else {
-            self.loadMoreLaunches(from: nil)
+            await self.loadMoreLaunches(from: nil)
             return
         }
         
@@ -66,30 +47,28 @@ class LaunchListViewModel: ObservableObject {
             return
         }
         
-        self.loadMoreLaunches(from: connection.cursor)
+        await self.loadMoreLaunches(from: connection.cursor)
     }
     
-    private func loadMoreLaunches(from cursor: String?) {
-        self.activeRequest = Network.shared.apollo.fetch(query: LaunchListQuery(cursor: cursor ?? .null)) { [weak self] result in
-            guard let self = self else {
-                return
+    private func loadMoreLaunches(from cursor: String?) async {
+        defer {
+            activeRequest = false
+        }
+        
+        do {
+            activeRequest = true
+            let response = try await apolloClient.fetch(query: LaunchListQuery(cursor: cursor ?? .null))
+            
+            if let errors = response.errors {
+                appAlert = .errors(errors: errors)
             }
             
-            self.activeRequest = nil
-            
-            switch result {
-            case .success(let graphQLResult):
-                if let launchConnection = graphQLResult.data?.launches {
-                    self.lastConnection = launchConnection
-                    self.launches.append(contentsOf: launchConnection.launches.compactMap({ $0 }))
-                }
-                
-                if let errors = graphQLResult.errors {
-                    self.appAlert = .errors(errors: errors)
-                }
-            case .failure(let error):
-                self.appAlert = .errors(errors: [error])
+            if let launchConnection = response.data?.launches {
+                lastConnection = launchConnection
+                launches.append(contentsOf: launchConnection.launches.compactMap({ $0 }))
             }
+        } catch {
+            appAlert = .errors(errors: [error])
         }
     }
     

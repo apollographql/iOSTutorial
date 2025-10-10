@@ -15,7 +15,7 @@ let package = Package(
     .library(name: "RocketReserverAPI", targets: ["RocketReserverAPI"]),
   ],
   dependencies: [
-    .package(url: "https://github.com/apollographql/apollo-ios", exact: "2.0.0-beta-3"),
+    .package(url: "https://github.com/apollographql/apollo-ios", exact: "2.0.1"),
   ],
   targets: [
     .target(

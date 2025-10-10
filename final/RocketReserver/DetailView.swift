@@ -1,14 +1,20 @@
 import RocketReserverAPI
 import SDWebImageSwiftUI
 import SwiftUI
+import Apollo
 
 struct DetailView: View {
     private let placeholderImg = Image("placeholder")
+    let apolloClient: ApolloClient
     
     @StateObject private var viewModel: DetailViewModel
     
-    init(launchID: RocketReserverAPI.ID) {
-        _viewModel = StateObject(wrappedValue: DetailViewModel(launchID: launchID))
+    init(
+        apolloClient: ApolloClient,
+        launchID: RocketReserverAPI.ID
+    ) {
+        self.apolloClient = apolloClient
+        _viewModel = StateObject(wrappedValue: DetailViewModel(apolloClient: apolloClient, launchID: launchID))
     }
     
     var body: some View {
@@ -63,29 +69,37 @@ struct DetailView: View {
         .navigationTitle(viewModel.launch?.mission?.name ?? "")
         .navigationBarTitleDisplayMode(.inline)
         .task {
-            viewModel.loadLaunchDetails()
+            await viewModel.loadLaunchDetails()
         }
         .sheet(isPresented: $viewModel.isShowingLogin) {
-            LoginView(isPresented: $viewModel.isShowingLogin)
+            LoginView(apolloClient: apolloClient, isPresented: $viewModel.isShowingLogin)
         }
         .appAlert($viewModel.appAlert)
     }
     
     private func bookTripButton() -> some View {
-        Button(action: viewModel.bookOrCancel) {
+        Button(action: {
+            Task {
+                await viewModel.bookOrCancel()
+            }
+        }, label: {
             Text("Book now!")
                 .foregroundColor(.black)
-        }
+        })
         .frame(width: 200, height: 50)
         .background(.green)
         .cornerRadius(8)
     }
     
     private func cancelTripButton() -> some View {
-        Button(action: viewModel.bookOrCancel) {
+        Button(action: {
+            Task {
+                await viewModel.bookOrCancel()
+            }
+        }, label: {
             Text("Cancel trip")
                 .foregroundColor(.black)
-        }
+        })
         .frame(width: 200, height: 50)
         .background(.red)
         .cornerRadius(8)
@@ -95,6 +109,6 @@ struct DetailView: View {
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailView(launchID: "110")
+        DetailView(apolloClient: .default(), launchID: "110")
     }
 }

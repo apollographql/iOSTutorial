@@ -1,19 +1,27 @@
 import KeychainSwift
 import RocketReserverAPI
 import SwiftUI
+import Apollo
 
+@MainActor
 class LoginViewModel: ObservableObject {
+    
+    let apolloClient: ApolloClient
     
     @Binding var isPresented: Bool
     @Published var isSubmitEnabled: Bool = true
     @Published var errorText: String?
     @Published var appAlert: AppAlert?
     
-    init(isPresented: Binding<Bool>) {
+    init(
+        apolloClient: ApolloClient,
+        isPresented: Binding<Bool>
+    ) {
+        self.apolloClient = apolloClient
         self._isPresented = isPresented
     }
     
-    func login(with email: String?) {
+    func login(with email: String?) async {
         errorText = nil
         isSubmitEnabled = false
         
@@ -29,25 +37,20 @@ class LoginViewModel: ObservableObject {
             return
         }
         
-        Network.shared.apollo.perform(mutation: LoginMutation(email: email)) { [weak self] result in
-            defer {
-                self?.isSubmitEnabled = true
+        do {
+            let response = try await apolloClient.perform(mutation: LoginMutation(email: email))
+            
+            if let errors = response.errors {
+                appAlert = .errors(errors: errors)
             }
             
-            switch result {
-            case .success(let graphQLResult):
-                if let token = graphQLResult.data?.login?.token {
-                    let keychain = KeychainSwift()
-                    keychain.set(token, forKey: LoginView.loginKeychainKey)
-                    self?.isPresented = false
-                }
-                
-                if let errors = graphQLResult.errors {
-                    self?.appAlert = .errors(errors: errors)
-                }
-            case .failure(let error):
-                self?.appAlert = .errors(errors: [error])
+            if let token = response.data?.login?.token {
+                let keychain = KeychainSwift()
+                keychain.set(token, forKey: LoginView.loginKeychainKey)
+                isPresented = false
             }
+        } catch {
+            appAlert = .errors(errors: [error])
         }
     }
     
