@@ -1,6 +1,6 @@
+import SwiftUI
 import RocketReserverAPI
 import SDWebImageSwiftUI
-import SwiftUI
 
 struct LaunchRow: View {
     let launch: LaunchListQuery.Data.Launches.Launch
@@ -29,7 +29,6 @@ struct LaunchRow: View {
                 Text(launch.site ?? "Launch Site")
                     .font(.system(size: 14))
             }
-            
             Spacer()
         }
         .padding(4)

@@ -16,8 +16,7 @@
     "schemaTypes" : {
       "path" : "./RocketReserverAPI",
       "moduleType" : {
-        "swiftPackage": {
-          "apolloSDKDependency" : {}
+        "swiftPackage" : {
         }
       }
     },

@@ -1,4 +1,3 @@
-import Apollo
 import SwiftUI
 
 enum AppAlert {

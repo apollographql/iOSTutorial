@@ -1,7 +1,7 @@
 query LaunchList($cursor: String) {
   launches(after: $cursor) {
-    cursor
     hasMore
+    cursor
     launches {
       id
       site

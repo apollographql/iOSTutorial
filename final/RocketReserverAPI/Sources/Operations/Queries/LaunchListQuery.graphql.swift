@@ -8,7 +8,7 @@ public struct LaunchListQuery: GraphQLQuery {
   public static let operationName: String = "LaunchList"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"query LaunchList($cursor: String) { launches(after: $cursor) { __typename cursor hasMore launches { __typename id site mission { __typename name missionPatch(size: SMALL) } } } }"#
+      #"query LaunchList($cursor: String) { launches(after: $cursor) { __typename hasMore cursor launches { __typename id site mission { __typename name missionPatch(size: SMALL) } } } }"#
     ))
 
   public var cursor: GraphQLNullable<String>
@@ -43,16 +43,16 @@ public struct LaunchListQuery: GraphQLQuery {
       @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { RocketReserverAPI.Objects.LaunchConnection }
       @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
-        .field("cursor", String.self),
         .field("hasMore", Bool.self),
+        .field("cursor", String.self),
         .field("launches", [Launch?].self),
       ] }
       @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
         LaunchListQuery.Data.Launches.self
       ] }
 
-      public var cursor: String { __data["cursor"] }
       public var hasMore: Bool { __data["hasMore"] }
+      public var cursor: String { __data["cursor"] }
       public var launches: [Launch?] { __data["launches"] }
 
       /// Launches.Launch

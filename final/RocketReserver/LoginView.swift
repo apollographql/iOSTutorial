@@ -1,5 +1,4 @@
 import SwiftUI
-import Apollo
 
 struct LoginView: View {
     static let loginKeychainKey = "login"
@@ -7,11 +6,8 @@ struct LoginView: View {
     @State private var email: String = ""
     @StateObject var viewModel: LoginViewModel
     
-    init(
-        apolloClient: ApolloClient,
-        isPresented: Binding<Bool>
-    ) {
-        _viewModel = StateObject(wrappedValue: LoginViewModel(apolloClient: apolloClient, isPresented: isPresented))
+    init(isPresented: Binding<Bool>) {
+        _viewModel = StateObject(wrappedValue: LoginViewModel(isPresented: isPresented))
     }
     
     var body: some View {

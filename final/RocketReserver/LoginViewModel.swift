@@ -1,23 +1,17 @@
-import KeychainSwift
-import RocketReserverAPI
 import SwiftUI
 import Apollo
+import RocketReserverAPI
+import KeychainSwift
 
 @MainActor
 class LoginViewModel: ObservableObject {
-    
-    let apolloClient: ApolloClient
     
     @Binding var isPresented: Bool
     @Published var isSubmitEnabled: Bool = true
     @Published var errorText: String?
     @Published var appAlert: AppAlert?
     
-    init(
-        apolloClient: ApolloClient,
-        isPresented: Binding<Bool>
-    ) {
-        self.apolloClient = apolloClient
+    init(isPresented: Binding<Bool>) {
         self._isPresented = isPresented
     }
     
@@ -38,7 +32,7 @@ class LoginViewModel: ObservableObject {
         }
         
         do {
-            let response = try await apolloClient.perform(mutation: LoginMutation(email: email))
+            let response = try await ApolloClient.shared.perform(mutation: LoginMutation(email: email))
             
             if let errors = response.errors {
                 appAlert = .errors(errors: errors)

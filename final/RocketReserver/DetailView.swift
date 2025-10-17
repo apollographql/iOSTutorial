@@ -1,20 +1,14 @@
+import SwiftUI
 import RocketReserverAPI
 import SDWebImageSwiftUI
-import SwiftUI
-import Apollo
 
 struct DetailView: View {
     private let placeholderImg = Image("placeholder")
-    let apolloClient: ApolloClient
     
     @StateObject private var viewModel: DetailViewModel
     
-    init(
-        apolloClient: ApolloClient,
-        launchID: RocketReserverAPI.ID
-    ) {
-        self.apolloClient = apolloClient
-        _viewModel = StateObject(wrappedValue: DetailViewModel(apolloClient: apolloClient, launchID: launchID))
+    init(launchID: RocketReserverAPI.ID) {
+        _viewModel = StateObject(wrappedValue: DetailViewModel(launchID: launchID))
     }
     
     var body: some View {
@@ -72,7 +66,7 @@ struct DetailView: View {
             await viewModel.loadLaunchDetails()
         }
         .sheet(isPresented: $viewModel.isShowingLogin) {
-            LoginView(apolloClient: apolloClient, isPresented: $viewModel.isShowingLogin)
+            LoginView(isPresented: $viewModel.isShowingLogin)
         }
         .appAlert($viewModel.appAlert)
     }
@@ -109,6 +103,6 @@ struct DetailView: View {
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailView(apolloClient: .default(), launchID: "110")
+        DetailView(launchID: "110")
     }
 }

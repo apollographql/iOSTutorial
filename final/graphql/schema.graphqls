@@ -3,6 +3,44 @@ A directive used by the Apollo iOS client to annotate operations or fragments th
 """
 directive @apollo_client_ios_localCacheMutation on QUERY | MUTATION | SUBSCRIPTION | FRAGMENT_DEFINITION
 
+"""
+A directive used by the Apollo iOS code generation engine to generate custom import statements in operation or fragment definition files. An import statement to import a module with the name provided in the `module` argument will be added to the generated definition file.
+"""
+directive @import(
+  """The name of the module to import."""
+  module: String!
+) repeatable on QUERY | MUTATION | SUBSCRIPTION | FRAGMENT_DEFINITION
+
+"""Attach extra information to a given type."""
+directive @typePolicy(
+  """
+  A selection set containing fields used to compute the cache key of an object. Referenced fields must have non-nullable scalar types. Order is important.
+  """
+  keyFields: String!
+) on OBJECT | INTERFACE
+
+"""
+A directive used by Apollo iOS to map query input data to cache keys of objects.
+"""
+directive @fieldPolicy(
+  """The field you are setting the @fieldPolicy for."""
+  forField: String!
+
+  """Set of fields used to compute the cache key."""
+  keyArgs: String!
+) repeatable on OBJECT | INTERFACE
+
+"""
+Directs the executor to defer this fragment when the `if` argument is true or undefined.
+"""
+directive @defer(
+  """Deferred when true or undefined."""
+  if: Boolean
+
+  """Unique name"""
+  label: String
+) on FRAGMENT_SPREAD | INLINE_FRAGMENT
+
 type Query {
   launches(
     """The number of results to show. Must be >= 1. Default = 20"""

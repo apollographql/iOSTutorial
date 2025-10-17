@@ -59,20 +59,28 @@ struct DetailView: View {
     }
     
     private func bookTripButton() -> some View {
-        Button(action: viewModel.bookOrCancel) {
+        Button(action: {
+            Task {
+                await viewModel.bookOrCancel()
+            }
+        }, label: {
             Text("Book now!")
                 .foregroundColor(.black)
-        }
+        })
         .frame(width: 200, height: 50)
         .background(.green)
         .cornerRadius(8)
     }
     
     private func cancelTripButton() -> some View {
-        Button(action: viewModel.bookOrCancel) {
+        Button(action: {
+            Task {
+                await viewModel.bookOrCancel()
+            }
+        }, label: {
             Text("Cancel trip")
                 .foregroundColor(.black)
-        }
+        })
         .frame(width: 200, height: 50)
         .background(.red)
         .cornerRadius(8)

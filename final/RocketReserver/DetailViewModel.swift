@@ -1,23 +1,20 @@
-import Apollo
-import KeychainSwift
-import RocketReserverAPI
 import SwiftUI
+import Apollo
+import RocketReserverAPI
+import KeychainSwift
 
 @MainActor
 class DetailViewModel: ObservableObject {
     
     let launchID: RocketReserverAPI.ID
-    let apolloClient: ApolloClient
     
     @Published var launch: LaunchDetailsQuery.Data.Launch?
     @Published var isShowingLogin = false
     @Published var appAlert: AppAlert?
     
     init(
-        apolloClient: ApolloClient,
         launchID: RocketReserverAPI.ID
     ) {
-        self.apolloClient = apolloClient
         self.launchID = launchID
     }
     
@@ -29,7 +26,7 @@ class DetailViewModel: ObservableObject {
         let cachePolicy: CachePolicy.Query.SingleResponse = forceReload ? .networkOnly : .cacheFirst
         
         do {
-            let response = try await apolloClient.fetch(
+            let response = try await ApolloClient.shared.fetch(
                 query: LaunchDetailsQuery(launchId: launchID),
                 cachePolicy: cachePolicy
             )
@@ -61,7 +58,7 @@ class DetailViewModel: ObservableObject {
     
     private func bookTrip(with id: RocketReserverAPI.ID) async {
         do {
-            let response = try await apolloClient.perform(mutation: BookTripMutation(id: id))
+            let response = try await ApolloClient.shared.perform(mutation: BookTripMutation(id: id))
             
             if let errors = response.errors {
                 appAlert = .errors(errors: errors)
@@ -85,7 +82,7 @@ class DetailViewModel: ObservableObject {
     
     private func cancelTrip(with id: RocketReserverAPI.ID) async {
         do {
-            let response = try await apolloClient.perform(mutation: CancelTripMutation(launchId: id))
+            let response = try await ApolloClient.shared.perform(mutation: CancelTripMutation(launchId: id))
             
             if let errors = response.errors {
                 appAlert = .errors(errors: errors)
@@ -108,8 +105,7 @@ class DetailViewModel: ObservableObject {
     
     private func isLoggedIn() -> Bool {
         let keychain = KeychainSwift()
-        let login = keychain.get(LoginView.loginKeychainKey) != nil
-        return login
+        return keychain.get(LoginView.loginKeychainKey) != nil
     }
     
 }

@@ -3,41 +3,46 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6618E6852E9970AF00C568F6 /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 6618E6842E9970AF00C568F6 /* Apollo */; };
-		6618E6872E9970AF00C568F6 /* ApolloAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 6618E6862E9970AF00C568F6 /* ApolloAPI */; };
-		6618E68B2E99849000C568F6 /* ApolloClient+Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6618E68A2E99848500C568F6 /* ApolloClient+Setup.swift */; };
-		6651EFF12E8C450400192FB4 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 6651EFF02E8C450400192FB4 /* KeychainSwift */; };
-		6651EFF42E8C45E100192FB4 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 6651EFF32E8C45E100192FB4 /* SDWebImageSwiftUI */; };
+		6618E68E2E998DF600C568F6 /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 6618E68D2E998DF600C568F6 /* Apollo */; };
+		6618E6CB2E9C843200C568F6 /* RocketReserverAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 6618E6CA2E9C843200C568F6 /* RocketReserverAPI */; };
+		6618E6CF2E9EC62000C568F6 /* ApolloClient+Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6618E6CE2E9EC61700C568F6 /* ApolloClient+Setup.swift */; };
+		6618E6D12EA01CBC00C568F6 /* LaunchDetails.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 6618E6D02EA01CB400C568F6 /* LaunchDetails.graphql */; };
+		66B47B972EA162D4004F87FE /* Login.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 66B47B962EA162CC004F87FE /* Login.graphql */; };
+		66B47B992EA168EA004F87FE /* AuthorizationInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B47B982EA168DC004F87FE /* AuthorizationInterceptor.swift */; };
+		66B47B9B2EA16C12004F87FE /* NetworkInterceptorProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B47B9A2EA16C04004F87FE /* NetworkInterceptorProvider.swift */; };
+		66B47B9F2EA1B2F7004F87FE /* BookTrip.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 66B47B9E2EA1B2F1004F87FE /* BookTrip.graphql */; };
+		66B47BA12EA1B617004F87FE /* CancelTrip.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 66B47BA02EA1B60C004F87FE /* CancelTrip.graphql */; };
+		66EEA7802A13C9AD00BB8C72 /* schema.graphqls in Resources */ = {isa = PBXBuildFile; fileRef = 66EEA77F2A13C9AD00BB8C72 /* schema.graphqls */; };
 		66F96F9B29FAC0D600713B80 /* RocketReserverApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F96F9A29FAC0D600713B80 /* RocketReserverApp.swift */; };
 		66F96F9D29FAC0D600713B80 /* LaunchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F96F9C29FAC0D600713B80 /* LaunchListView.swift */; };
 		66F96F9F29FAC0D700713B80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66F96F9E29FAC0D700713B80 /* Assets.xcassets */; };
 		66F96FA229FAC0D700713B80 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66F96FA129FAC0D700713B80 /* Preview Assets.xcassets */; };
 		66F96FC529FAC7F200713B80 /* LaunchRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F96FC429FAC7F200713B80 /* LaunchRow.swift */; };
 		66F96FC729FACE1A00713B80 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F96FC629FACE1A00713B80 /* DetailView.swift */; };
-		66F96FD129FAD2EC00713B80 /* RocketReserverAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 66F96FD029FAD2EC00713B80 /* RocketReserverAPI */; };
+		66F96FD629FADBB700713B80 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 66F96FD529FADBB700713B80 /* SDWebImageSwiftUI */; };
+		66F96FDA29FADCC800713B80 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 66F96FD929FADCC800713B80 /* KeychainSwift */; };
 		66F96FDC29FAE88E00713B80 /* LaunchListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F96FDB29FAE88E00713B80 /* LaunchListViewModel.swift */; };
 		66F96FDE29FAEDBF00713B80 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F96FDD29FAEDBF00713B80 /* DetailViewModel.swift */; };
 		66F96FE029FAFB9600713B80 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F96FDF29FAFB9600713B80 /* LoginView.swift */; };
 		66F96FE229FB0A9600713B80 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F96FE129FB0A9600713B80 /* LoginViewModel.swift */; };
-		66F96FE429FC069D00713B80 /* AuthorizationInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F96FE329FC069D00713B80 /* AuthorizationInterceptor.swift */; };
-		66F96FE629FC070600713B80 /* NetworkInterceptorProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F96FE529FC070600713B80 /* NetworkInterceptorProvider.swift */; };
 		66F96FE829FC0D7700713B80 /* View+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F96FE729FC0D7700713B80 /* View+Alert.swift */; };
 		66F96FEA29FC183200713B80 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F96FE929FC183200713B80 /* NotificationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		6618E68A2E99848500C568F6 /* ApolloClient+Setup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ApolloClient+Setup.swift"; sourceTree = "<group>"; };
-		66D7A53B2A056886009DDB89 /* schema.graphqls */ = {isa = PBXFileReference; lastKnownFileType = text; path = schema.graphqls; sourceTree = "<group>"; };
-		66D7A53C2A056886009DDB89 /* Login.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = Login.graphql; sourceTree = "<group>"; };
-		66D7A53D2A056886009DDB89 /* LaunchDetails.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = LaunchDetails.graphql; sourceTree = "<group>"; };
-		66D7A53E2A056886009DDB89 /* BookTrip.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = BookTrip.graphql; sourceTree = "<group>"; };
-		66D7A53F2A056886009DDB89 /* TripsBooked.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = TripsBooked.graphql; sourceTree = "<group>"; };
-		66D7A5402A056886009DDB89 /* LaunchList.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = LaunchList.graphql; sourceTree = "<group>"; };
-		66D7A5412A056886009DDB89 /* CancelTrip.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = CancelTrip.graphql; sourceTree = "<group>"; };
+		6618E6C72E9C7D3300C568F6 /* LaunchList.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = LaunchList.graphql; sourceTree = "<group>"; };
+		6618E6CE2E9EC61700C568F6 /* ApolloClient+Setup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ApolloClient+Setup.swift"; sourceTree = "<group>"; };
+		6618E6D02EA01CB400C568F6 /* LaunchDetails.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = LaunchDetails.graphql; sourceTree = "<group>"; };
+		66B47B962EA162CC004F87FE /* Login.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = Login.graphql; sourceTree = "<group>"; };
+		66B47B982EA168DC004F87FE /* AuthorizationInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationInterceptor.swift; sourceTree = "<group>"; };
+		66B47B9A2EA16C04004F87FE /* NetworkInterceptorProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkInterceptorProvider.swift; sourceTree = "<group>"; };
+		66B47B9E2EA1B2F1004F87FE /* BookTrip.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = BookTrip.graphql; sourceTree = "<group>"; };
+		66B47BA02EA1B60C004F87FE /* CancelTrip.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = CancelTrip.graphql; sourceTree = "<group>"; };
+		66EEA77F2A13C9AD00BB8C72 /* schema.graphqls */ = {isa = PBXFileReference; lastKnownFileType = text; path = schema.graphqls; sourceTree = "<group>"; };
 		66F96F9729FAC0D600713B80 /* RocketReserver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RocketReserver.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66F96F9A29FAC0D600713B80 /* RocketReserverApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketReserverApp.swift; sourceTree = "<group>"; };
 		66F96F9C29FAC0D600713B80 /* LaunchListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchListView.swift; sourceTree = "<group>"; };
@@ -49,11 +54,8 @@
 		66F96FDD29FAEDBF00713B80 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		66F96FDF29FAFB9600713B80 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		66F96FE129FB0A9600713B80 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
-		66F96FE329FC069D00713B80 /* AuthorizationInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationInterceptor.swift; sourceTree = "<group>"; };
-		66F96FE529FC070600713B80 /* NetworkInterceptorProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkInterceptorProvider.swift; sourceTree = "<group>"; };
 		66F96FE729FC0D7700713B80 /* View+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Alert.swift"; sourceTree = "<group>"; };
 		66F96FE929FC183200713B80 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
-		66F96FEB29FC2BF400713B80 /* RocketReserverAPI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = RocketReserverAPI; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,27 +63,25 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6651EFF42E8C45E100192FB4 /* SDWebImageSwiftUI in Frameworks */,
-				6618E6852E9970AF00C568F6 /* Apollo in Frameworks */,
-				6651EFF12E8C450400192FB4 /* KeychainSwift in Frameworks */,
-				66F96FD129FAD2EC00713B80 /* RocketReserverAPI in Frameworks */,
-				6618E6872E9970AF00C568F6 /* ApolloAPI in Frameworks */,
+				66F96FD629FADBB700713B80 /* SDWebImageSwiftUI in Frameworks */,
+				6618E6CB2E9C843200C568F6 /* RocketReserverAPI in Frameworks */,
+				6618E68E2E998DF600C568F6 /* Apollo in Frameworks */,
+				66F96FDA29FADCC800713B80 /* KeychainSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		66D7A53A2A056886009DDB89 /* graphql */ = {
+		66EEA77E2A13C94400BB8C72 /* graphql */ = {
 			isa = PBXGroup;
 			children = (
-				66D7A53B2A056886009DDB89 /* schema.graphqls */,
-				66D7A53C2A056886009DDB89 /* Login.graphql */,
-				66D7A53D2A056886009DDB89 /* LaunchDetails.graphql */,
-				66D7A53E2A056886009DDB89 /* BookTrip.graphql */,
-				66D7A53F2A056886009DDB89 /* TripsBooked.graphql */,
-				66D7A5402A056886009DDB89 /* LaunchList.graphql */,
-				66D7A5412A056886009DDB89 /* CancelTrip.graphql */,
+				66B47BA02EA1B60C004F87FE /* CancelTrip.graphql */,
+				66B47B9E2EA1B2F1004F87FE /* BookTrip.graphql */,
+				66B47B962EA162CC004F87FE /* Login.graphql */,
+				6618E6D02EA01CB400C568F6 /* LaunchDetails.graphql */,
+				6618E6C72E9C7D3300C568F6 /* LaunchList.graphql */,
+				66EEA77F2A13C9AD00BB8C72 /* schema.graphqls */,
 			);
 			path = graphql;
 			sourceTree = "<group>";
@@ -89,8 +89,7 @@
 		66F96F8E29FAC0D600713B80 = {
 			isa = PBXGroup;
 			children = (
-				66D7A53A2A056886009DDB89 /* graphql */,
-				66F96FCD29FAD2DD00713B80 /* Packages */,
+				66EEA77E2A13C94400BB8C72 /* graphql */,
 				66F96F9929FAC0D600713B80 /* RocketReserver */,
 				66F96F9829FAC0D600713B80 /* Products */,
 				66F96FCF29FAD2EC00713B80 /* Frameworks */,
@@ -108,10 +107,10 @@
 		66F96F9929FAC0D600713B80 /* RocketReserver */ = {
 			isa = PBXGroup;
 			children = (
-				6618E68A2E99848500C568F6 /* ApolloClient+Setup.swift */,
+				66B47B9A2EA16C04004F87FE /* NetworkInterceptorProvider.swift */,
+				66B47B982EA168DC004F87FE /* AuthorizationInterceptor.swift */,
+				6618E6CE2E9EC61700C568F6 /* ApolloClient+Setup.swift */,
 				66F96F9A29FAC0D600713B80 /* RocketReserverApp.swift */,
-				66F96FE329FC069D00713B80 /* AuthorizationInterceptor.swift */,
-				66F96FE529FC070600713B80 /* NetworkInterceptorProvider.swift */,
 				66F96F9C29FAC0D600713B80 /* LaunchListView.swift */,
 				66F96FDB29FAE88E00713B80 /* LaunchListViewModel.swift */,
 				66F96FC429FAC7F200713B80 /* LaunchRow.swift */,
@@ -133,14 +132,6 @@
 				66F96FA129FAC0D700713B80 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		66F96FCD29FAD2DD00713B80 /* Packages */ = {
-			isa = PBXGroup;
-			children = (
-				66F96FEB29FC2BF400713B80 /* RocketReserverAPI */,
-			);
-			name = Packages;
 			sourceTree = "<group>";
 		};
 		66F96FCF29FAD2EC00713B80 /* Frameworks */ = {
@@ -167,11 +158,10 @@
 			);
 			name = RocketReserver;
 			packageProductDependencies = (
-				66F96FD029FAD2EC00713B80 /* RocketReserverAPI */,
-				6651EFF02E8C450400192FB4 /* KeychainSwift */,
-				6651EFF32E8C45E100192FB4 /* SDWebImageSwiftUI */,
-				6618E6842E9970AF00C568F6 /* Apollo */,
-				6618E6862E9970AF00C568F6 /* ApolloAPI */,
+				66F96FD529FADBB700713B80 /* SDWebImageSwiftUI */,
+				66F96FD929FADCC800713B80 /* KeychainSwift */,
+				6618E68D2E998DF600C568F6 /* Apollo */,
+				6618E6CA2E9C843200C568F6 /* RocketReserverAPI */,
 			);
 			productName = RocketReserver;
 			productReference = 66F96F9729FAC0D600713B80 /* RocketReserver.app */;
@@ -202,9 +192,10 @@
 			);
 			mainGroup = 66F96F8E29FAC0D600713B80;
 			packageReferences = (
-				6651EFEF2E8C450400192FB4 /* XCRemoteSwiftPackageReference "keychain-swift" */,
-				6651EFF22E8C45E100192FB4 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
-				66D7612C2E99670A001D00D6 /* XCRemoteSwiftPackageReference "apollo-ios" */,
+				66F96FD429FADBB700713B80 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+				66F96FD829FADCC800713B80 /* XCRemoteSwiftPackageReference "keychain-swift" */,
+				6618E68C2E998DF600C568F6 /* XCRemoteSwiftPackageReference "apollo-ios" */,
+				6618E6C92E9C843200C568F6 /* XCLocalSwiftPackageReference "RocketReserverAPI" */,
 			);
 			productRefGroup = 66F96F9829FAC0D600713B80 /* Products */;
 			projectDirPath = "";
@@ -221,7 +212,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				66F96FA229FAC0D700713B80 /* Preview Assets.xcassets in Resources */,
+				66B47B9F2EA1B2F7004F87FE /* BookTrip.graphql in Resources */,
+				66EEA7802A13C9AD00BB8C72 /* schema.graphqls in Resources */,
+				66B47BA12EA1B617004F87FE /* CancelTrip.graphql in Resources */,
+				66B47B972EA162D4004F87FE /* Login.graphql in Resources */,
 				66F96F9F29FAC0D700713B80 /* Assets.xcassets in Resources */,
+				6618E6D12EA01CBC00C568F6 /* LaunchDetails.graphql in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,16 +231,16 @@
 				66F96F9D29FAC0D600713B80 /* LaunchListView.swift in Sources */,
 				66F96FDE29FAEDBF00713B80 /* DetailViewModel.swift in Sources */,
 				66F96FEA29FC183200713B80 /* NotificationView.swift in Sources */,
-				6618E68B2E99849000C568F6 /* ApolloClient+Setup.swift in Sources */,
 				66F96FC729FACE1A00713B80 /* DetailView.swift in Sources */,
 				66F96FDC29FAE88E00713B80 /* LaunchListViewModel.swift in Sources */,
+				66B47B992EA168EA004F87FE /* AuthorizationInterceptor.swift in Sources */,
 				66F96FE829FC0D7700713B80 /* View+Alert.swift in Sources */,
+				6618E6CF2E9EC62000C568F6 /* ApolloClient+Setup.swift in Sources */,
+				66B47B9B2EA16C12004F87FE /* NetworkInterceptorProvider.swift in Sources */,
 				66F96FC529FAC7F200713B80 /* LaunchRow.swift in Sources */,
 				66F96FE029FAFB9600713B80 /* LoginView.swift in Sources */,
-				66F96FE629FC070600713B80 /* NetworkInterceptorProvider.swift in Sources */,
 				66F96F9B29FAC0D600713B80 /* RocketReserverApp.swift in Sources */,
 				66F96FE229FB0A9600713B80 /* LoginViewModel.swift in Sources */,
-				66F96FE429FC069D00713B80 /* AuthorizationInterceptor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,7 +368,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RocketReserver/Preview Content\"";
@@ -384,17 +379,15 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.apollographql.RocketReserver.RocketReserver2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.apollographql.RocketReserver.RocketReserver;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 6.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -404,7 +397,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RocketReserver/Preview Content\"";
@@ -416,17 +408,15 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.apollographql.RocketReserver.RocketReserver2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.apollographql.RocketReserver.RocketReserver;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 6.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -454,16 +444,23 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCLocalSwiftPackageReference section */
+		6618E6C92E9C843200C568F6 /* XCLocalSwiftPackageReference "RocketReserverAPI" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = RocketReserverAPI;
+		};
+/* End XCLocalSwiftPackageReference section */
+
 /* Begin XCRemoteSwiftPackageReference section */
-		6651EFEF2E8C450400192FB4 /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
+		6618E68C2E998DF600C568F6 /* XCRemoteSwiftPackageReference "apollo-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/evgenyneu/keychain-swift";
+			repositoryURL = "https://github.com/apollographql/apollo-ios";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 24.0.0;
+				kind = upToNextMinorVersion;
+				minimumVersion = 2.0.1;
 			};
 		};
-		6651EFF22E8C45E100192FB4 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+		66F96FD429FADBB700713B80 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI";
 			requirement = {
@@ -471,40 +468,35 @@
 				minimumVersion = 3.1.3;
 			};
 		};
-		66D7612C2E99670A001D00D6 /* XCRemoteSwiftPackageReference "apollo-ios" */ = {
+		66F96FD829FADCC800713B80 /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/apollographql/apollo-ios";
+			repositoryURL = "https://github.com/evgenyneu/keychain-swift";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.1;
+				minimumVersion = 24.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		6618E6842E9970AF00C568F6 /* Apollo */ = {
+		6618E68D2E998DF600C568F6 /* Apollo */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 66D7612C2E99670A001D00D6 /* XCRemoteSwiftPackageReference "apollo-ios" */;
+			package = 6618E68C2E998DF600C568F6 /* XCRemoteSwiftPackageReference "apollo-ios" */;
 			productName = Apollo;
 		};
-		6618E6862E9970AF00C568F6 /* ApolloAPI */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 66D7612C2E99670A001D00D6 /* XCRemoteSwiftPackageReference "apollo-ios" */;
-			productName = ApolloAPI;
-		};
-		6651EFF02E8C450400192FB4 /* KeychainSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 6651EFEF2E8C450400192FB4 /* XCRemoteSwiftPackageReference "keychain-swift" */;
-			productName = KeychainSwift;
-		};
-		6651EFF32E8C45E100192FB4 /* SDWebImageSwiftUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 6651EFF22E8C45E100192FB4 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
-			productName = SDWebImageSwiftUI;
-		};
-		66F96FD029FAD2EC00713B80 /* RocketReserverAPI */ = {
+		6618E6CA2E9C843200C568F6 /* RocketReserverAPI */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = RocketReserverAPI;
+		};
+		66F96FD529FADBB700713B80 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 66F96FD429FADBB700713B80 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+		66F96FD929FADCC800713B80 /* KeychainSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 66F96FD829FADCC800713B80 /* XCRemoteSwiftPackageReference "keychain-swift" */;
+			productName = KeychainSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

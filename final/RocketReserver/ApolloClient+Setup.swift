@@ -2,7 +2,7 @@ import Apollo
 import Foundation
 
 extension ApolloClient {
-    static func `default`() -> ApolloClient {
+    static let shared: ApolloClient = {
         let cache = InMemoryNormalizedCache()
         let store = ApolloStore(cache: cache)
         let url = URL(string: "https://apollo-fullstack-tutorial.herokuapp.com/graphql")!
@@ -14,5 +14,5 @@ extension ApolloClient {
             endpointURL: url
         )
         return ApolloClient(networkTransport: networkTransport, store: store)
-    }
+    }()
 }

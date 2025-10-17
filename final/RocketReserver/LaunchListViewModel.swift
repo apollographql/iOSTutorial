@@ -1,37 +1,15 @@
+import SwiftUI
 import Apollo
 import RocketReserverAPI
-import SwiftUI
 
 @MainActor
 class LaunchListViewModel: ObservableObject {
-    
-    private let apolloClient: ApolloClient
     
     @Published var launches = [LaunchListQuery.Data.Launches.Launch]()
     @Published var lastConnection: LaunchListQuery.Data.Launches?
     @Published var activeRequest: Bool = false
     @Published var appAlert: AppAlert?
     @Published var notificationMessage: String?
-    
-    init(apolloClient: ApolloClient) {
-        self.apolloClient = apolloClient
-    }
-    
-    private func handleTripsBooked(value: Int) {
-        var message: String
-        switch value {
-        case 1:
-            message = "A new trip was booked! 🚀"
-        case -1:
-            message = "A trip was cancelled! 😭"
-        default:
-            appAlert = .basic(title: "Unexpected Value",
-                              message: "Subscription returned an unexpected value: \(value)")
-            return
-        }
-        
-        notificationMessage = message
-    }
     
     // MARK: - Launch Loading
     
@@ -57,7 +35,7 @@ class LaunchListViewModel: ObservableObject {
         
         do {
             activeRequest = true
-            let response = try await apolloClient.fetch(query: LaunchListQuery(cursor: cursor ?? .null))
+            let response = try await ApolloClient.shared.fetch(query: LaunchListQuery(cursor: cursor ?? .null))
             
             if let errors = response.errors {
                 appAlert = .errors(errors: errors)
