@@ -3,9 +3,7 @@ import Apollo
 import ApolloAPI
 import KeychainSwift
 
-struct AuthorizationInterceptor: HTTPInterceptor {
-    public var id: String = UUID().uuidString
-    
+struct AuthorizationInterceptor: HTTPInterceptor {    
     func intercept(
       request: URLRequest,
       next: NextHTTPInterceptorFunction
