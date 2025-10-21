@@ -2,8 +2,9 @@
 // This file was automatically generated and should not be edited.
 
 @_exported import ApolloAPI
+@_spi(Execution) @_spi(Unsafe) import ApolloAPI
 
-public class LoginMutation: GraphQLMutation {
+public struct LoginMutation: GraphQLMutation {
   public static let operationName: String = "Login"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
@@ -16,15 +17,18 @@ public class LoginMutation: GraphQLMutation {
     self.email = email
   }
 
-  public var __variables: Variables? { ["email": email] }
+  @_spi(Unsafe) public var __variables: Variables? { ["email": email] }
 
   public struct Data: RocketReserverAPI.SelectionSet {
-    public let __data: DataDict
-    public init(_dataDict: DataDict) { __data = _dataDict }
+    @_spi(Unsafe) public let __data: DataDict
+    @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: ApolloAPI.ParentType { RocketReserverAPI.Objects.Mutation }
-    public static var __selections: [ApolloAPI.Selection] { [
+    @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { RocketReserverAPI.Objects.Mutation }
+    @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
       .field("login", Login?.self, arguments: ["email": .variable("email")]),
+    ] }
+    @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+      LoginMutation.Data.self
     ] }
 
     public var login: Login? { __data["login"] }
@@ -33,13 +37,16 @@ public class LoginMutation: GraphQLMutation {
     ///
     /// Parent Type: `User`
     public struct Login: RocketReserverAPI.SelectionSet {
-      public let __data: DataDict
-      public init(_dataDict: DataDict) { __data = _dataDict }
+      @_spi(Unsafe) public let __data: DataDict
+      @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: ApolloAPI.ParentType { RocketReserverAPI.Objects.User }
-      public static var __selections: [ApolloAPI.Selection] { [
+      @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { RocketReserverAPI.Objects.User }
+      @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .field("token", String?.self),
+      ] }
+      @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+        LoginMutation.Data.Login.self
       ] }
 
       public var token: String? { __data["token"] }

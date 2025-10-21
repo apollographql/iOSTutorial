@@ -32,7 +32,9 @@ struct LoginView: View {
                     .textFieldStyle(.roundedBorder)
                 
                 Button(viewModel.isSubmitEnabled ? "Submit" : "Submitting...") {
-                    viewModel.login(with: email)
+                    Task {
+                        await viewModel.login(with: email)
+                    }
                 }
                 .disabled(!viewModel.isSubmitEnabled)
                 

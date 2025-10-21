@@ -1,5 +1,6 @@
 import SwiftUI
 
+@MainActor
 class LoginViewModel: ObservableObject {
     
     @Binding var isPresented: Bool
@@ -11,7 +12,7 @@ class LoginViewModel: ObservableObject {
         self._isPresented = isPresented
     }
     
-    func login(with email: String?) {
+    func login(with email: String?) async {
         errorText = nil
         isSubmitEnabled = false
         

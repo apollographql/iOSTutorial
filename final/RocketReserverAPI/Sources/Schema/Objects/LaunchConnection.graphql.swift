@@ -9,6 +9,7 @@ public extension Objects {
   /// after these.
   static let LaunchConnection = ApolloAPI.Object(
     typename: "LaunchConnection",
-    implementedInterfaces: []
+    implementedInterfaces: [],
+    keyFields: nil
   )
 }

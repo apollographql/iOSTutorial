@@ -3,26 +3,17 @@ import Apollo
 import ApolloAPI
 import KeychainSwift
 
-class AuthorizationInterceptor: ApolloInterceptor {
-    var id: String = UUID().uuidString
-
-    func interceptAsync<Operation>(
-        chain: RequestChain,
-        request: HTTPRequest<Operation>,
-        response: HTTPResponse<Operation>?,
-        completion: @escaping (Result<GraphQLResult<Operation.Data>, Error>) -> Void
-    ) where Operation : GraphQLOperation {
+struct AuthorizationInterceptor: HTTPInterceptor {    
+    func intercept(
+      request: URLRequest,
+      next: NextHTTPInterceptorFunction
+    ) async throws -> HTTPResponse {
+        var request = request
         let keychain = KeychainSwift()
-        if let token = keychain.get(LoginView.loginKeychainKey) {
-            request.addHeader(name: "Authorization", value: token)
+        if let token = await keychain.get(LoginView.loginKeychainKey) {
+            request.addValue(token, forHTTPHeaderField: "Authorization")
         }
         
-        chain.proceedAsync(
-            request: request,
-            response: response,
-            interceptor: self,
-            completion: completion
-        )
+        return try await next(request)
     }
-    
 }

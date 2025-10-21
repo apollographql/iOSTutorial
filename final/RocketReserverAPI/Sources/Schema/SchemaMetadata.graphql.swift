@@ -3,8 +3,6 @@
 
 import ApolloAPI
 
-public typealias ID = String
-
 public protocol SelectionSet: ApolloAPI.SelectionSet & ApolloAPI.RootSelectionSet
 where Schema == RocketReserverAPI.SchemaMetadata {}
 
@@ -18,19 +16,18 @@ public protocol MutableInlineFragment: ApolloAPI.MutableSelectionSet & ApolloAPI
 where Schema == RocketReserverAPI.SchemaMetadata {}
 
 public enum SchemaMetadata: ApolloAPI.SchemaMetadata {
-  public static let configuration: ApolloAPI.SchemaConfiguration.Type = SchemaConfiguration.self
+  public static let configuration: any ApolloAPI.SchemaConfiguration.Type = SchemaConfiguration.self
 
-  public static func objectType(forTypename typename: String) -> ApolloAPI.Object? {
+  @_spi(Execution) public static func objectType(forTypename typename: String) -> ApolloAPI.Object? {
     switch typename {
-    case "Mutation": return RocketReserverAPI.Objects.Mutation
-    case "User": return RocketReserverAPI.Objects.User
-    case "Query": return RocketReserverAPI.Objects.Query
     case "Launch": return RocketReserverAPI.Objects.Launch
+    case "LaunchConnection": return RocketReserverAPI.Objects.LaunchConnection
     case "Mission": return RocketReserverAPI.Objects.Mission
+    case "Mutation": return RocketReserverAPI.Objects.Mutation
+    case "Query": return RocketReserverAPI.Objects.Query
     case "Rocket": return RocketReserverAPI.Objects.Rocket
     case "TripUpdateResponse": return RocketReserverAPI.Objects.TripUpdateResponse
-    case "Subscription": return RocketReserverAPI.Objects.Subscription
-    case "LaunchConnection": return RocketReserverAPI.Objects.LaunchConnection
+    case "User": return RocketReserverAPI.Objects.User
     default: return nil
     }
   }

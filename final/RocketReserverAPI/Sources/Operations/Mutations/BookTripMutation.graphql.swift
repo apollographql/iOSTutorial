@@ -2,8 +2,9 @@
 // This file was automatically generated and should not be edited.
 
 @_exported import ApolloAPI
+@_spi(Execution) @_spi(Unsafe) import ApolloAPI
 
-public class BookTripMutation: GraphQLMutation {
+public struct BookTripMutation: GraphQLMutation {
   public static let operationName: String = "BookTrip"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
@@ -16,15 +17,18 @@ public class BookTripMutation: GraphQLMutation {
     self.id = id
   }
 
-  public var __variables: Variables? { ["id": id] }
+  @_spi(Unsafe) public var __variables: Variables? { ["id": id] }
 
   public struct Data: RocketReserverAPI.SelectionSet {
-    public let __data: DataDict
-    public init(_dataDict: DataDict) { __data = _dataDict }
+    @_spi(Unsafe) public let __data: DataDict
+    @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-    public static var __parentType: ApolloAPI.ParentType { RocketReserverAPI.Objects.Mutation }
-    public static var __selections: [ApolloAPI.Selection] { [
+    @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { RocketReserverAPI.Objects.Mutation }
+    @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
       .field("bookTrips", BookTrips.self, arguments: ["launchIds": [.variable("id")]]),
+    ] }
+    @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+      BookTripMutation.Data.self
     ] }
 
     public var bookTrips: BookTrips { __data["bookTrips"] }
@@ -33,14 +37,17 @@ public class BookTripMutation: GraphQLMutation {
     ///
     /// Parent Type: `TripUpdateResponse`
     public struct BookTrips: RocketReserverAPI.SelectionSet {
-      public let __data: DataDict
-      public init(_dataDict: DataDict) { __data = _dataDict }
+      @_spi(Unsafe) public let __data: DataDict
+      @_spi(Unsafe) public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: ApolloAPI.ParentType { RocketReserverAPI.Objects.TripUpdateResponse }
-      public static var __selections: [ApolloAPI.Selection] { [
+      @_spi(Execution) public static var __parentType: any ApolloAPI.ParentType { RocketReserverAPI.Objects.TripUpdateResponse }
+      @_spi(Execution) public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .field("success", Bool.self),
         .field("message", String?.self),
+      ] }
+      @_spi(Execution) public static var __fulfilledFragments: [any ApolloAPI.SelectionSet.Type] { [
+        BookTripMutation.Data.BookTrips.self
       ] }
 
       public var success: Bool { __data["success"] }

@@ -1,5 +1,6 @@
 import SwiftUI
 
+@MainActor
 class DetailViewModel: ObservableObject {
     
     @Published var isShowingLogin = false
@@ -9,11 +10,11 @@ class DetailViewModel: ObservableObject {
         // TODO (Section 9 - https://www.apollographql.com/docs/ios/tutorial/tutorial-complete-details-view#execute-the-query)
     }
     
-    func loadLaunchDetails() {
+    func loadLaunchDetails() async {
         // TODO (Section 9 - https://www.apollographql.com/docs/ios/tutorial/tutorial-complete-details-view#execute-the-query)
     }
     
-    func bookOrCancel() {
+    func bookOrCancel() async {
         guard self.isLoggedIn() else {
             isShowingLogin = true
             return
@@ -22,12 +23,12 @@ class DetailViewModel: ObservableObject {
         // TODO (Section 12 - https://www.apollographql.com/docs/ios/tutorial/tutorial-define-additional-mutations#implement-the-canceltrip-logic)
     }
     
-    private func bookTrip() {
+    private func bookTrip() async {
         print("Book Trip!")
         // TODO (Section 12 - https://www.apollographql.com/docs/ios/tutorial/tutorial-define-additional-mutations#implement-the-booktrip-logic)
     }
     
-    private func cancelTrip() {
+    private func cancelTrip() async {
         print("Cancel Trip!")
         // TODO (Section 12 - https://www.apollographql.com/docs/ios/tutorial/tutorial-define-additional-mutations#implement-the-canceltrip-logic)
     }

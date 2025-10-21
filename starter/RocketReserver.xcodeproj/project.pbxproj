@@ -7,15 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		66EEA7802A13C9AD00BB8C72 /* schema.graphqls in Resources */ = {isa = PBXBuildFile; fileRef = 66EEA77F2A13C9AD00BB8C72 /* schema.graphqls */; };
+		66B47BA42EA1C130004F87FE /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 66B47BA32EA1C130004F87FE /* KeychainSwift */; };
+		66B47BA72EA1C145004F87FE /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 66B47BA62EA1C145004F87FE /* SDWebImageSwiftUI */; };
 		66F96F9B29FAC0D600713B80 /* RocketReserverApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F96F9A29FAC0D600713B80 /* RocketReserverApp.swift */; };
 		66F96F9D29FAC0D600713B80 /* LaunchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F96F9C29FAC0D600713B80 /* LaunchListView.swift */; };
 		66F96F9F29FAC0D700713B80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66F96F9E29FAC0D700713B80 /* Assets.xcassets */; };
 		66F96FA229FAC0D700713B80 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66F96FA129FAC0D700713B80 /* Preview Assets.xcassets */; };
 		66F96FC529FAC7F200713B80 /* LaunchRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F96FC429FAC7F200713B80 /* LaunchRow.swift */; };
 		66F96FC729FACE1A00713B80 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F96FC629FACE1A00713B80 /* DetailView.swift */; };
-		66F96FD629FADBB700713B80 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 66F96FD529FADBB700713B80 /* SDWebImageSwiftUI */; };
-		66F96FDA29FADCC800713B80 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 66F96FD929FADCC800713B80 /* KeychainSwift */; };
 		66F96FDC29FAE88E00713B80 /* LaunchListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F96FDB29FAE88E00713B80 /* LaunchListViewModel.swift */; };
 		66F96FDE29FAEDBF00713B80 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F96FDD29FAEDBF00713B80 /* DetailViewModel.swift */; };
 		66F96FE029FAFB9600713B80 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F96FDF29FAFB9600713B80 /* LoginView.swift */; };
@@ -25,7 +24,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		66EEA77F2A13C9AD00BB8C72 /* schema.graphqls */ = {isa = PBXFileReference; lastKnownFileType = text; path = schema.graphqls; sourceTree = "<group>"; };
 		66F96F9729FAC0D600713B80 /* RocketReserver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RocketReserver.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66F96F9A29FAC0D600713B80 /* RocketReserverApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketReserverApp.swift; sourceTree = "<group>"; };
 		66F96F9C29FAC0D600713B80 /* LaunchListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchListView.swift; sourceTree = "<group>"; };
@@ -46,26 +44,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66F96FD629FADBB700713B80 /* SDWebImageSwiftUI in Frameworks */,
-				66F96FDA29FADCC800713B80 /* KeychainSwift in Frameworks */,
+				66B47BA72EA1C145004F87FE /* SDWebImageSwiftUI in Frameworks */,
+				66B47BA42EA1C130004F87FE /* KeychainSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		66EEA77E2A13C94400BB8C72 /* graphql */ = {
-			isa = PBXGroup;
-			children = (
-				66EEA77F2A13C9AD00BB8C72 /* schema.graphqls */,
-			);
-			path = graphql;
-			sourceTree = "<group>";
-		};
 		66F96F8E29FAC0D600713B80 = {
 			isa = PBXGroup;
 			children = (
-				66EEA77E2A13C94400BB8C72 /* graphql */,
 				66F96F9929FAC0D600713B80 /* RocketReserver */,
 				66F96F9829FAC0D600713B80 /* Products */,
 				66F96FCF29FAD2EC00713B80 /* Frameworks */,
@@ -131,8 +120,9 @@
 			);
 			name = RocketReserver;
 			packageProductDependencies = (
-				66F96FD529FADBB700713B80 /* SDWebImageSwiftUI */,
-				66F96FD929FADCC800713B80 /* KeychainSwift */,
+				6618E6CA2E9C843200C568F6 /* RocketReserverAPI */,
+				66B47BA32EA1C130004F87FE /* KeychainSwift */,
+				66B47BA62EA1C145004F87FE /* SDWebImageSwiftUI */,
 			);
 			productName = RocketReserver;
 			productReference = 66F96F9729FAC0D600713B80 /* RocketReserver.app */;
@@ -163,8 +153,8 @@
 			);
 			mainGroup = 66F96F8E29FAC0D600713B80;
 			packageReferences = (
-				66F96FD429FADBB700713B80 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
-				66F96FD829FADCC800713B80 /* XCRemoteSwiftPackageReference "keychain-swift" */,
+				66B47BA22EA1C130004F87FE /* XCRemoteSwiftPackageReference "keychain-swift" */,
+				66B47BA52EA1C145004F87FE /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 			);
 			productRefGroup = 66F96F9829FAC0D600713B80 /* Products */;
 			projectDirPath = "";
@@ -181,7 +171,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				66F96FA229FAC0D700713B80 /* Preview Assets.xcassets in Resources */,
-				66EEA7802A13C9AD00BB8C72 /* schema.graphqls in Resources */,
 				66F96F9F29FAC0D700713B80 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -407,34 +396,38 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		66F96FD429FADBB700713B80 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI";
-			requirement = {
-				kind = upToNextMinorVersion;
-				minimumVersion = 2.2.0;
-			};
-		};
-		66F96FD829FADCC800713B80 /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
+		66B47BA22EA1C130004F87FE /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/evgenyneu/keychain-swift";
 			requirement = {
-				kind = exactVersion;
-				version = 18.0.0;
+				kind = upToNextMajorVersion;
+				minimumVersion = 24.0.0;
+			};
+		};
+		66B47BA52EA1C145004F87FE /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.3;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		66F96FD529FADBB700713B80 /* SDWebImageSwiftUI */ = {
+		6618E6CA2E9C843200C568F6 /* RocketReserverAPI */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 66F96FD429FADBB700713B80 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
-			productName = SDWebImageSwiftUI;
+			productName = RocketReserverAPI;
 		};
-		66F96FD929FADCC800713B80 /* KeychainSwift */ = {
+		66B47BA32EA1C130004F87FE /* KeychainSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 66F96FD829FADCC800713B80 /* XCRemoteSwiftPackageReference "keychain-swift" */;
+			package = 66B47BA22EA1C130004F87FE /* XCRemoteSwiftPackageReference "keychain-swift" */;
 			productName = KeychainSwift;
+		};
+		66B47BA62EA1C145004F87FE /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 66B47BA52EA1C145004F87FE /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

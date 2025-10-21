@@ -1,8 +1,9 @@
-import Apollo
-import KeychainSwift
-import RocketReserverAPI
 import SwiftUI
+import Apollo
+import RocketReserverAPI
+import KeychainSwift
 
+@MainActor
 class DetailViewModel: ObservableObject {
     
     let launchID: RocketReserverAPI.ID
@@ -11,38 +12,38 @@ class DetailViewModel: ObservableObject {
     @Published var isShowingLogin = false
     @Published var appAlert: AppAlert?
     
-    init(launchID: RocketReserverAPI.ID) {
+    init(
+        launchID: RocketReserverAPI.ID
+    ) {
         self.launchID = launchID
     }
     
-    func loadLaunchDetails(forceReload: Bool = false) {
+    func loadLaunchDetails(forceReload: Bool = false) async {
         guard forceReload || launchID != launch?.id else {
             return
         }
         
-        let cachePolicy: CachePolicy = forceReload ? .fetchIgnoringCacheData : .returnCacheDataElseFetch
+        let cachePolicy: CachePolicy.Query.SingleResponse = forceReload ? .networkOnly : .cacheFirst
         
-        Network.shared.apollo.fetch(query: LaunchDetailsQuery(launchId: launchID), cachePolicy: cachePolicy) { [weak self] result in
-            guard let self = self else {
-                return
+        do {
+            let response = try await ApolloClient.shared.fetch(
+                query: LaunchDetailsQuery(launchId: launchID),
+                cachePolicy: cachePolicy
+            )
+            
+            if let errors = response.errors {
+                appAlert = .errors(errors: errors)
             }
             
-            switch result {
-            case.success(let graphQLResult):
-                if let launch = graphQLResult.data?.launch {
-                    self.launch = launch
-                }
-                
-                if let errors = graphQLResult.errors {
-                    self.appAlert = .errors(errors: errors)
-                }
-            case .failure(let error):
-                self.appAlert = .errors(errors: [error])
+            if let launch = response.data?.launch {
+                self.launch = launch
             }
+        } catch {
+            appAlert = .errors(errors: [error])
         }
     }
     
-    func bookOrCancel() {
+    func bookOrCancel() async {
         guard self.isLoggedIn() else {
             isShowingLogin = true
             return
@@ -52,62 +53,53 @@ class DetailViewModel: ObservableObject {
             return
         }
         
-        launch.isBooked ? cancelTrip(with: launch.id) : bookTrip(with: launch.id)
+        launch.isBooked ? await cancelTrip(with: launch.id) : await bookTrip(with: launch.id)
     }
     
-    private func bookTrip(with id: RocketReserverAPI.ID) {
-        Network.shared.apollo.perform(mutation: BookTripMutation(id: id)) { [weak self] result in
-            guard let self = self else {
-                return
+    private func bookTrip(with id: RocketReserverAPI.ID) async {
+        do {
+            let response = try await ApolloClient.shared.perform(mutation: BookTripMutation(id: id))
+            
+            if let errors = response.errors {
+                appAlert = .errors(errors: errors)
             }
             
-            switch result {
-            case .success(let graphQLResult):
-                if let bookingResult = graphQLResult.data?.bookTrips {
-                    if bookingResult.success {
-                        self.appAlert = .basic(title: "Success!",
-                                               message: bookingResult.message ?? "Trip booked successfully")
-                        self.loadLaunchDetails(forceReload: true)
-                    } else {
-                        self.appAlert = .basic(title: "Could not book trip",
-                                               message: bookingResult.message ?? "Unknown failure")
-                    }
+            if let bookingResult = response.data?.bookTrips {
+                if bookingResult.success {
+                    appAlert = .basic(title: "Success!",
+                                      message: bookingResult.message ?? "Trip booked successfully")
+                    await loadLaunchDetails(forceReload: true)
+                } else {
+                    appAlert = .basic(title: "Could not book trip",
+                                      message: bookingResult.message ??
+                                      "Something went wrong while booking the trip")
                 }
-                
-                if let errors = graphQLResult.errors {
-                    self.appAlert = .errors(errors: errors)
-                }
-            case .failure(let error):
-                self.appAlert = .errors(errors: [error])
             }
+        } catch {
+            appAlert = .errors(errors: [error])
         }
     }
     
-    private func cancelTrip(with id: RocketReserverAPI.ID) {
-        Network.shared.apollo.perform(mutation: CancelTripMutation(launchId: id)) { [weak self] result in
-            guard let self = self else {
-                return
+    private func cancelTrip(with id: RocketReserverAPI.ID) async {
+        do {
+            let response = try await ApolloClient.shared.perform(mutation: CancelTripMutation(launchId: id))
+            
+            if let errors = response.errors {
+                appAlert = .errors(errors: errors)
             }
             
-            switch result {
-            case .success(let graphQLResult):
-                if let cancelResult = graphQLResult.data?.cancelTrip {
-                    if cancelResult.success {
-                        self.appAlert = .basic(title: "Trip cancelled",
-                                               message: cancelResult.message ?? "Your trip has been officially cancelled")
-                        self.loadLaunchDetails(forceReload: true)
-                    } else {
-                        self.appAlert = .basic(title: "Could not cancel trip",
-                                               message: cancelResult.message ?? "Unknown failure.")
-                    }
+            if let cancelResult = response.data?.cancelTrip {
+                if cancelResult.success {
+                    appAlert = .basic(title: "Trip cancelled",
+                                      message: cancelResult.message ?? "Your trip has been officially cancelled")
+                    await loadLaunchDetails(forceReload: true)
+                } else {
+                    appAlert = .basic(title: "Could not cancel trip",
+                                      message: cancelResult.message ?? "Something went wrong")
                 }
-                
-                if let errors = graphQLResult.errors {
-                    self.appAlert = .errors(errors: errors)
-                }
-            case .failure(let error):
-                self.appAlert = .errors(errors: [error])
             }
+        } catch {
+            appAlert = .errors(errors: [error])
         }
     }
     

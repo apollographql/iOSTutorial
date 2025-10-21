@@ -16,7 +16,7 @@
     "schemaTypes" : {
       "path" : "./RocketReserverAPI",
       "moduleType" : {
-        "swiftPackageManager" : {
+        "swiftPackage" : {
         }
       }
     },
